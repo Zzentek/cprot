@@ -1,0 +1,70 @@
+{
+  "section": {
+    "title": {
+      "prefix": "Elige tu",
+      "highlight": "Servicio",
+      "suffix": ""
+    },
+    "description": "Esto es lo que ofrecemos",
+    "plans": [
+      {
+        "title": "Minecraft Servers",
+        "image": "/games.jpg",
+        "description": "Intel i3 10100",
+        "basePrice": 3.99,
+        "features": [
+          "Entrega inmediata",
+          "Plugins",
+          "Mods",
+          "Proteccion DDoS",
+          "Soporte basico"
+        ],
+        "buttonText": "CATALOGO",
+        "buttonStyle": "secondary",
+        "popular": false,
+        "link": "/games"
+      },
+      {
+        "title": "VPS Hosting",
+        "image": "/vps.png",
+        "description": "Xeon E5-2670v3/2650v4",
+        "basePrice": 7.99,
+        "features": [
+          "Acceso root",
+          "SSD",
+          "99.9% uptime",
+          "Multiples OS",
+          "Backup incluido",
+          "Red empresarial",
+          "Soporte profesional"
+        ],
+        "buttonText": "Ordena ahora",
+        "buttonStyle": "primary",
+        "popular": true,
+        "link": "/vps"
+      },
+      {
+        "title": "Servidores Dedicados",
+        "image": "/dedicated.webp",
+        "description": "Rendimiento Bare metal",
+        "basePrice": 49.99,
+        "features": [
+          "Entrega en 4hrs o menos",
+          "Acceso root",
+          "Multiples OS",
+          "Soporte empresarial",
+          "Proteccion DDoS",
+          "Red empresarial"
+        ],
+        "buttonText": "Get a Quote",
+        "buttonStyle": "secondary",
+        "popular": false,
+        "link": "/dedicated"
+      }
+    ],
+    "footer": {
+      "text": "¿Necesitas algo diferente o personalizado?",
+      "linkText": "Contacta nuestro equipo de ventas."
+    }
+  }
+}

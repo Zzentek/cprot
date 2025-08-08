@@ -1,0 +1,65 @@
+{
+  "mainNavigation": [
+    {
+      "name": "Minecraft",
+      "href": "/minecraft",
+      "icon": "Gamepad2",
+      "hasDropdown": false,
+      "dropdownType": "games"
+    },
+    {
+      "name": "VPS",
+      "href": "/vps",
+      "icon": "Cloud",
+      "hasDropdown": false
+    },
+    {
+      "name": "servidores dedicados",
+      "href": "/dedicated",
+      "icon": "Server",
+      "hasDropdown": false
+    },
+    {
+      "name": "Legal",
+      "href": "/terms-of-services",
+      "icon": "FileText",
+      "hasDropdown": true,
+      "dropdownType": "legal",
+      "dropdownItems": [
+        {
+          "name": "Terms of Service",
+          "href": "/terms-of-services",
+          "description": "Our service agreement and terms"
+        },
+        {
+          "name": "Privacy Policy",
+          "href": "/privacy-policy",
+          "description": "How we protect your privacy"
+        }
+      ]
+    }
+  ],
+  "socialLinks": [
+    {
+      "name": "Discord",
+      "href": "https://discord.cprot.net",
+      "icon": "discord"
+    },
+    {
+      "name": "Twitter",
+      "href": "#",
+      "icon": "twitter"
+    }
+  ],
+  "clientSpace": {
+    "name": "CLIENT SPACE",
+    "href": "https://builtbybit.com/resources/all-in-one-hosting-template-dezernova.69325/",
+    "icon": "User"
+  },
+  "banner": {
+    "show": true,
+    "text": "Limited Time Offer: Save 10% on Game Servers",
+    "couponCode": "WELCOME",
+    "backgroundColor": "bg-blue-500"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "loading": {
+    "enableLoadingScreen": false,
+    "loadingDuration": 1000
+  },
+  "currency": {
+    "apiKey": "e912bbb7db10a10466ec18f0",
+    "baseCurrency": "USD",
+    "defaultCurrency": "USD",
+    "supportedCurrencies": [
+      { "code": "EUR", "symbol": "€", "name": "Euro" }
+    ]
+  }
+}

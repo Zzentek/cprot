@@ -1,0 +1,64 @@
+{
+  "navbar": {
+    "logo": "/banners/Dezer-Banner.webp",
+    "brandName": "CPROT",
+    "brandAccent": "Hosting"
+  },
+  "hero": {
+    "title": {
+      "prefix": "Hostea tu propio",
+      "suffix": "Server",
+      "suffixColor": "white",
+      "gameNameColor": "blue"
+    },
+    "games": [
+      {
+        "id": "minecraft",
+        "name": "Minecraft",
+        "displayName": "Minecraft",
+        "banner": "/banners/minecraft-banners.webp",
+        "color": "#4CAF50",
+        "showSuffix": true,
+        "showInDropdown": true
+      },
+      {
+        "id": "discord-nodejs",
+        "name": "Discord (NodeJS)",
+        "displayName": "Discord bot",
+        "banner": "/banners/node.webp",
+        "color": "#339933",
+        "showSuffix": true,
+        "showInDropdown": true
+      }
+    ],
+    "description": "Rendimiento extremo, red optimizada para México y protección anti-DDoS real.",
+    "cycleInterval": 10000,
+    "partners": [
+      {
+        "name": "Intel",
+        "src": "/advertisement/intel.png",
+        "loading": "lazy"
+      },
+      {
+        "name": "Pterodactyl",
+        "src": "/advertisement/pterodactyl.png",
+        "loading": "lazy"
+      },
+      {
+        "name": "TELMEX",
+        "src": "/advertisement/telmex-isp.webp",
+        "loading": "lazy"
+      },
+      {
+        "name": "VirtFusion",
+        "src": "/advertisement/virtfusion.png",
+        "loading": "lazy"
+      },
+      {
+        "name": "MEGA",
+        "src": "/advertisement/mega-isp.webp",
+        "loading": "lazy"
+      }
+    ]
+  }
+}
