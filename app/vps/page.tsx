@@ -13,12 +13,16 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50 dark:bg-[#0a0b0f] transition-colors duration-300">
       <Navbar />
       <VPSPricingSection />
-      <OSSelectionSection />
-      <FeaturesSection />
-      <LocationsSection />
       <FAQSection />
-      <PanelShowcase />
       <Footer />
     </div>
   )
 }
+
+
+/*
+      <PanelShowcase />
+      
+      <OSSelectionSection />
+      <FeaturesSection />
+      <LocationsSection /> */

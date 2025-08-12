@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 import { Server, Cpu, MemoryStick, HardDrive, Wifi, HeartPulse } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
-import discordConfig from "../../config/sections/discord.json"
-import type { DiscordConfig } from "../../types/discord"
+import discordConfig from "../../config/sections/minecraft.json"
+import type { DiscordConfig } from "../../types/minecraft"
 import { CurrencySelector, useCurrency } from "../ui/CurrencySelector"
 
 const config = discordConfig as DiscordConfig

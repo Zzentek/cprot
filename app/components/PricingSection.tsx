@@ -14,7 +14,7 @@ export default function PricingSection() {
   const { selectedCurrency, setSelectedCurrency, convertPrice } = useCurrency()
 
   return (
-    <div className="bg-gray-50 dark:bg-[#0a0b0f] py-16 px-4 sm:px-6 lg:px-8 relative">
+    <div className="bg-gray-50 dark:bg-[#0a0b0f] py-16 px-4 sm:px-6 lg:px-8 relative" id="catalogo">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

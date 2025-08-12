@@ -332,7 +332,7 @@ export default function HeroSection() {
                     whileTap="tap"
                   >
                     <a
-                      href="/games"
+                      href="#catalogo"
                       className="group bg-orange-500 hover:bg-yellow-400 text-black dark:text-black px-4 py-3 rounded-md font-bold text-md transition-all duration-300 flex items-center gap-2 backdrop-blur-sm no-underline shadow-none hover:shadow-none"
                     >
                       <span className="orbitron-font">CATALOGO</span>
@@ -451,6 +451,7 @@ export default function HeroSection() {
               <div className="flex gap-24 absolute whitespace-nowrap animate-scroll will-change-transform">
                 {[...partners, ...partners].map((partner, index) => (
                   <div
+                    id="#catalogo"
                     key={`${partner.name}-${index}`}
                     className="flex-shrink-0 w-[200px] hover:scale-110 transition-transform duration-300"
                   >
