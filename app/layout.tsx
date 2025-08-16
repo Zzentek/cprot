@@ -46,45 +46,52 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "DezerNova - Game Hosting, VPS & Dedicated Servers",
-    template: "%s | DezerNova"
+    default: "CPRO Hosting, Minecraft Servers y VPS",
+    template: "%s | CPROT"
   },
-  description: "Premium game hosting, VPS & dedicated servers by DezerNova. High-performance infrastructure with 99.9% uptime, DDoS protection & 24/7 support.",
+  description: "El mejor Hosting de México te ofrece: Minecraft Servers, VPS y la mejor latencia a nivel nacional y LATAM.",
   keywords: [
     "game hosting",
     "minecraft hosting",
+    "minecraft server",
+    "minecraft server hosting",
     "discord bot hosting",
     "VPS hosting",
+    "VPS",
+    "VPS Mexico",
+    "VPS Ryzen",
+    "VPS Intel",
+    "VPS barato",
     "dedicated servers",
+    "Servidores dedicados",
     "cloud servers",
     "gaming servers",
-    "DezerNova",
-    "low latency hosting",
-    "DDoS protection",
-    "24/7 support",
-    "custom server hosting",
-    "modded game hosting",
-    "server rental"
+    "Hosting bajo ping",
+    "Proteccion ddos",
+    "Soporte 24/7",
+    "Hosting Mexico",
+    "Hostinguer",
+    "SuperCores"
   ],
-  authors: [{ name: "Anthony" }],
-  creator: "Anthony",
-  publisher: "DezerX | NovaTemplate",
-  category: "Game Hosting & Server Solutions",
+  authors: [{ name: "Carlos Soltero" }],
+  creator: "Carlos Soltero",
+  publisher: "CPROT Hosting",
+  category: "VPS Hosting & Minecraft servers",
   
   // Open Graph metadata
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://nova.dezerx.com",
-    siteName: "DezerNova - Game Hosting & Servers",
-    title: "DezerNova - Game Hosting, VPS & Dedicated Servers",
-    description: "Premium game hosting, VPS, and dedicated server solutions. High-performance infrastructure for gaming communities and developers with DDoS protection.",
+    url: "https://cprot.net",
+    siteName: "CPROT Hosting",
+    title: "El mejor Hosting VPS y Minecraft Servers de Mexico",
+    description: "Ofrecemos los servicios de Hosting con la latencia más baja a nivel nacional e internacional con proteccion DDoS.",
     images: [
       {
         url: "https://nova.dezerx.com/meta/Banner.png",
         width: 1200,
         height: 630,
-        alt: "DezerNova - Game Hosting, VPS & Dedicated Servers",
+        alt: "CPROT - Minecraft Hosting y VPS barato",
         type: "image/png"
       }
     ]
@@ -93,8 +100,8 @@ export const metadata: Metadata = {
   // Twitter Card metadata
   twitter: {
     card: "summary_large_image",
-    title: "DezerNova - Game Hosting, VPS & Dedicated Servers",
-    description: "Premium game hosting and server solutions. High-performance infrastructure for gaming communities with DDoS protection and 24/7 support.",
+    title: "CPROT Hosting - VPS y Minecraft Servers barato",
+    description: "Ofrecemos los servicios de Hosting con la latencia más baja a nivel nacional e internacional con proteccion DDoS.",
     images: ["https://nova.dezerx.com/meta/Banner.png"]
   },
 
@@ -151,7 +158,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <head>
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -166,22 +173,22 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "DezerNova",
-              "url": "https://nova.dezerx.com",
-              "logo": "https://nova.dezerx.com/meta/Logo.png",
-              "description": "Premium game hosting, VPS, and dedicated server solutions for gaming communities and developers",
+              "name": "CPROT Hosting",
+              "url": "https://cprot.net",
+              "logo": "https://cprot.net/meta/Logo.png",
+              "description": "El mejor Hosting de México te ofrece: Minecraft Servers, VPS y la mejor latencia a nivel nacional y LATAM.",
               "serviceType": ["Game Server Hosting", "VPS Hosting", "Dedicated Servers", "Cloud Infrastructure"],
               "areaServed": "Worldwide",
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
-                "name": "Gaming & Server Solutions",
+                "name": "Minecraft Servers y VPS Hosting",
                 "itemListElement": [
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "Game Server Hosting",
-                      "description": "High-performance game servers with DDoS protection"
+                      "name": "Minecraft Hosting",
+                      "description": "Alto rendimiento con bajisima latencia para Mexico y LATAM con proteccion DDoS."
                     }
                   },
                   {
@@ -189,35 +196,35 @@ export default function RootLayout({
                     "itemOffered": {
                       "@type": "Service",
                       "name": "VPS Hosting",
-                      "description": "Virtual private servers with full root access"
+                      "description": "Servidores VPS KVM con full root y proteccion DDoS."
                     }
                   },
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service", 
-                      "name": "Dedicated Servers",
-                      "description": "Bare metal servers for maximum performance"
+                      "name": "Servidores Dedicados",
+                      "description": "Servidores BareMetal con una entrega instantánea."
                     }
                   }
                 ]
               },
               "sameAs": [
-                "https://discord.gg/Qrzn2enUP2"
+                "https://discord.gg/MsDqb6HvS3"
               ],
               "contactPoint": {
                 "@type": "ContactPoint",
-                "contactType": "customer service",
-                "availableLanguage": "English",
-                "serviceType": "Technical Support",
-                "url": "https://discord.gg/Qrzn2enUP2"
+                "contactType": "Soporte al cliente",
+                "availableLanguage": "Spanish",
+                "serviceType": "Soporte Técnico",
+                "url": "https://discord.gg/MsDqb6HvS3"
               },
               "founder": {
                 "@type": "Person",
-                "name": "Anthony "
+                "name": "Carlos SOltero "
               },
-              "termsOfService": "https://nova.dezerx.com/terms-of-services",
-              "privacyPolicy": "https://nova.dezerx.com/privacy-policy"
+              "termsOfService": "https://cprot.net/terms-of-services",
+              "privacyPolicy": "https://cprot.net/privacy-policy"
             })
           }}
         />
