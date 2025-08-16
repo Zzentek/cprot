@@ -46,7 +46,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "CPRO Hosting, Minecraft Servers y VPS",
+    default: "CPROT Hosting, Minecraft Servers y VPS",
     template: "%s | CPROT"
   },
   description: "El mejor Hosting de México te ofrece: Minecraft Servers, VPS y la mejor latencia a nivel nacional y LATAM.",
