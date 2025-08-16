@@ -126,7 +126,7 @@ export const metadata: Metadata = {
     google: "vzsKvhNUgAPlCbf1annB0Sl-bttSFos87mhOyQSU2aY", // Replace with actual verification code
   },
 
-  applicationName: "DezerNova",
+  applicationName: "CPROT",
   referrer: "origin-when-cross-origin",
 
   manifest: "/manifest.json",
@@ -164,7 +164,7 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="DezerNova" />
+        <meta name="apple-mobile-web-app-title" content="CPROT" />
         <meta name="crawl-delay" content="10" />
         <meta name="revisit-after" content="7 days" />
         <script
