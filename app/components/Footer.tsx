@@ -8,20 +8,19 @@ import DiscordBanner from "./DiscordBanner"
 
 export default function Footer() {
   const quickLinks = [
-    { name: "Area de Clientes", href: "https://cliente.cprot.net" },
+    { name: "Area de Clientes", href: "https://lobby.cprot.net" },
     { name: "Discord", href: "https://discord.cprot.net" },
     { name: "VPS Hosting", href: "/vps" },
 /**    { name: "Servidores Dedicados", href: "/dedicados" },*/
-    { name: "Minecraft Hosting", href: "/juegos" },
+    { name: "Minecraft Hosting", href: "/minecraft" },
   ]
 
   const legalLinks = [
-    { name: "Terminos de servicio", href: "/terminos-de-servicio" },
-    { name: "Politica de privacidad", href: "/politica-de-privacidad" },
+    { name: "Terminos de servicio", href: "/terminos-servicio" },
   ]
 
   const contactInfo = [
-    { icon: Mail, label: "Email", value: "carlosh@cprot.net", href: "mailto:crlosh@cprot.net" },
+    { icon: Mail, label: "Email", value: "admin@cprot.net", href: "mailto:admin@cprot.net" },
     { icon: Phone, label: "Celular", value: "N/A", href: "tel:+52 000 000 0000" },
     { icon: Gamepad2, label: "Minecraft Panel", value: "mc.cprot.net", href: "https://mc.cprot.net" },
   ]

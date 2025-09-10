@@ -33,7 +33,7 @@
     "ryzen-7": [
       {
         "id": "VDS-R7-04",
-        "name": "AMD Ryzen 7700",
+        "name": "NO STOCK",
         "badge": "Enterprise",
         "cpu": "16 Cores",
         "cpuDetail": "AMD Ryzen 7",
@@ -46,23 +46,21 @@
         "price": "£245.00",
         "period": "/mo",
         "features": [
-          "Full Root Access",
-          "24/7 Support",
+          "Acceso completo Root",
+          "Soporte avanzado",
           "99.9% Uptime",
-          "DDoS Protection",
-          "Free Backups",
-          "Priority Support",
-          "Free SSL Certificate",
-          "Dedicated IP",
-          "Custom Configuration"
+          "Protección DDoS",
+          "RAM DDR5",
+          "IP Dedicada",
+          "Configuracion personalizada"
         ],
-        "orderLink": "https://example.com/order/vds/ryzen-7/enterprise"
+        "orderLink": "https://lobby.cprot.net"
       }
     ],
     "ryzen-9": [
       {
         "id": "VDS-R9-04",
-        "name": "VDS-R9-Enterprise",
+        "name": "NO STOCK",
         "badge": "Enterprise",
         "cpu": "16 Cores",
         "cpuDetail": "AMD Ryzen 9",
@@ -75,19 +73,15 @@
         "price": "£395.00",
         "period": "/mo",
         "features": [
-          "Full Root Access",
-          "24/7 Support",
+          "Acceso completo Root",
+          "Soporte avanzado",
           "99.9% Uptime",
-          "DDoS Protection",
-          "Free Backups",
-          "Priority Support",
-          "DDR5 Memory",
-          "Free SSL Certificate",
-          "Dedicated IP",
-          "Custom Configuration",
-          "Premium Support"
+          "Protección DDoS",
+          "RAM DDR5",
+          "IP Dedicada",
+          "Configuracion personalizada"
         ],
-        "orderLink": "https://example.com/order/vds/ryzen-9/enterprise"
+        "orderLink": "https://lobby.cprot.net"
       }
     ]
   }

@@ -598,7 +598,7 @@ const Navbar: React.FC = () => {
               <Link
                 href="/"
                 className="flex items-center space-x-3"
-                aria-label="Go to homepage"
+                aria-label="Inicio"
                 prefetch={true}
               >
                 <Image

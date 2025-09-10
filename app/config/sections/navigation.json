@@ -48,13 +48,13 @@
   ],
   "clientSpace": {
     "name": "CLIENT SPACE",
-    "href": "https://builtbybit.com/resources/all-in-one-hosting-template-dezernova.69325/",
+    "href": "https://lobby.cprot.net",
     "icon": "User"
   },
   "banner": {
     "show": true,
-    "text": "Limited Time Offer: Save 10% on Game Servers",
-    "couponCode": "WELCOME",
+    "text": "Oferta Limitada 10% en Minecraft Servers 10/10/25 ",
+    "couponCode": "RECLAMAR",
     "backgroundColor": "bg-blue-500"
   }
 }

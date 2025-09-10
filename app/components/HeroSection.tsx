@@ -351,13 +351,6 @@ export default function HeroSection() {
                     whileHover="hover"
                     whileTap="tap"
                   >
-                   <a
-  href="#"
-  className="hidden sm:inline-flex text-gray-700 dark:text-white hover:bg-transparent hover:shadow-none px-8 py-3 rounded-lg orbitron-font text-md transition-all duration-300 items-center gap-2 no-underline"
->
-  Learn More
-  <FiExternalLink className="w-4 h-4" />
-</a>
 
                   </motion.div>
                 </motion.div>
@@ -395,7 +388,7 @@ export default function HeroSection() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 1.2, duration: 0.6 }}
                   >
-                    Get started for free!
+                    Inicia ahora
                   </motion.span>
                 </motion.div>
               </motion.div>
