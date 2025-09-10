@@ -36,7 +36,7 @@
         "uptime": "Proteccion DDoS",
         "price": "£3.99",
         "period": "/mes",
-        "orderLink": "https://example.com/order/discord/budget/starter"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/minecraft-eco/tier-1"
       },
       {
         "id": "budget-basic",
@@ -53,7 +53,7 @@
         "bandwidthDetail": "Tráfico",
         "price": "£5.99",
         "period": "/mes",
-        "orderLink": "https://example.com/order/discord/budget/basic"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/minecraft-eco/tier-2"
       },
       {
         "id": "budget-standard",
@@ -69,7 +69,7 @@
         "uptime": "Proteccion DDoS",
         "price": "£7.99",
         "period": "/mes",
-        "orderLink": "https://example.com/order/discord/budget/standard"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/minecraft-eco/tier-3"
       },
       {
         "id": "budget-advanced",
@@ -85,7 +85,7 @@
         "uptime": "Proteccion DDoS",
         "price": "£11.99",
         "period": "/mes",
-        "orderLink": "https://example.com/order/discord/budget/standard"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/minecraft-eco/tier-4"
       },
       {
         "id": "budget-high",
@@ -101,7 +101,7 @@
         "uptime": "Proteccion DDoS",
         "price": "£15.99",
         "period": "/mes",
-        "orderLink": "https://example.com/order/discord/budget/standard"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/minecraft-eco/tier-5"
       }
     ],
     "premium": [

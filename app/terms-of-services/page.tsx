@@ -35,7 +35,7 @@ export default function TermsPage() {
           className="flex justify-center items-center"
         >
           <iframe
-            src="/Terminos de Servicio CPROT dc 12_08_25.pdf"
+            src="https://lobby.cprot.net/Terminos-Servicio-CPROT-12_08_25.pdf"
             className="w-full max-w-5xl h-[90vh] bg-white rounded-lg border-none shadow-lg"
           />
         </motion.div>

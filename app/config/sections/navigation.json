@@ -21,15 +21,15 @@
     },
     {
       "name": "Legal",
-      "href": "/terms-of-services",
+      "href": "/terminos-servicio",
       "icon": "FileText",
       "hasDropdown": true,
       "dropdownType": "legal",
       "dropdownItems": [
         {
-          "name": "Terms of Service",
-          "href": "/terms-of-services",
-          "description": "Our service agreement and terms"
+          "name": "Términos de servicio",
+          "href": "/terminos-servico",
+          "description": "Nuestro acuerdo de servicio y términos"
         }
       ]
     }
