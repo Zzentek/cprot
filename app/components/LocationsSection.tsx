@@ -7,11 +7,18 @@ import { memo, useMemo, useState, useEffect, useRef } from "react";
 // Easily customizable locations data with coordinates
 const locations = [
   {
-    name: "México",
+    name: "Colima, México",
     flag: "/flags/mexico.webp",
-    cpu: "Intel I3 10100",
+    cpu: "AMD Ryzen 5700G",
     lat: 10.7128,
     lng: -142.0060, // New York
+  },
+  {
+    name: "Miami, US",
+    flag: "/flags/usa.png",
+    cpu: "AMD Ryzen 9950X",
+    lat: 22.9128,
+    lng: -114.5060, // New York
   }
 ];
 

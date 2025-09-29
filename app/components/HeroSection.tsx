@@ -453,7 +453,7 @@ export default function HeroSection() {
                       alt={`${partner.name} - Nuestros aliados`}
                       width={128}
                       height={64}
-                      className="h-12 sm:h-16 w-24 sm:w-32 object-contain opacity-20 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 filter brightness-0 dark:invert"
+                      className="h-12 sm:h-16 w-24 sm:w-32 object-contain transition-all duration-300"
                       loading="lazy"
                       quality={60}
                       sizes="(max-width: 640px) 96px, 128px"

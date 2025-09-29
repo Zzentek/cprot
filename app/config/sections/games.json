@@ -23,7 +23,13 @@
       "id": "Mexico",
       "name": "Mexico",
       "flag": "/flags/mexico.webp",
-      "availablePlanTypes": ["budget", "premium"]
+      "availablePlanTypes": ["budget"]
+    },
+    {
+      "id": "USA",
+      "name": "Mexico",
+      "flag": "/flags/usa.png",
+      "availablePlanTypes": ["premium"]
     }
   ],
   "games": [
