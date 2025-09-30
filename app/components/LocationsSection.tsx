@@ -11,14 +11,14 @@ const locations = [
     flag: "/flags/mexico.webp",
     cpu: "AMD Ryzen 5700G",
     lat: 10.7128,
-    lng: -142.0060, // New York
+    lng: -142.0060,
   },
   {
     name: "Miami, US",
-    flag: "/flags/usa.png",
+    flag: "/flags/usa.webp",
     cpu: "AMD Ryzen 9950X",
     lat: 22.9128,
-    lng: -114.5060, // New York
+    lng: -114.5060,
   }
 ];
 

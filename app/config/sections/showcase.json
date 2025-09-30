@@ -17,32 +17,32 @@
         "icon": "Zap",
         "title": "PTERODACTYL",
         "description": "Usamos el panel más común para gestionar servidores de minecraft.",
-        "imageDark": "/showcase/dark/shell.png",
-        "imageLight": "/showcase/light/shell.png"
+        "imageDark": "/showcase/dark/shell.webp",
+        "imageLight": "/showcase/light/shell.webp"
       },
       {
         "id": 2,
         "icon": "Plug",
         "title": "Multiples herramientas",
         "description": "Consola, Administrador de archivos, startup, bases de datos, backups, ajustes avanzados.",
-        "imageDark": "/showcase/dark/plugin.png",
-        "imageLight": "/showcase/light/plugin.png"
+        "imageDark": "/showcase/dark/plugin.webp",
+        "imageLight": "/showcase/light/plugin.webp"
       },
       {
         "id": 3,
         "icon": "Archive",
         "title": "VirtFusion VPS",
         "description": "Inicia, apaga, reinicia y configura tu VPS en menos de 10 segundos con las herramientas mas sencillas.",
-        "imageDark": "/showcase/dark/mod.png",
-        "imageLight": "/showcase/light/mod.png"
+        "imageDark": "/showcase/dark/mod.webp",
+        "imageLight": "/showcase/light/mod.webp"
       },
       {
         "id": 4,
         "icon": "HeartPulse",
         "title": "Monitoreo",
         "description": "Podrás mirar en vivo el uso real de los recursos de tu VPS 24/7.",
-        "imageDark": "/showcase/dark/analytics.png",
-        "imageLight": "/showcase/light/analytics.png"
+        "imageDark": "/showcase/dark/analytics.webp",
+        "imageLight": "/showcase/light/analytics.webp"
       }
     ],
     "settings": {

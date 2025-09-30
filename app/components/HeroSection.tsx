@@ -20,45 +20,6 @@ export default function HeroSection() {
   const [imagesLoaded, setImagesLoaded] = useState(new Set<number>())
   const [preloadedImages, setPreloadedImages] = useState(new Set<number>())
   const controls = useAnimation()
-  const preloadTimeoutRef = useRef<NodeJS.Timeout | null>(null)
-  const preloadImage = useCallback((index: number) => {
-    if (preloadedImages.has(index)) return;
-
-    const img = new window.Image();
-    img.onload = () => {
-      setPreloadedImages(prev => new Set([...prev, index]));
-      setImagesLoaded(prev => new Set([...prev, index]));
-    };
-    img.src = config.hero.games[index]?.banner;
-  }, [preloadedImages]);
-  const preloadNextImages = useCallback((currentIndex: number) => {
-    const nextIndex = (currentIndex + 1) % config.hero.games.length;
-    const nextNextIndex = (currentIndex + 2) % config.hero.games.length;
-    preloadImage(nextIndex);
-    preloadTimeoutRef.current = setTimeout(() => {
-      preloadImage(nextNextIndex);
-    }, 1000);
-  }, [preloadImage]);
-  useEffect(() => {
-    let interval: NodeJS.Timeout | null = null;
-    preloadImage(0);
-    preloadImage(1);
-    setTimeout(() => preloadImage(2), 500);
-    setImagesLoaded(new Set([0]));
-    interval = setInterval(() => {
-      setCurrentBannerIndex((prev) => {
-        const next = (prev + 1) % config.hero.games.length;
-        preloadNextImages(next);
-        return next;
-      });
-    }, config.hero.cycleInterval);
-
-    return () => {
-      if (interval) clearInterval(interval);
-      if (preloadTimeoutRef.current) clearTimeout(preloadTimeoutRef.current);
-    };
-  }, [preloadImage, preloadNextImages])
-
   const currentGame = config.hero.games[currentBannerIndex] || config.hero.games[0]
   const partners = config.hero.partners
   const containerVariants = {
@@ -66,7 +27,7 @@ export default function HeroSection() {
     visible: {
       opacity: 1,
       transition: {
-        duration: 0.6,
+        duration: 0.1,
         staggerChildren: 0.1,
         delayChildren: 0.2,
       },
@@ -108,12 +69,12 @@ export default function HeroSection() {
         type: "spring" as const,
         damping: 25,
         stiffness: 120,
-        delay: 0.4 + index * 0.1,
-        duration: 0.7,
+        delay: 0 + index * 0.09,
+        duration: 0.1,
       },
     }),
     hover: {
-      scale: 1.02,
+      scale: 1.05,
       y: -5,
       transition: {
         type: "spring" as const,
@@ -167,7 +128,7 @@ export default function HeroSection() {
       opacity: 0.6,
       scale: 1,
       transition: {
-        duration: 2,
+        duration: 0,
         ease: "easeOut" as const,
       },
     },
@@ -273,7 +234,7 @@ export default function HeroSection() {
                         transition={{
                           duration: 1,
                           ease: [0.25, 0.46, 0.45, 0.94],
-                          rotateX: { duration: 0.8 }
+                          rotateX: { duration: 0 }
                         }}
                         className="block bg-gradient-to-r from-blue-500 to-blue-700 dark:from-blue-400 dark:to-blue-600 bg-clip-text text-transparent"
                         style={{ perspective: "1000px" }}
@@ -293,7 +254,7 @@ export default function HeroSection() {
                       type: "spring",
                       damping: 25,
                       stiffness: 120,
-                      delay: 0.7,
+                      delay: 0,
                     }}
                   >
                     {config.hero.description}
@@ -317,7 +278,7 @@ export default function HeroSection() {
                       <span className="orbitron-font">CATALOGO</span>
                       <motion.div
                         animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                        transition={{ duration: 0.7, repeat: Infinity, ease: "easeInOut" }}
                       >
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                       </motion.div>
