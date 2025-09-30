@@ -181,41 +181,20 @@ export default function HeroSection() {
       animate="visible"
     >
       <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentBannerIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute inset-0 w-full h-full"
-          >
-            <Image
-              src={currentGame.banner}
-              alt={`${currentGame.displayName} game banner`}
-              fill
-              priority={currentBannerIndex === 0}
-              className={`object-cover object-center w-full h-full transition-opacity duration-700 ${
-                imagesLoaded.has(currentBannerIndex) ? 'opacity-100' : 'opacity-0'
-              }`}
-              quality={currentBannerIndex === 0 ? 85 : 75}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
-              placeholder="blur"
-              blurDataURL={generateBlurDataURL()}
-              loading={currentBannerIndex < 3 ? "eager" : "lazy"}
-              style={{
-                objectFit: 'cover',
-                objectPosition: 'center',
-              }}
-              onLoad={() => {
-                setImagesLoaded(prev => new Set([...prev, currentBannerIndex]));
-              }}
-            />
-            {!imagesLoaded.has(currentBannerIndex) && (
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 animate-pulse" />
-            )}
-          </motion.div>
-        </AnimatePresence>
+        <img
+          src="https://cdn.cprot.net/CPROT-LANDING/minecraft-banners.webp"
+          alt="Minecraft banner"
+          className="object-cover object-center w-full h-full absolute inset-0"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b 
+                  from-white via-white/40 to-transparent 
+                  dark:from-[#0a0b0f]/50 dark:via-[#0a0b0f]/10 dark:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t 
+                  from-white via-white/60 to-white/40 
+                  dark:from-[#0a0b0f] dark:via-[#0a0b0f]/90 dark:to-[#0a0b0f]/40" />
+
+
         <motion.div
           className="absolute inset-0 bg-gradient-to-b from-gray-50 via-gray-50/40 to-transparent dark:from-[#0a0b0f]/50 dark:via-[#0a0b0f]/10 dark:to-transparent"
         />
