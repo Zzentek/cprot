@@ -11,7 +11,7 @@
         "title": "Minecraft Servers",
         "image": "/banners/minecraft-banners.webp",
         "description": "Intel i3 10100",
-        "basePrice": 3.99,
+        "basePrice": 0.99,
         "features": [
           "Entrega inmediata",
           "Plugins",
@@ -28,7 +28,7 @@
         "title": "VPS Hosting",
         "image": "/vps.webp",
         "description": "Xeon E5-2670v3/2650v4",
-        "basePrice": 7.99,
+        "basePrice": 3.99,
         "features": [
           "Acceso root",
           "SSD",
