@@ -60,7 +60,6 @@ export default function VPSPricingSection() {
 
   return (
     <div className="bg-gray-50 dark:bg-[#0a0b0f] relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Background Image and Gradients */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
@@ -71,8 +70,6 @@ export default function VPSPricingSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-gray-50/40 to-transparent dark:from-[#0a0b0f] dark:via-[#0a0b0f]/60 dark:to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-gray-50/80 to-gray-50/40 dark:from-[#0a0b0f] dark:via-[#0a0b0f]/60 dark:to-[#0a0b0f]/60" />
       </div>
-
-      {/* Content */}
       <div className="relative z-10 mt-16 max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -125,9 +122,8 @@ export default function VPSPricingSection() {
           className="mb-4"
         >
           <div className="flex flex-col lg:flex-row gap-6 justify-left items-left">
-            {/* Location Filter - First */}
             <div className="flex flex-col items-left">
-              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3.5">1. Location</h3>
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3.5">{t('vps.step1')}</h3>
               <div className="flex flex-wrap gap-2">
                 {config.locations.map((location) => {
                   const hasAvailableCpus = location.availableCpus.length > 0
@@ -138,12 +134,12 @@ export default function VPSPricingSection() {
                       key={location.id}
                       onClick={() => handleLocationSelection(location.id)}
                       disabled={!hasAvailableCpus}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-md font-medium transition-all duration-300 ${
+                      className={`flex items-center gap-3 px-4 py-3 rounded-tl-2xl rounded-br-2xl font-medium transition-all duration-300 ${
                         isSelected
-                          ? "bg-blue-600 dark:bg-blue-500/20 dark:text-blue-400 text-white shadow-lg"
+                          ? "button-primary border-primary text-button-primary shadow-lg"
                           : hasAvailableCpus
-                          ? "bg-gray-200 dark:bg-gray-800/20 dark:border-blue-600/40 border border-blue-600/20 text-gray-700 dark:text-blue-400 hover:bg-gray-300 dark:hover:bg-gray-700/30"
-                          : "bg-gray-100 dark:bg-gray-800/10 border border-gray-300/40 dark:border-gray-600/20 text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-50"
+                          ? "bg-gray-200 dark:bg-gray-800/20 border border-secondary text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700/30 hover:border-secondary"
+                          : "bg-gray-100 dark:bg-gray-800/10 border button-primary text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-50"
                       }`}
                     >
                       <Image
