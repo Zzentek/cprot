@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Server, Cpu, MemoryStick, HardDrive, ChevronLeft, ChevronRight } from "lucide-react"
+import { Server, Cpu, MemoryStick, HardDrive, ChevronLeft, ChevronRight, Wifi } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
 import vpsConfig from "../../config/sections/vps.json"
@@ -15,7 +15,7 @@ export default function VPSPricingSection() {
   const [selectedLocation, setSelectedLocation] = useState(config.locations[0].id)
   const [selectedCPU, setSelectedCPU] = useState(config.planTypes[0].id)
   const [currentPage, setCurrentPage] = useState(1)
-  const plansPerPage = 3
+  const plansPerPage = 4
   const currentLocation = config.locations.find(loc => loc.id === selectedLocation)
   const availableCPUs = currentLocation?.availableCpus || []
   const currentPlans = config.plans[selectedCPU] || config.plans[config.planTypes[0].id]
@@ -244,7 +244,7 @@ export default function VPSPricingSection() {
                       {plan.cpu}
                     </div>
                   </div>
-                  <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md bg-gray-50 dark:bg-gray-800/30">
+                  <div className="border border-blue-400/20 flex items-center justify-between px-2 py-2 rounded-md bg-gray-50 dark:bg-gray-800/30">
                     <div className="flex items-center gap-2">
                       <MemoryStick className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                       <div className="text-xs text-gray-500 dark:text-gray-400">{plan.ramDetail}</div>
@@ -268,7 +268,25 @@ export default function VPSPricingSection() {
                       <div className="text-xs text-gray-500 dark:text-gray-400">{plan.bandwidthDetail}</div>
                     </div>
                     <div className="text-md font-medium bg-blue-50 dark:bg-gray-800/80 rounded-md px-2 py-1 text-blue-600 dark:text-blue-400">
-                      {plan.storage}
+                      {plan.bandwidth}
+                    </div>
+                  </div>
+                  <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md bg-gray-50 dark:bg-gray-800/30">
+                    <div className="flex items-center gap-2">
+                      <Wifi className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                      <div className="text-xs text-gray-500 dark:text-gray-400">{plan.antiddosDetail}</div>
+                    </div>
+                    <div className="text-md font-medium bg-blue-50 dark:bg-gray-800/80 rounded-md px-2 py-1 text-blue-600 dark:text-blue-400">
+                      {plan.antiddos}
+                    </div>
+                  </div>
+                  <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md bg-gray-50 dark:bg-gray-800/30">
+                    <div className="flex items-center gap-2">
+                      <Wifi className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                      <div className="text-xs text-gray-500 dark:text-gray-400">{plan.uplinkDetail}</div>
+                    </div>
+                    <div className="text-md font-medium bg-blue-50 dark:bg-gray-800/80 rounded-md px-2 py-1 text-blue-600 dark:text-blue-400">
+                      {plan.uplink}
                     </div>
                   </div>
                 </div>
@@ -283,9 +301,10 @@ export default function VPSPricingSection() {
                   </div>
                   <a 
                     href={plan.orderLink}
+                    target="_BLANK"
                     className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 dark:bg-blue-600/20 text-white dark:text-blue-400 px-6 py-2 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2 border border-blue-600/20 dark:border-blue-400/20 hover:border-blue-600/40 dark:hover:border-blue-400/40 no-underline"
                   >
-                    Order Now
+                    Contrata YA
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

@@ -1,4 +1,10 @@
+import { ReactNode } from "react"
+
 export interface VPSPlan {
+  antiddosDetail: ReactNode
+  uplinkDetail: ReactNode
+  uplink: ReactNode
+  antiddos: ReactNode
   id: string
   name: string
   badge?: string
