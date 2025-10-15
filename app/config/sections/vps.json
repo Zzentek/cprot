@@ -8,32 +8,32 @@
   },
   "planTypes": [
     {
-      "id": "ryzen-7",
-      "name": "Ryzen 5700G",
-      "displayName": "Ryzen 5700G",
-      "image": "/cpu/ryzen7.png"
-    },
-    {
       "id": "ryzen-9",
       "name": "Ryzen 7900",
       "displayName": "Ryzen 7900",
       "image": "/cpu/ryzen9.png"
+    },
+    {
+      "id": "ryzen-7",
+      "name": "Ryzen 5700G",
+      "displayName": "Ryzen 5700G",
+      "image": "/cpu/ryzen7.png"
     }
   ],
   "locations": [
-    {
-      "id": "mx",
-      "name": "México",
-      "flag": "/flags/mexico.webp",
-      "displayName": "MÉXICO",
-      "availableCpus": ["ryzen-7"]
-    },
     {
       "id": "usa",
       "name": "Estados Unidos",
       "flag": "/flags/usa.webp",
       "displayName": "USA",
       "availableCpus": ["ryzen-9"]
+    },
+    {
+      "id": "mx",
+      "name": "México",
+      "flag": "/flags/mexico.webp",
+      "displayName": "MÉXICO",
+      "availableCpus": ["ryzen-7"]
     }
   ],
   "plans": {
