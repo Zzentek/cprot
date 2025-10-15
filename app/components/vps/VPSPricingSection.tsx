@@ -262,6 +262,15 @@ export default function VPSPricingSection() {
                       {plan.storage}
                     </div>
                   </div>
+                  <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md bg-gray-50 dark:bg-gray-800/30">
+                    <div className="flex items-center gap-2">
+                      <Wifi className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                      <div className="text-xs text-gray-500 dark:text-gray-400">{plan.bandwidthDetail}</div>
+                    </div>
+                    <div className="text-md font-medium bg-blue-50 dark:bg-gray-800/80 rounded-md px-2 py-1 text-blue-600 dark:text-blue-400">
+                      {plan.storage}
+                    </div>
+                  </div>
                 </div>
 
                 {/* Price and Action */}

@@ -155,7 +155,7 @@
         "bandwidthDetail": "Bandwidth",
         "price": "$3.95",
         "period": "/mo",
-        "orderLink": "/order/vps/PVPS1"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-1"
       },
       {
         "id": "AV-VPS-2",
@@ -172,7 +172,7 @@
         "bandwidthDetail": "Bandwidth",
         "price": "$7.95",
         "period": "/mo",
-        "orderLink": "/order/vps/PVPS2"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-2"
       },
       {
         "id": "AV-VPS-3",
@@ -189,7 +189,7 @@
         "bandwidthDetail": "Bandwidth",
         "price": "$15.95",
         "period": "/mo",
-        "orderLink": "/order/vps/PVPS3"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-3"
       },
       {
         "id": "AV-VPS-4",
@@ -206,7 +206,7 @@
         "bandwidthDetail": "Bandwidth",
         "price": "$23.95",
         "period": "/mo",
-        "orderLink": "/order/vps/PVPS4"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-4"
       },
       {
         "id": "AV-VPS-5",
@@ -223,7 +223,7 @@
         "bandwidthDetail": "Bandwidth",
         "price": "$31.95",
         "period": "/mo",
-        "orderLink": "/order/vps/PVPS5"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-5"
       },
       {
         "id": "AV-VPS-6",
@@ -240,7 +240,7 @@
         "bandwidthDetail": "Bandwidth",
         "price": "$47.95",
         "period": "/mo",
-        "orderLink": "/order/vps/PVPS6"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-6"
       },
       {
         "id": "AV-VPS-7",
@@ -257,7 +257,7 @@
         "bandwidthDetail": "Bandwidth",
         "price": "$63.95",
         "period": "/mo",
-        "orderLink": "/order/vps/PVPS7"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-7"
       },
       {
         "id": "AV-VPS-8",
@@ -274,7 +274,7 @@
         "bandwidthDetail": "Bandwidth",
         "price": "$95.95",
         "period": "/mo",
-        "orderLink": "/order/vps/PVPS8"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-8"
       }
     ]
   }
