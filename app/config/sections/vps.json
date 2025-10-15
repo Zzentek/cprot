@@ -4,7 +4,7 @@
       "text": "VPS Hosting"
     },
     "title": "NUEVO STOCK",
-    "description": "Seguro encuentras un preciasazo."
+    "description": "2 Ubicaciones - CPUs AMD Ryzen - Almacenamiento NVMe - Proteccion AntiDDoS - Soporte 24/7"
   },
   "planTypes": [
     {
@@ -40,7 +40,7 @@
     "ryzen-7": [
       {
         "id": "BVPS1",
-        "name": "BVPS1",
+        "name": "NO STOCK",
         "badge": "30s",
         "image": "/cpu/ryzen7.png",
         "cpu": "1 Core",
@@ -51,11 +51,11 @@
         "storageDetail": "NVMe SSD",
         "price": "$2.70",
         "period": "/mo",
-        "orderLink": "/order/vps/BVPS1"
+        "orderLink": "https://lobby.cprot.net/"
       },
       {
         "id": "BVPS2",
-        "name": "BVPS2",
+        "name": "NO STOCK",
         "badge": "30s",
         "image": "/cpu/ryzen7.png",
         "cpu": "1 Core",
@@ -72,7 +72,7 @@
       },
       {
         "id": "BVPS3",
-        "name": "BVPS3",
+        "name": "NO STOCK",
         "badge": "30s",
         "image": "/cpu/ryzen7.png",
         "cpu": "2 Cores",
@@ -85,11 +85,11 @@
         "bandwidthDetail": "Bandwidth",
         "price": "$10.60",
         "period": "/mo",
-        "orderLink": "/order/vps/BVPS3"
+        "orderLink": "https://lobby.cprot.net/"
       },
       {
         "id": "BVPS4",
-        "name": "BVPS4",
+        "name": "NO STOCK",
         "badge": "30s",
         "image": "/cpu/ryzen7.png",
         "cpu": "3 Cores",
@@ -102,11 +102,11 @@
         "bandwidthDetail": "Bandwidth",
         "price": "$15.60",
         "period": "/mo",
-        "orderLink": "/order/vps/BVPS4"
+        "orderLink": "https://lobby.cprot.net/"
       },
       {
         "id": "BVPS5",
-        "name": "BVPS5",
+        "name": "NO STOCK",
         "badge": "30s",
         "image": "/cpu/ryzen7.png",
         "cpu": "4 Cores",
@@ -119,11 +119,11 @@
         "bandwidthDetail": "Bandwidth",
         "price": "$20.60",
         "period": "/mo",
-        "orderLink": "/order/vps/BVPS5"
+        "orderLink": "https://lobby.cprot.net/"
       },
       {
         "id": "BVPS6",
-        "name": "BVPS6",
+        "name": "NO STOCK",
         "badge": "30s",
         "image": "/cpu/ryzen7.png",
         "cpu": "6 Cores",
@@ -136,79 +136,81 @@
         "bandwidthDetail": "Bandwidth",
         "price": "$40.60",
         "period": "/mo",
-        "orderLink": "/order/vps/BVPS6"
+        "orderLink": "https://lobby.cprot.net/"
       }
     ],
     "ryzen-9": [
       {
-        "id": "PVPS1",
-        "name": "PVPS1",
+        "id": "AV-VPS-1",
+        "name": "AVANZADO 1",
         "badge": "15s",
         "image": "/cpu/ryzen9.png",
         "cpu": "1 Core",
         "cpuDetail": "Cores",
         "ram": "2 GB",
         "ramDetail": "DDR5 RAM",
-        "storage": "25 GB",
+        "storage": "20 GB",
         "storageDetail": "NVMe SSD",
-        "price": "$3.90",
+        "bandwidth": "1 TB",
+        "bandwidthDetail": "Bandwidth",
+        "price": "$3.95",
         "period": "/mo",
         "orderLink": "/order/vps/PVPS1"
       },
       {
-        "id": "PVPS2",
-        "name": "PVPS2",
+        "id": "AV-VPS-2",
+        "name": "AVANZADO 2",
         "badge": "15s",
         "image": "/cpu/ryzen9.png",
         "cpu": "1 Core",
         "cpuDetail": "Cores",
         "ram": "4 GB",
         "ramDetail": "DDR5 RAM",
-        "storage": "50 GB",
+        "storage": "40 GB",
         "storageDetail": "NVMe SSD",
         "bandwidth": "1.5 TB",
         "bandwidthDetail": "Bandwidth",
-        "price": "$7.40",
+        "price": "$7.95",
         "period": "/mo",
         "orderLink": "/order/vps/PVPS2"
       },
       {
-        "id": "PVPS3",
-        "name": "PVPS3",
+        "id": "AV-VPS-3",
+        "name": "AVANZADO 3",
         "badge": "15s",
         "image": "/cpu/ryzen9.png",
         "cpu": "2 Cores",
         "cpuDetail": "Cores",
         "ram": "8 GB",
         "ramDetail": "DDR5 RAM",
-        "storage": "100 GB",
+        "storage": "80 GB",
         "storageDetail": "NVMe SSD",
         "bandwidth": "3 TB",
         "bandwidthDetail": "Bandwidth",
-        "price": "$14.90",
+        "price": "$15.95",
         "period": "/mo",
         "orderLink": "/order/vps/PVPS3"
       },
       {
-        "id": "PVPS4",
-        "name": "PVPS4",
+        "id": "AV-VPS-4",
+        "name": "AVANZADO 4",
         "badge": "15s",
         "image": "/cpu/ryzen9.png",
         "cpu": "3 Cores",
         "cpuDetail": "Cores",
         "ram": "12 GB",
         "ramDetail": "DDR5 RAM",
-        "storage": "150 GB",
+        "storage": "120 GB",
         "storageDetail": "NVMe SSD",
         "bandwidth": "5 TB",
         "bandwidthDetail": "Bandwidth",
-        "price": "$22.40",
+        "price": "$23.95",
         "period": "/mo",
         "orderLink": "/order/vps/PVPS4"
       },
       {
-        "id": "PVPS5",
-        "name": "PVPS5",
+        "id": "AV-VPS-5",
+        "name": "AVANZADO 5",
         "badge": "15s",
         "image": "/cpu/ryzen9.png",
         "cpu": "4 Cores",
@@ -219,26 +221,60 @@
         "storageDetail": "NVMe SSD",
         "bandwidth": "8 TB",
         "bandwidthDetail": "Bandwidth",
-        "price": "$29.90",
+        "price": "$31.95",
         "period": "/mo",
         "orderLink": "/order/vps/PVPS5"
       },
       {
-        "id": "PVPS6",
-        "name": "PVPS6",
+        "id": "AV-VPS-6",
+        "name": "AVANZADO 6",
+        "badge": "15s",
+        "image": "/cpu/ryzen9.png",
+        "cpu": "5 Cores",
+        "cpuDetail": "Cores",
+        "ram": "24 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "300 GB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "12 TB",
+        "bandwidthDetail": "Bandwidth",
+        "price": "$47.95",
+        "period": "/mo",
+        "orderLink": "/order/vps/PVPS6"
+      },
+      {
+        "id": "AV-VPS-7",
+        "name": "AVANZADO 7",
         "badge": "15s",
         "image": "/cpu/ryzen9.png",
         "cpu": "6 Cores",
         "cpuDetail": "Cores",
         "ram": "32 GB",
         "ramDetail": "DDR5 RAM",
-        "storage": "256 GB",
+        "storage": "400 GB",
         "storageDetail": "NVMe SSD",
         "bandwidth": "15 TB",
         "bandwidthDetail": "Bandwidth",
-        "price": "$58.90",
+        "price": "$63.95",
         "period": "/mo",
-        "orderLink": "/order/vps/PVPS6"
+        "orderLink": "/order/vps/PVPS7"
+      },
+      {
+        "id": "AV-VPS-8",
+        "name": "AVANZADO 8",
+        "badge": "15s",
+        "image": "/cpu/ryzen9.png",
+        "cpu": "8 Cores",
+        "cpuDetail": "Cores",
+        "ram": "48 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "600 GB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "20 TB",
+        "bandwidthDetail": "Bandwidth",
+        "price": "$95.95",
+        "period": "/mo",
+        "orderLink": "/order/vps/PVPS8"
       }
     ]
   }
