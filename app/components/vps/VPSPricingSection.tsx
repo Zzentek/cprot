@@ -302,7 +302,7 @@ export default function VPSPricingSection() {
                   <a 
                     href={plan.orderLink}
                     target="_BLANK"
-                    className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 dark:bg-blue-600/20 text-white dark:text-blue-400 px-6 py-2 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2 border border-blue-600/20 dark:border-blue-400/20 hover:border-blue-600/40 dark:hover:border-blue-400/40 no-underline"
+                    className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 dark:bg-blue-600/20 text-white dark:text-white-400 px-6 py-2 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2 border border-blue-600/20 dark:border-blue-400/20 hover:border-blue-600/40 dark:hover:border-blue-400/40 no-underline"
                   >
                     Contrata YA
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -85,7 +85,7 @@ export default function DiscordPricingSection() {
                   key={planType.id}
                   onClick={() => setSelectedPlanType(planType.id)}
                   className={`flex items-center gap-3 px-6 py-2 rounded-lg font-medium transition-all duration-300 ${selectedPlanType === planType.id
-                      ? "bg-blue-600 dark:bg-blue-500/40 dark:text-blue-400 text-white shadow-lg"
+                      ? "bg-blue-600 dark:bg-blue-500/40 dark:text-white-400 text-white shadow-lg"
                       : "bg-gray-200 dark:bg-gray-800/20 dark:border-blue-600/40 border border-blue-600/20 text-gray-700 dark:text-blue-400 hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.15)_0%,_transparent_100%)] dark:hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%)]"
                     }`}
                 >
@@ -131,7 +131,7 @@ export default function DiscordPricingSection() {
                   <div className="flex items-center gap-4 mb-6">
                     <div className=" flex items-center justify-center">
                       <Image
-                        src="/flags/mexico.webp"
+                        src="/flags/usa.webp"
                         alt="Mexico"
                         width={64}
                         height={64}
@@ -140,7 +140,7 @@ export default function DiscordPricingSection() {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white">{plan.name}</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">MÉXICO</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">MIAMI, FL</p>
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-4 mb-6">
@@ -186,7 +186,7 @@ export default function DiscordPricingSection() {
                     </div>
                     <a
                       href={plan.orderLink}
-                      className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-600/20 text-white dark:text-blue-400 px-6 py-3 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2"
+                      className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-600/20 text-white dark:text-white-400 px-6 py-3 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2"
                     >
                       SELECCIONAR
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
