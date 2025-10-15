@@ -162,7 +162,7 @@ export default function VPSPricingSection() {
 
             {/* CPU Type Filter - Second */}
             <div className="flex flex-col items-left">
-              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">2. CPU Type</h3>
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">2. TIPO CPU</h3>
               <div className="flex flex-wrap gap-2">
                 {config.planTypes.map((cpu) => {
                   const isAvailable = availableCPUs.includes(cpu.id)
@@ -202,15 +202,15 @@ export default function VPSPricingSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="space-y-4"
+          transition={{ duration: 0.2, delay: 0.1 }}
+          className="space-y-2"
         >
           {currentPagePlans.map((plan, index) => (
             <motion.div
               key={plan.id}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+              transition={{ duration: 0.2, delay: 0.1 }}
               className="bg-white dark:bg-gray-900/20 backdrop-blur-xl border border-blue-600/20 hover:border-blue-400 dark:border-blue-400/20 rounded-xl p-4 dark:hover:border-blue-400/50 hover:bg-blue-50/50 dark:hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%)] transition-all duration-300"
             >
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
@@ -292,7 +292,7 @@ export default function VPSPricingSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
             className="flex items-center justify-center gap-2 mt-8"
           >
             <button
