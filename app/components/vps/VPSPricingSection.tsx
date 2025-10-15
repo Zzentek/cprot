@@ -147,8 +147,8 @@ export default function VPSPricingSection() {
                       }`}
                     >
                       <Image
-                        src={location.flag || "/placeholder.svg"}
-                        alt={`${location.name} flag`}
+                        src={location.flag || "/placeholder.webp"}
+                        alt={`${location.name} bandera`}
                         width={24}
                         height={24}
                         className={`object-cover ${!hasAvailableCpus ? 'opacity-50' : ''}`}
