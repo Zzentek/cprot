@@ -3,43 +3,36 @@
     "badge": {
       "text": "VPS Hosting"
     },
-    "title": "NO STOCK",
-    "description": "Vuelve más tarde, seguro encuentras un preciasazo."
+    "title": "NUEVO STOCK",
+    "description": "Seguro encuentras un preciasazo."
   },
   "planTypes": [
     {
       "id": "ryzen-7",
-      "name": "AMD Ryzen 7",
-      "displayName": "AMD Ryzen 7",
+      "name": "Ryzen 5700G",
+      "displayName": "Ryzen 5700G",
       "image": "/cpu/ryzen7.png"
     },
     {
       "id": "ryzen-9",
-      "name": "AMD Ryzen 9",
-      "displayName": "AMD Ryzen 9",
+      "name": "Ryzen 7900",
+      "displayName": "Ryzen 7900",
       "image": "/cpu/ryzen9.png"
     }
   ],
   "locations": [
     {
+      "id": "mx",
+      "name": "México",
+      "flag": "/flags/mexico.webp",
+      "displayName": "MÉXICO",
+      "availableCpus": ["ryzen-7"]
+    },
+    {
       "id": "usa",
-      "name": "United States",
-      "flag": "/flags/usa.png",
+      "name": "Estados Unidos",
+      "flag": "/flags/usa.webp",
       "displayName": "USA",
-      "availableCpus": ["ryzen-7"]
-    },
-    {
-      "id": "germany",
-      "name": "Germany",
-      "flag": "/flags/germany.png",
-      "displayName": "Germany",
-      "availableCpus": ["ryzen-7"]
-    },
-    {
-      "id": "singapore",
-      "name": "Singapore",
-      "flag": "/flags/singapore.png",
-      "displayName": "Singapore",
       "availableCpus": ["ryzen-9"]
     }
   ],
