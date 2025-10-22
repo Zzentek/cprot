@@ -41,7 +41,7 @@
       {
         "id": "BVPS1",
         "name": "NO STOCK",
-        "badge": "30s",
+        "badge": "€99.99",
         "image": "/cpu/ryzen7.png",
         "cpu": "1 Core",
         "cpuDetail": "Cores",
@@ -62,7 +62,7 @@
       {
         "id": "BVPS2",
         "name": "NO STOCK",
-        "badge": "30s",
+        "badge": "€99.99",
         "image": "/cpu/ryzen7.png",
         "cpu": "1 Core",
         "cpuDetail": "Cores",
@@ -83,7 +83,7 @@
       {
         "id": "BVPS3",
         "name": "NO STOCK",
-        "badge": "30s",
+        "badge": "€99.99",
         "image": "/cpu/ryzen7.png",
         "cpu": "2 Cores",
         "cpuDetail": "Cores",
@@ -104,7 +104,7 @@
       {
         "id": "BVPS4",
         "name": "NO STOCK",
-        "badge": "30s",
+        "badge": "€99.99",
         "image": "/cpu/ryzen7.png",
         "cpu": "3 Cores",
         "cpuDetail": "Cores",
@@ -125,7 +125,7 @@
       {
         "id": "BVPS5",
         "name": "NO STOCK",
-        "badge": "30s",
+        "badge": "€99.99",
         "image": "/cpu/ryzen7.png",
         "cpu": "4 Cores",
         "cpuDetail": "Cores",
@@ -146,7 +146,7 @@
       {
         "id": "BVPS6",
         "name": "NO STOCK",
-        "badge": "30s",
+        "badge": "€99.99",
         "image": "/cpu/ryzen7.png",
         "cpu": "6 Cores",
         "cpuDetail": "Cores",
@@ -169,7 +169,7 @@
       {
         "id": "AV-VPS-1",
         "name": "AVANZADO 1",
-        "antes": "€4.00",
+        "badge": "€4.00",
         "image": "/cpu/ryzen9.png",
         "cpu": "1 Core",
         "cpuDetail": "Cores",
@@ -190,7 +190,7 @@
       {
         "id": "AV-VPS-2",
         "name": "AVANZADO 2",
-        "antes": "€8.00",
+        "badge": "€8.00",
         "image": "/cpu/ryzen9.png",
         "cpu": "1 Core",
         "cpuDetail": "Cores",
@@ -211,7 +211,7 @@
       {
         "id": "AV-VPS-3",
         "name": "AVANZADO 3",
-        "antes": "€16.00",
+        "badge": "€16.00",
         "image": "/cpu/ryzen9.png",
         "cpu": "2 Cores",
         "cpuDetail": "Cores",
@@ -232,7 +232,7 @@
       {
         "id": "AV-VPS-4",
         "name": "AVANZADO 4",
-        "antes": "€24.00",
+        "badge": "€24.00",
         "image": "/cpu/ryzen9.png",
         "cpu": "3 Cores",
         "cpuDetail": "Cores",
@@ -253,7 +253,7 @@
       {
         "id": "AV-VPS-5",
         "name": "AVANZADO 5",
-        "antes": "€32.00",
+        "badge": "€32.00",
         "image": "/cpu/ryzen9.png",
         "cpu": "4 Cores",
         "cpuDetail": "Cores",
@@ -274,7 +274,7 @@
       {
         "id": "AV-VPS-6",
         "name": "AVANZADO 6",
-        "antes": "€48.00",
+        "badge": "€48.00",
         "image": "/cpu/ryzen9.png",
         "cpu": "5 Cores",
         "cpuDetail": "Cores",
@@ -295,7 +295,7 @@
       {
         "id": "AV-VPS-7",
         "name": "AVANZADO 7",
-        "antes": "€64.00",
+        "badge": "€64.00",
         "image": "/cpu/ryzen9.png",
         "cpu": "6 Cores",
         "cpuDetail": "Cores",
@@ -316,7 +316,7 @@
       {
         "id": "AV-VPS-8",
         "name": "AVANZADO 8",
-        "antes": "€96.00",
+        "badge": "€96.00",
         "image": "/cpu/ryzen9.png",
         "cpu": "8 Cores",
         "cpuDetail": "Cores",
