@@ -27,7 +27,7 @@
         "storageDetail": "Almacenamiento SSD",
         "bandwidth": "Ilimitado",
         "bandwidthDetail": "Tráfico",
-        "uptime": "Proteccion DDoS",
+        "uptime": "NeoProtect 5Tbps Anti-DDoS",
         "price": "£9.95",
         "period": "/mes",
         "orderLink": "https://lobby.cprot.net/index.php?rp=/store/minecraft-premium/high-tier-1"
@@ -45,7 +45,7 @@
         "storageDetail": "NVMe SSD",
         "bandwidth": "Ilimitado",
         "bandwidthDetail": "Tráfico",
-        "uptime": "OHZ 10Tbps Anti-DDoS",
+        "uptime": "NeoProtect 5Tbps Anti-DDoS",
         "price": "£2.99",
         "period": "/3 meses",
         "orderLink": "https://lobby.cprot.net/index.php?rp=/store/minecraft-premium/mc-proxy"
@@ -61,7 +61,7 @@
         "storageDetail": "NVMe SSD",
         "bandwidth": "Ilimitado",
         "bandwidthDetail": "Tráfico",
-        "uptime": "OHZ 10Tbps Anti-DDoS",
+        "uptime": "NeoProtect 5Tbps Anti-DDoS",
         "price": "£9.95",
         "period": "/mes",
         "orderLink": "https://lobby.cprot.net/index.php?rp=/store/minecraft-premium/high-tier-1"
@@ -69,7 +69,6 @@
       {
         "id": "premium-basico",
         "name": "High Tier 2",
-        "uptime": "OHZ 10Tbps Anti-DDoS",
         "cpu": "200%",
         "cpuDetail": "AMD Ryzen 9950X",
         "badge": "POPULAR",
@@ -79,6 +78,7 @@
         "storageDetail": "NVMe SSD",
         "bandwidth": "Ilimitado",
         "bandwidthDetail": "Tráfico",
+        "uptime": "NeoProtect 5Tbps Anti-DDoS",
         "price": "£14.95",
         "period": "/mes",
         "orderLink": "https://lobby.cprot.net/index.php?rp=/store/minecraft-premium/high-tier-2"
@@ -94,7 +94,7 @@
         "storageDetail": "NVMe SSD",
         "bandwidth": "Ilimitado",
         "bandwidthDetail": "Tráfico",
-        "uptime": "OHZ 10Tbps Anti-DDoS",
+        "uptime": "NeoProtect 5Tbps Anti-DDoS",
         "price": "£19.95",
         "period": "/mes",
         "orderLink": "https://lobby.cprot.net/index.php?rp=/store/minecraft-premium/high-tier-3"
@@ -110,7 +110,7 @@
         "storageDetail": "NVMe SSD",
         "bandwidth": "Ilimitado",
         "bandwidthDetail": "Bandwidth",
-        "uptime": "OHZ 10Tbps Anti-DDoS",
+        "uptime": "NeoProtect 5Tbps Anti-DDoS",
         "price": "£26.95",
         "period": "/mes",
         "orderLink": "https://lobby.cprot.net/index.php?rp=/store/minecraft-premium/high-tier-4"
@@ -126,7 +126,7 @@
         "storageDetail": "NVMe SSD",
         "bandwidth": "Ilimitado",
         "bandwidthDetail": "Tráfico",
-        "uptime": "OHZ 10Tbps Anti-DDoS",
+        "uptime": "NeoProtect 5Tbps Anti-DDoS",
         "price": "£35.95",
         "period": "/mes",
         "orderLink": "https://lobby.cprot.net/index.php?rp=/store/minecraft-premium/high-tier-5"
@@ -142,10 +142,26 @@
         "storageDetail": "NVMe SSD",
         "bandwidth": "Ilimitado",
         "bandwidthDetail": "Tráfico",
-        "uptime": "OHZ 10Tbps Anti-DDoS",
+        "uptime": "NeoProtect 5Tbps Anti-DDoS",
         "price": "£44.95",
         "period": "/mes",
         "orderLink": "https://lobby.cprot.net/index.php?rp=/store/minecraft-premium/high-tier-5"
+      },
+      {
+        "id": "recursos",
+        "name": "¿Necesitas más recursos?",
+        "cpu": "16vCores+",
+        "cpuDetail": "AMD Ryzen 7900",
+        "ram": "Hasta 196 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "Hasta 4 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Tráfico",
+        "uptime": "NeoProtect 5Tbps Anti-DDoS",
+        "price": "desde 2.49",
+        "period": "/mes",
+        "orderLink": "/vps"
       }
     ]
   }
