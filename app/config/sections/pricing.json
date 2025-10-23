@@ -10,14 +10,14 @@
       {
         "title": "Minecraft Servers",
         "image": "/banners/minecraft-banners.webp",
-        "description": "Intel i3 10100",
+        "description": "Ryzen 9 9950X",
         "basePrice": 0.99,
         "features": [
           "Entrega inmediata",
           "Plugins",
           "Mods",
           "Proteccion DDoS",
-          "Soporte basico"
+          "Maximo rendimiento"
         ],
         "buttonText": "CATALOGO",
         "buttonStyle": "secondary",
@@ -27,8 +27,8 @@
       {
         "title": "VPS Hosting",
         "image": "/vps.webp",
-        "description": "Xeon E5-2670v3/2650v4",
-        "basePrice": 3.99,
+        "description": "Ryzen 9 7900",
+        "basePrice": 2.95,
         "features": [
           "Acceso root",
           "SSD",
