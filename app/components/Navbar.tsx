@@ -286,6 +286,14 @@ const Navbar: React.FC = () => {
                     {dropdownItem.description}
                   </p>
                 )}
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+                  {dropdownItem.name}
+                </h3>
+                {dropdownItem.description && (
+                  <p className="text-xs text-gray-600 dark:text-gray-300">
+                    {dropdownItem.description}
+                  </p>
+                )}
               </Link>
             ))}
           </div>

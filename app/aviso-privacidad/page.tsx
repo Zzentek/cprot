@@ -19,11 +19,11 @@ export default function TermsPage() {
           className="text-center mb-12"
         >
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 orbitron-font">
-            Términos de <span className="text-blue-600 dark:text-blue-400">servicio</span>
+            Aviso de <span className="text-blue-600 dark:text-blue-400">privacidad</span>
           </h1>
 
           <p className="text-gray-600 dark:text-gray-300">
-            Ultima actualización: 12/08/2025
+            Ultima actualización: 27/10/2025
           </p>
         </motion.div>
 
@@ -35,7 +35,7 @@ export default function TermsPage() {
           className="flex justify-center items-center"
         >
           <iframe
-            src="https://cdn.cprot.net/CPROT-Terminos-Servicio.pdf"
+            src="https://cdn.cprot.net/aviso-de-privacidad.pdf"
             className="w-full max-w-5xl h-[90vh] bg-white rounded-lg border-none shadow-lg"
           />
         </motion.div>
