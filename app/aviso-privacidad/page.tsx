@@ -23,7 +23,7 @@ export default function TermsPage() {
           </h1>
 
           <p className="text-gray-600 dark:text-gray-300">
-            Ultima actualización: 27/10/2025
+            Ultima actualización: 28/10/2025
           </p>
         </motion.div>
 
@@ -35,7 +35,7 @@ export default function TermsPage() {
           className="flex justify-center items-center"
         >
           <iframe
-            src="https://cdn.cprot.net/aviso-de-privacidad.pdf"
+            src="https://cdn.cprot.net/CPROT-LANDING/aviso-de-privacidad.pdf"
             className="w-full max-w-5xl h-[90vh] bg-white rounded-lg border-none shadow-lg"
           />
         </motion.div>
