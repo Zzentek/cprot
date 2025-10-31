@@ -9,6 +9,7 @@ export interface VPSPlan {
   name: string
   badge?: string
   image: string
+  oferta: string
   cpu: string
   cpuDetail: string
   ram: string

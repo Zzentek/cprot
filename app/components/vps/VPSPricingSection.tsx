@@ -297,7 +297,7 @@ export default function VPSPricingSection() {
                   <div className="text-center sm:text-right">
                     <div className="text-lg font-bold text-blue-600 dark:text-blue-400">
                       <p className="text-sm dark:text-red-400">ANTES <span className="text-sm line-through dark:text-red-400">{plan.badge}</span></p>
-                      <p className="text-sm dark:text-yellow-400">AHORA: 66% OFF</p>
+                      <p className="text-sm dark:text-yellow-400">AHORA: {plan.oferta} OFF</p>
                       {convertPrice(plan.price)}
                       <span className=" text-gray-500 dark:text-gray-400">{plan.period}</span>
                     </div>
