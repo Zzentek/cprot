@@ -43,6 +43,7 @@ export interface VPSHeader {
   }
   title: string
   description: string
+  description1: string
 }
 
 export interface VPSConfig {

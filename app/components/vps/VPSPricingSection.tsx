@@ -106,6 +106,7 @@ export default function VPSPricingSection() {
                   </motion.svg>
                 </span>
               </h2>
+              <p className="text-md text-gray-600 max-w-3xl dark:text-gray-300">{config.header.description1}</p>
               <p className="text-md text-gray-600 max-w-3xl dark:text-gray-300">{config.header.description}</p>
             </div>
             {/* Currency Selector in Header */}
@@ -295,10 +296,10 @@ export default function VPSPricingSection() {
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <div className="text-center sm:text-right">
                     <div className="text-lg font-bold text-blue-600 dark:text-blue-400">
-                      <p className="text-sm dark:text-yellow-400">ANTES:</p>
-                      <p className="text-sm line-through dark:text-red-400">{plan.badge}</p>
+                      <p className="text-sm dark:text-red-400">ANTES <span className="text-sm line-through dark:text-red-400">{plan.badge}</span></p>
+                      <p className="text-sm dark:text-yellow-400">AHORA: 66% OFF</p>
                       {convertPrice(plan.price)}
-                      <span className="text-sm text-gray-500 dark:text-gray-400">{plan.period}</span>
+                      <span className=" text-gray-500 dark:text-gray-400">{plan.period}</span>
                     </div>
                   </div>
                   <a 

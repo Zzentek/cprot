@@ -12,10 +12,10 @@ import Image from "next/image";
 const HEADER_CONFIG = {
   badge: {
     icon: Monitor,
-    text: "Operating Systems"
+    text: "Sistemas Operativos Disponibles"
   },
-  title: "Choose your OS",
-  description: "Select from a wide range of popular operating systems. All images are pre-configured and ready to deploy instantly on your VPS."
+  title: "Elige tu SO",
+  description: "Selecciona entre una amplia gama de sistemas operativos populares. Todas las imágenes están preconfiguradas y listas para desplegarse al instante en tu VPS."
 };
 
 // OS Configuration - Easy to modify

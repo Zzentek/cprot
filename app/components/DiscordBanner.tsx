@@ -36,22 +36,22 @@ export default function DiscordBanner() {
                         <div className="text-center md:text-left">
                             <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
                                 <a
-                                    href="https://discord.gg/Qrzn2enUP2"
+                                    href="https://discord.cprot.net"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center justify-center md:justify-start gap-3 "
                                 >
                                     <h2 className="text-3xl md:text-4xl font-bold text-white orbitron-font">
-                                        Join Our <span className="text-blue-200 dark:text-blue-400">Discord</span>
+                                        Únete a nuestro <span className="text-blue-200 dark:text-blue-400">Discord</span>
                                     </h2>
                                 </a>
 
                             </div>
                             <p className="text-xl text-white mb-2">
-                                Connect with our community of gamers and developers
+                                Conecta con nuestra comunidad global de usuarios y desarrolladores.
                             </p>
                             <p className=" text-white">
-                                Get instant support, share experiences, and stay updated with the latest news
+                                Obtén soporte instantáneo, comparte experiencias y mantente actualizado con las últimas noticias.
                             </p>
 
                         </div>

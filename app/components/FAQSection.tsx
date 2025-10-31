@@ -22,11 +22,11 @@ const faqs: FAQItem[] = [
   },
   {
     question: "¿Tienen Proteccion DDoS?",
-    answer: "Sí, nuestra capacidad es la gran suma de 10Gbps."
+    answer: "Sí, nuestra capacidad es la gran suma de 10Tbps."
   },
   {
     question: "¿Tienen IPs dedicadas?",
-    answer: "Sí, en VPS ofrecemos 1 IPv4 dedicada sin costo. En Minecraft Hosting, las IPv4 son compartidas y una dedicada tiene un costo adicional de 2.99EUR"
+    answer: "Sí, en VPS ofrecemos 1 IPv4 dedicada sin costo. En Minecraft Hosting, las IPv4 son compartidas y una dedicada tiene un costo adicional de 2.00EUR"
   }
 ]
 

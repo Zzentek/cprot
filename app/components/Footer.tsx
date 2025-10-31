@@ -3,26 +3,27 @@
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import Image from "next/image"
-import { Mail, Phone, Gamepad2, ExternalLink } from "lucide-react"
+import { Mail, Phone, Gamepad2, ExternalLink, Target } from "lucide-react"
 import DiscordBanner from "./DiscordBanner"
 
 export default function Footer() {
   const quickLinks = [
-    { name: "Area de Clientes", href: "https://lobby.cprot.net" },
-    { name: "Discord", href: "https://discord.cprot.net" },
-    { name: "VPS Hosting", href: "/vps" },
+    { name: "Area de Clientes", href: "https://lobby.cprot.net", target: "_BLANK" },
+    { name: "Discord", href: "https://discord.cprot.net", target: "_BLANK" },
+    { name: "VPS Panel", href: "https://vps.cprot.net", target: "_BLANK" },
 /**    { name: "Servidores Dedicados", href: "/dedicados" },*/
-    { name: "Minecraft Hosting", href: "/minecraft" },
+    { name: "Minecraft Panel", href: "https://mc.cprot.net", target: "_BLANK" },
   ]
 
   const legalLinks = [
-    { name: "Terminos de servicio", href: "/terminos-servicio" },
+    { name: "Terminos de servicio", href: "/terms-of-service" },
+    { name: "Aviso de privacidad", href: "/aviso-privacidad" },
   ]
 
   const contactInfo = [
     { icon: Mail, label: "Email", value: "admin@cprot.net", href: "mailto:admin@cprot.net" },
     { icon: Phone, label: "Celular", value: "N/A", href: "tel:+52 000 000 0000" },
-    { icon: Gamepad2, label: "Minecraft Panel", value: "mc.cprot.net", href: "https://mc.cprot.net" },
+    { icon: Gamepad2, label: "Minecraft Panel", value: "mc.cprot.net", href: "https://mc.cprot.net", target: "_BLANK" },
   ]
 
   return (
@@ -46,7 +47,7 @@ export default function Footer() {
             <div className="mb-6">
               <Image
                 src="/meta/Logo.png"
-                alt="Dezer Logo"
+                alt="CPROT Hosting"
                 width={200}
                 height={60}
                 className="h-12 w-auto"
@@ -56,7 +57,7 @@ export default function Footer() {
               Hosting premium pensado en público Mexicano y Latinoamericano.
             </p>
             <div className="text-xs text-gray-500 dark:text-gray-500">
-              Hecho por <span className="text-blue-600 dark:text-blue-400 font-medium">Carlos Soltero</span>
+              Hecho por <span className="text-blue-600 dark:text-blue-400 font-medium">TEAM CPROT</span>
             </div>
           </motion.div>
 
