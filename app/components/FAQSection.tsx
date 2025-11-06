@@ -22,7 +22,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "¿Tienen Proteccion DDoS?",
-    answer: "Sí, nuestra capacidad es la gran suma de 10Tbps."
+    answer: "Sí, nuestra capacidad es la gran suma de 10Tbps y 100Gbps."
   },
   {
     question: "¿Tienen IPs dedicadas?",

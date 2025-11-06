@@ -35,7 +35,7 @@ export default function FeaturesSection() {
     {
       icon: Shield,
       title: "Proteccion DDoS",
-      description: "Nuestro sistema fué diseñado para proveer 10Gbps de antiddos y proteger nuestros servicios frente a cualquier ataque."
+      description: "Nuestro sistema fué diseñado para proveer 10Tbps y 100Gbps de antiddos y proteger nuestros servicios frente a cualquier ataque."
     },
     {
       icon: HeartPulse,

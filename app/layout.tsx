@@ -88,11 +88,11 @@ export const metadata: Metadata = {
     description: "Ofrecemos los servicios de Hosting con la latencia más baja a nivel nacional e internacional con proteccion DDoS.",
     images: [
       {
-        url: "https://nova.dezerx.com/meta/Banner.png",
+        url: "https://cdn.cprot.net/CPROT-LANDING/Banner.webp",
         width: 1200,
         height: 630,
         alt: "CPROT - Minecraft Hosting y VPS barato",
-        type: "image/png"
+        type: "image/webp"
       }
     ]
   },
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CPROT Hosting - VPS y Minecraft Servers barato",
     description: "Ofrecemos los servicios de Hosting con la latencia más baja a nivel nacional e internacional con proteccion DDoS.",
-    images: ["https://nova.dezerx.com/meta/Banner.png"]
+    images: ["https://cdn.cprot.net/CPROT-LANDING/Banner.webp"],
   },
 
   // Additional metadata with bot protection
@@ -132,23 +132,23 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/meta/Logo.png", sizes: "32x32", type: "image/png" },
-      { url: "/meta/Logo.png", sizes: "16x16", type: "image/png" }
+      { url: "/meta/Favicon.svg", sizes: "32x32", type: "image/svg" },
+      { url: "/meta/Favicon.svg", sizes: "16x16", type: "image/svg" }
     ],
     apple: [
-      { url: "/meta/Logo.png", sizes: "180x180", type: "image/png" }
+      { url: "/meta/Favicon.svg", sizes: "180x180", type: "image/svg" }
     ],
-    shortcut: "/meta/Logo.png"
+    shortcut: "/meta/Favicon.svg"
   },
 
   alternates: {
-    canonical: "https://nova.dezerx.com"
+    canonical: "https://cprot.net"
   },
   other: {
     "msapplication-TileColor": "#1e40af",
     "msapplication-config": "/browserconfig.xml",
-    "terms-of-service": "https://nova.dezerx.com/terms-of-services",
-    "privacy-policy": "https://nova.dezerx.com/privacy-policy"
+    "terms-of-service": "https://cprot.net/terms-of-services",
+    "privacy-policy": "https://cprot.net/aviso-privacidad",
   }
 };
 
@@ -175,9 +175,9 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "CPROT Hosting",
               "url": "https://cprot.net",
-              "logo": "https://cprot.net/meta/Logo.png",
+              "logo": "https://cdn.cprot.net/CPROT-LANDING/Favicon.svg",
               "description": "El mejor Hosting de México te ofrece: Minecraft Servers, VPS y la mejor latencia a nivel nacional y LATAM.",
-              "serviceType": ["Game Server Hosting", "VPS Hosting", "Dedicated Servers", "Cloud Infrastructure"],
+              "serviceType": ["Game Server Hosting", "VPS Hosting", "Servidores Dedicados", "Minecraft server", "VPS Miami", "VPS Mexico"],
               "areaServed": "Worldwide",
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
@@ -210,21 +210,21 @@ export default function RootLayout({
                 ]
               },
               "sameAs": [
-                "https://discord.gg/MsDqb6HvS3"
+                "https://discord.cprot.net"
               ],
               "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "Soporte al cliente",
                 "availableLanguage": "Spanish",
                 "serviceType": "Soporte Técnico",
-                "url": "https://discord.gg/MsDqb6HvS3"
+                "url": "https://lobby.cprot.net"
               },
               "founder": {
                 "@type": "Person",
                 "name": "Carlos SOltero "
               },
               "termsOfService": "https://cprot.net/terms-of-services",
-              "privacyPolicy": "https://cprot.net/privacy-policy"
+              "privacyPolicy": "https://cprot.net/aviso-privacidad"
             })
           }}
         />

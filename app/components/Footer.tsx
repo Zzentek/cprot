@@ -46,7 +46,7 @@ export default function Footer() {
       >
             <div className="mb-6">
               <Image
-                src="/meta/Logo.png"
+                src="/meta/Favicon.svg"
                 alt="CPROT Hosting"
                 width={200}
                 height={60}

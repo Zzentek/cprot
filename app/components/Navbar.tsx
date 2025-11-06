@@ -79,7 +79,7 @@ const ThemeToggle = React.memo((): React.ReactElement => {
   }, [])
 
   const handleThemeToggle = useCallback(() => {
-    setTheme(theme === "light" ? "dark" : "light")
+    setTheme(theme === "dark" ? "dark" : "dark")
   }, [theme, setTheme])
 
   const aria = theme === "light"
@@ -188,7 +188,7 @@ const Navbar: React.FC = () => {
           setShowPopup(true);
         })
         .catch(() => {
-          alert('Failed to copy code. Please try again.');
+          alert('Fallo al copiar el codigo. Por favor, inténtalo de nuevo.');
         });
     } else {
       const textArea = document.createElement('textarea');
@@ -206,7 +206,7 @@ const Navbar: React.FC = () => {
         setShowConfetti(true);
         setShowPopup(true);
       } catch (err) {
-        alert('Failed to copy code. Please try again.');
+        alert('Fallo al copiar el codigo. Por favor, inténtalo de nuevo.');
       }
       document.body.removeChild(textArea);
     }
@@ -258,7 +258,7 @@ const Navbar: React.FC = () => {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/80 to-transparent">
                   <h3 className="text-white text-lg font-semibold mb-1">{game.displayName}</h3>
-                  <p className="text-white/80 text-sm line-clamp-2">Host your own {game.name} server</p>
+                  <p className="text-white/80 text-sm line-clamp-2">Hostea tu propio {game.name} server</p>
                 </div>
               </Link>
             ))}
@@ -664,7 +664,7 @@ const Navbar: React.FC = () => {
                 aria-controls="mobile-menu"
                 aria-label="Toggle navigation menu"
               >
-                <span className="sr-only">Open main menu</span>
+                <span className="sr-only">Abrir menu principal</span>
                 <Menu className={`${isMobileMenuOpen ? 'hidden' : 'block'} h-6 w-6`} />
                 <X className={`${isMobileMenuOpen ? 'block' : 'hidden'} h-6 w-6`} />
               </button>

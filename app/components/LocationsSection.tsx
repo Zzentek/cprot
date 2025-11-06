@@ -16,7 +16,7 @@ const locations = [
   {
     name: "Miami, US",
     flag: "/flags/usa.webp",
-    cpu: "AMD Ryzen 9950X",
+    cpu: "AMD Ryzen 7900/9900X",
     lat: 22.9128,
     lng: -114.5060,
   }
