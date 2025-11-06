@@ -4,11 +4,11 @@ import { useState, useEffect, useCallback, useRef } from "react"
 import { motion, AnimatePresence, useAnimation } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
-import heroConfig from "../config/sections/hero.json"
-import type { HeroConfig } from "../types/hero"
+import cprotConfig from "../config/sections/cprot.json"
+import type { cprotConfig as CprotConfigType } from "../types/cprot"
 
-const config = heroConfig as HeroConfig;
-import { ArrowRight, Server, Shield, Clock, Users } from "lucide-react"
+const config = cprotConfig as CprotConfigType;
+import { ArrowRight, Server, Shield, Clock, Users, Check } from "lucide-react"
 import { FiExternalLink } from 'react-icons/fi';
 
 const generateBlurDataURL = () => {
@@ -53,6 +53,7 @@ export default function HeroSection() {
     },
   }
 
+
   const featureBoxVariants = {
     hidden: {
       opacity: 0,
@@ -83,7 +84,7 @@ export default function HeroSection() {
       },
     },
   }
-
+  
   const iconVariants = {
     initial: { scale: 1, rotate: 0 },
     animate: {
@@ -143,9 +144,9 @@ export default function HeroSection() {
     >
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <img
-          src="https://cdn.cprot.net/CPROT-LANDING/minecraft-banners.webp"
+          src="https://cdn.cprot.net/CPROT-LANDING/Favicon.svg"
           alt="Minecraft banner"
-          className="object-cover object-center w-full h-full absolute inset-0"
+          className="object-fill object-center w-full h-full absolute inset-0"
           loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-b 
@@ -170,7 +171,7 @@ export default function HeroSection() {
         animate="animate"
       >
         <svg
-          className="absolute right-[-10%] top-[-5%] w-[700px] h-[700px]"
+          className="absolute left-[-10%] top-[-5%] w-[800px] h-[700px]"
           viewBox="0 0 803 808"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -218,13 +219,6 @@ export default function HeroSection() {
                       delay: 0.3,
                     }}
                   >
-                    <motion.span
-                      initial={{ opacity: 0, x: -30 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-                    >
-                      {config.hero.title.prefix}
-                    </motion.span>
                     <AnimatePresence mode="wait">
                       <motion.span
                         key={currentGame.displayName}
@@ -245,6 +239,13 @@ export default function HeroSection() {
                         )}
                       </motion.span>
                     </AnimatePresence>
+                    <motion.span
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+                    >
+                      {config.hero.title.prefix}
+                    </motion.span>
                   </motion.h1>
                   <motion.p
                     className="text-md sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed"
@@ -260,162 +261,8 @@ export default function HeroSection() {
                     {config.hero.description}
                   </motion.p>
                 </motion.div>
-
-                <motion.div
-                  variants={itemVariants}
-                  className="flex flex-col sm:flex-row gap-4 items-start mb-8"
-                >
-                  <motion.div
-                    variants={buttonVariants}
-                    initial="initial"
-                    whileHover="hover"
-                    whileTap="tap"
-                  >
-                    <a
-                      href="#catalogo"
-                      className="group bg-orange-500 hover:bg-yellow-400 text-black dark:text-black px-4 py-3 rounded-md font-bold text-md transition-all duration-300 flex items-center gap-2 backdrop-blur-sm no-underline shadow-none hover:shadow-none"
-                    >
-                      <span className="orbitron-font">CATALOGO</span>
-                      <motion.div
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 0.7, repeat: Infinity, ease: "easeInOut" }}
-                      >
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                      </motion.div>
-                    </a>
-                  </motion.div>
-
-                  <motion.div
-                    variants={buttonVariants}
-                    initial="initial"
-                    whileHover="hover"
-                    whileTap="tap"
-                  >
-
-                  </motion.div>
-                </motion.div>
-
-
-                <motion.div
-                  variants={itemVariants}
-                  className="flex items-center gap-3 -mt-6 ml-4"
-                >
-                  <motion.svg
-                    fill="currentColor"
-                    className="w-6 h-6 text-blue-600 dark:text-blue-400"
-                    viewBox="0 0 342.674 342.674"
-                    xmlns="http://www.w3.org/2000/svg"
-
-                  >
-                    <g>
-                      <g>
-                        <path d="M18.36,36.83c0-3.672,0-7.956-1.224-11.628c-0.612-3.672-7.344-3.672-7.956,0c-0.612,3.672-0.612,7.344-1.224,11.016c0,2.448,0,4.284,0,6.732c0,1.224,0,2.448,0.612,3.672c0.612,0.612,1.224,1.224,1.836,1.836c-1.224-0.612-1.224-1.224-0.612,0c1.224,2.448,4.896,2.448,5.508,0v-0.612l0,0c1.224-1.224,1.224-2.448,1.224-4.284C18.36,41.726,18.36,39.278,18.36,36.83z" />
-                        <path d="M7.956,87.014c0-1.836-2.448-1.836-3.06,0c-0.612,11.016-3.672,22.032-3.672,33.048c0,6.732,10.404,6.732,10.404,0C11.628,109.046,9.18,98.03,7.956,87.014z" />
-                        <path d="M12.24,157.394c0.612-2.448-3.06-4.896-4.896-1.836c-2.448,5.508-4.284,11.016-4.896,17.136c-0.612,5.508-1.836,11.016,0.612,15.912c1.224,2.447,4.896,2.447,6.12,0c2.448-3.672,1.836-7.957,1.836-12.24C11.016,169.634,11.628,163.514,12.24,157.394z" />
-                        <path d="M11.016,241.238c-2.448-6.12-4.284-11.628-4.896-17.748c-0.612-3.672-6.12-3.672-6.12,0c0,5.508,0,11.016,0.612,15.912c0.612,5.508,1.836,12.852,6.12,16.523c1.836,1.836,6.12,1.225,6.732-1.836C14.688,249.194,12.852,245.522,11.016,241.238z" />
-                        <path d="M48.348,287.138c-3.06-2.447-7.956-1.836-11.628-3.06c-4.896-1.224-8.568-4.284-10.404-9.18c-1.224-3.061-6.12-0.612-4.896,1.836c1.836,6.12,5.508,10.403,10.404,13.464c4.896,2.448,12.24,5.508,17.136,1.836C50.184,290.81,50.184,288.362,48.348,287.138z" />
-                        <path d="M108.936,293.87c-7.344-6.732-19.584-4.896-28.764-4.284c-4.284,0-4.284,6.12,0,6.732c4.284,0,8.568,0.611,12.852,1.224s9.18,2.448,13.464,1.836C108.936,299.378,111.384,296.318,108.936,293.87z" />
-                        <path d="M175.031,292.646c-10.404-6.12-25.091-4.284-36.107,0c-4.284,1.836-2.448,7.956,1.836,6.731c11.016-2.448,21.42,0,32.436,0.612C177.48,300.603,178.703,294.482,175.031,292.646z" />
-                        <path d="M236.844,289.586c-9.791-3.06-20.809-1.224-30.6-0.612c-4.896,0-4.896,7.345,0,7.345c9.791,0.611,21.42,2.447,30.6-0.612C240.516,295.094,240.516,290.81,236.844,289.586z" />
-                        <path d="M294.984,287.138c-4.285-4.283-9.793-2.447-15.301-1.836c-6.119,0.612-12.24,1.836-18.359,3.672c-4.285,1.836-3.061,8.568,1.836,7.345c6.119-1.836,12.24-2.448,18.359-2.448c4.896,0,9.18,1.224,12.852-2.448C296.207,290.81,296.207,288.362,294.984,287.138z" />
-                        <path d="M337.824,282.854c-14.076-3.673-23.869-15.301-37.332-20.809c-4.896-1.836-7.344,5.508-3.672,8.568c9.18,6.12,17.135,14.688,26.928,20.808c-3.672,3.061-7.344,6.12-11.629,9.181c-4.283,3.06-11.016,4.283-14.076,8.567c-1.836,2.448-2.447,6.12,0,8.568c11.629,10.404,34.885-14.688,42.229-22.645C344.557,290.81,342.721,284.078,337.824,282.854z" />
-                      </g>
-                    </g>
-                  </motion.svg>
-                  <motion.span
-                    className="text-gray-600 -mb-4 dark:text-gray-300 text-sm"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 1.2, duration: 0.6 }}
-                  >
-                    Inicia ahora
-                  </motion.span>
-                </motion.div>
-              </motion.div>
-              <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-4"
-                variants={containerVariants}
-              >
-                {[
-                  { icon: Server, title: "Activación Instantánea", description: "Tu servidor online en menos de 1 minuto.", index: 0 },
-                  { icon: Shield, title: "DDoS Protection", description: "Infraestructura segura, mitigación automática.", index: 1 },
-                  { icon: Clock, title: "99.9% Uptime", description: "Alta disponibilidad respaldada por SLA.", index: 2 },
-                  { icon: Users, title: "Red Optimizada para México", description: "Latencia mínima nacional y LATAM", index: 3 },
-                ].map((feature) => (
-                  <motion.div
-                    key={feature.title}
-                    custom={feature.index}
-                    variants={featureBoxVariants}
-                    initial="hidden"
-                    animate="visible"
-                    whileHover="hover"
-                    className="bg-white/20 dark:bg-white/5 backdrop-blur-sm border border-blue-400/50 dark:border-white/10 rounded-md hover:bg-transparent hover:border-blue-500/40 dark:hover:border-blue-400/40 hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(59,130,246,0.15)_0%,_transparent_100%)] dark:hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%)] group transition-all duration-300 relative cursor-pointer"
-                  >
-                    <div className="flex justify-between items-start">
-                      <div className="flex-1 p-4">
-                        <motion.h3
-                          className="text-lg font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
-                        >
-                          {feature.title}
-                        </motion.h3>
-                        <p className="text-gray-700 dark:text-gray-300 text-sm leading-tight group-hover:text-gray-900 dark:group-hover:text-white transition-colors">{feature.description}</p>
-                      </div>
-                      <div className="w-12 h-12 border-l border-b border-blue-400/40 dark:border-white/10 rounded-tr-lg flex items-center justify-center flex-shrink-0">
-                        <motion.div
-                          variants={iconVariants}
-                          initial="initial"
-                          animate="animate"
-                          whileHover="hover"
-                        >
-                          <feature.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                        </motion.div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
               </motion.div>
             </div>
-            
-            <motion.div
-              className="mt-16 md:mt-24 overflow-hidden relative h-16 sm:h-20"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.5, duration: 0.8 }}
-            >
-              <div className="flex gap-24 absolute whitespace-nowrap animate-scroll will-change-transform">
-                {[...partners, ...partners].map((partner, index) => (
-                  <div
-                    id="#catalogo"
-                    key={`${partner.name}-${index}`}
-                    className="flex-shrink-0 w-[200px] hover:scale-110 transition-transform duration-300"
-                  >
-                    <Image
-                      src={partner.src}
-                      alt={`${partner.name} - Nuestros aliados`}
-                      width={128}
-                      height={64}
-                      className="h-12 sm:h-16 w-24 sm:w-32 object-contain transition-all duration-300"
-                      loading="lazy"
-                      quality={60}
-                      sizes="(max-width: 640px) 96px, 128px"
-                    />
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-            <div className="texxt">
-            <motion.h1
-                    className="text-2xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 leading-tight orbitron-font"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      type: "spring",
-                      damping: 20,
-                      stiffness: 100,
-                      delay: 0.3,
-                    }}
-                  > NUESTROS PROVEEDORES</motion.h1>
-                  </div>
           </div>
         </section>
       </div>

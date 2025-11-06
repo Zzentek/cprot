@@ -6,8 +6,8 @@
   },
   "hero": {
     "title": {
-      "prefix": "Hostea tu propio",
-      "suffix": "Server",
+      "prefix": "SINÓNIMO DE EXCELENCIA",
+      "suffix": "",
       "suffixColor": "white",
       "gameNameColor": "blue"
     },
@@ -15,7 +15,7 @@
       {
         "id": "minecraft",
         "name": "Minecraft",
-        "displayName": "Minecraft",
+        "displayName": "CPROT Hosting",
         "banner": "/banners/minecraft-banners.webp",
         "color": "#4CAF50",
         "showSuffix": true,
@@ -29,55 +29,6 @@
         "color": "#339933",
         "showSuffix": true,
         "showInDropdown": true
-      }
-    ],
-    "description": "Rendimiento extremo, red optimizada para México-LATAM y OHZ 10tbps anti-DDoS real.",
-    "cycleInterval": 20000,
-    "partners": [
-      {
-        "name": "Intel",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/Intel.svg",
-        "loading": "lazy"
-      },
-      {
-        "name": "Pterodactyl",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/Pterodactyl.svg",
-        "loading": "lazy"
-      },
-      {
-        "name": "TELMEX",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/TELMEX.svg",
-        "loading": "lazy"
-      },
-      {
-        "name": "VirtFusion",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/VirtFusion.svg",
-        "loading": "lazy"
-      },
-      {
-        "name": "MEGA",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/MEGA.svg",
-        "loading": "lazy"
-      },
-      {
-        "name": "Infinitum",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/Infinitum.svg",
-        "loading": "lazy"
-      },
-      {
-        "name": "OHZ",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/OHZ.svg",
-        "loading": "lazy"
-      },
-      {
-        "name": "ReliableSite",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/ReliableSite.svg",
-        "loading": "lazy"
-      },
-      {
-        "name": "RYZEN",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/RYZEN.svg",
-        "loading": "lazy"
       }
     ]
   }

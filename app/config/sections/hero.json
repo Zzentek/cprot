@@ -6,8 +6,8 @@
   },
   "hero": {
     "title": {
-      "prefix": "Hostea tu propio",
-      "suffix": "Server",
+      "prefix": "SINÓNIMO DE EXCELENCIA",
+      "suffix": "",
       "suffixColor": "white",
       "gameNameColor": "blue"
     },
@@ -15,68 +15,86 @@
       {
         "id": "minecraft",
         "name": "Minecraft",
-        "displayName": "Minecraft",
+        "displayName": "CPROT Hosting",
         "banner": "/banners/minecraft-banners.webp",
         "color": "#4CAF50",
         "showSuffix": true,
         "showInDropdown": true
-      },
-      {
-        "id": "discord-nodejs",
-        "name": "Discord (NodeJS)",
-        "displayName": "Discord bot",
-        "banner": "/banners/node.webp",
-        "color": "#339933",
-        "showSuffix": true,
-        "showInDropdown": true
       }
     ],
-    "description": "Rendimiento extremo, red optimizada para México-LATAM y OHZ 10tbps anti-DDoS real.",
+    "description": "Nuestra meta es resguardar tu información y proporcionarte un servicio de calidad superior.",
     "cycleInterval": 20000,
     "partners": [
       {
         "name": "Intel",
         "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/Intel.svg",
+        "website": "https://www.intel.com/",
         "loading": "lazy"
       },
       {
         "name": "Pterodactyl",
         "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/Pterodactyl.svg",
+        "website": "https://pterodactyl.io/",
         "loading": "lazy"
       },
       {
         "name": "TELMEX",
         "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/TELMEX.svg",
+        "website": "https://telmex.com/",
         "loading": "lazy"
       },
       {
         "name": "VirtFusion",
         "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/VirtFusion.svg",
+        "website": "https://virtfusion.com/",
         "loading": "lazy"
       },
       {
         "name": "MEGA",
         "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/MEGA.svg",
+        "website": "https://megacable.com.mx/",
         "loading": "lazy"
       },
       {
         "name": "Infinitum",
         "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/Infinitum.svg",
+        "website": "https://telmex.com",
         "loading": "lazy"
       },
       {
         "name": "OHZ",
         "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/OHZ.svg",
+        "website": "https://xdp.es",
         "loading": "lazy"
       },
       {
         "name": "ReliableSite",
         "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/ReliableSite.svg",
+        "website": "https://reliablesite.net",
+        "loading": "lazy"
+      },
+      {
+        "name": "EdgeUno",
+        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/EdgeUno.svg",
+        "website": "https://edgeuno.com/",
+        "loading": "lazy"
+      },
+      {
+        "name": "GTT",
+        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/GTT.svg",
+        "website": "https://gtt.net/",
+        "loading": "lazy"
+      },
+      {
+        "name": "NTT",
+        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/NTT.svg",
+        "website": "https://www.gin.ntt.net/",
         "loading": "lazy"
       },
       {
         "name": "RYZEN",
         "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/RYZEN.svg",
+        "website": "https://www.amd.com/",
         "loading": "lazy"
       }
     ]

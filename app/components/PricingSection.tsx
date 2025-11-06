@@ -40,10 +40,10 @@ export default function PricingSection() {
                 </svg>
               </span>
               {config.section.title.suffix}
+            <div className="cprot">
+              <img src="https://cdn.cprot.net/CPROT-LANDING/Favicon.svg" alt="CPROT LOGO" />
+            </div>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300">
-              {config.section.description}
-            </p>
           </div>
 
           {/* Currency Selector */}

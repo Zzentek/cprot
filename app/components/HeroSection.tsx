@@ -15,6 +15,7 @@ const generateBlurDataURL = () => {
   return 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMxZjI5MzciLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxMTE4MjciLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNnKSIvPjwvc3ZnPg==';
 };
 
+
 export default function HeroSection() {
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0)
   const [imagesLoaded, setImagesLoaded] = useState(new Set<number>())
@@ -134,6 +135,8 @@ export default function HeroSection() {
     },
   }
 
+  
+
   return (
     <motion.div
       className="bg-gray-50 dark:bg-[#0a0b0f] relative overflow-hidden"
@@ -143,9 +146,9 @@ export default function HeroSection() {
     >
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <img
-          src="https://cdn.cprot.net/CPROT-LANDING/minecraft-banners.webp"
-          alt="Minecraft banner"
-          className="object-cover object-center w-full h-full absolute inset-0"
+          src="https://cdn.cprot.net/CPROT-LANDING/Favicon.svg"
+          alt="CPROT"
+          className="object-fill object-center w-full h-full absolute inset-0"
           loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-b 
@@ -218,13 +221,6 @@ export default function HeroSection() {
                       delay: 0.3,
                     }}
                   >
-                    <motion.span
-                      initial={{ opacity: 0, x: -30 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-                    >
-                      {config.hero.title.prefix}
-                    </motion.span>
                     <AnimatePresence mode="wait">
                       <motion.span
                         key={currentGame.displayName}
@@ -245,6 +241,13 @@ export default function HeroSection() {
                         )}
                       </motion.span>
                     </AnimatePresence>
+                    <motion.span
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+                    >
+                      {config.hero.title.prefix}
+                    </motion.span>
                   </motion.h1>
                   <motion.p
                     className="text-md sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed"
@@ -338,7 +341,7 @@ export default function HeroSection() {
               >
                 {[
                   { icon: Server, title: "Activación Instantánea", description: "Tu servidor online en menos de 1 minuto.", index: 0 },
-                  { icon: Shield, title: "DDoS Protection", description: "Infraestructura segura, mitigación automática.", index: 1 },
+                  { icon: Shield, title: "Proteccion DDoS", description: "Infraestructura segura, mitigación automática.", index: 1 },
                   { icon: Clock, title: "99.9% Uptime", description: "Alta disponibilidad respaldada por SLA.", index: 2 },
                   { icon: Users, title: "Red Optimizada para México", description: "Latencia mínima nacional y LATAM", index: 3 },
                 ].map((feature) => (
@@ -389,6 +392,13 @@ export default function HeroSection() {
                     key={`${partner.name}-${index}`}
                     className="flex-shrink-0 w-[200px] hover:scale-110 transition-transform duration-300"
                   >
+                    <a 
+                    key={`${partner.name}-${index}`}
+                    href={ partner.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 w-[200px] hover:scale-110 transition-transform duration-300"
+                    >
                     <Image
                       src={partner.src}
                       alt={`${partner.name} - Nuestros aliados`}
@@ -399,6 +409,7 @@ export default function HeroSection() {
                       quality={60}
                       sizes="(max-width: 640px) 96px, 128px"
                     />
+                    </a>
                   </div>
                 ))}
               </div>

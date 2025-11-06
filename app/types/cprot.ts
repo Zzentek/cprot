@@ -17,12 +17,11 @@ export interface HeroTitle {
 
 export interface HeroPartner {
   name: string;
-  website: string;
   src: string;
   loading: "lazy" | "eager";
 }
 
-export interface HeroConfig {
+export interface cprotConfig {
   navbar: {
     logo: string;
     brandName: string;
