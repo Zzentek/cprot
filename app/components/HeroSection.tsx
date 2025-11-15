@@ -336,46 +336,10 @@ export default function HeroSection() {
                 </motion.div>
               </motion.div>
               <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-4"
+                className="grid grid-cols-1"
                 variants={containerVariants}
               >
-                {[
-                  { icon: Server, title: "Activación Instantánea", description: "Tu servidor online en menos de 1 minuto.", index: 0 },
-                  { icon: Shield, title: "Proteccion DDoS", description: "Infraestructura segura, mitigación automática.", index: 1 },
-                  { icon: Clock, title: "99.9% Uptime", description: "Alta disponibilidad respaldada por SLA.", index: 2 },
-                  { icon: Users, title: "Red Optimizada para México", description: "Latencia mínima nacional y LATAM", index: 3 },
-                ].map((feature) => (
-                  <motion.div
-                    key={feature.title}
-                    custom={feature.index}
-                    variants={featureBoxVariants}
-                    initial="hidden"
-                    animate="visible"
-                    whileHover="hover"
-                    className="bg-white/20 dark:bg-white/5 backdrop-blur-sm border border-blue-400/50 dark:border-white/10 rounded-md hover:bg-transparent hover:border-blue-500/40 dark:hover:border-blue-400/40 hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(59,130,246,0.15)_0%,_transparent_100%)] dark:hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%)] group transition-all duration-300 relative cursor-pointer"
-                  >
-                    <div className="flex justify-between items-start">
-                      <div className="flex-1 p-4">
-                        <motion.h3
-                          className="text-lg font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
-                        >
-                          {feature.title}
-                        </motion.h3>
-                        <p className="text-gray-700 dark:text-gray-300 text-sm leading-tight group-hover:text-gray-900 dark:group-hover:text-white transition-colors">{feature.description}</p>
-                      </div>
-                      <div className="w-12 h-12 border-l border-b border-blue-400/40 dark:border-white/10 rounded-tr-lg flex items-center justify-center flex-shrink-0">
-                        <motion.div
-                          variants={iconVariants}
-                          initial="initial"
-                          animate="animate"
-                          whileHover="hover"
-                        >
-                          <feature.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                        </motion.div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
+                <img src="/BuenFin2025.svg" alt="" />
               </motion.div>
             </div>
             
