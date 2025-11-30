@@ -14,7 +14,7 @@ export default function PricingSection() {
   const { selectedCurrency, setSelectedCurrency, convertPrice } = useCurrency()
 
   return (
-    <div className="bg-gray-50 dark:bg-[#0a0b0f] py-16 px-4 sm:px-6 lg:px-8 relative" id="catalogo">
+    <div className="bg-gray-50 dark:bg-[#000000] py-16 px-4 sm:px-6 lg:px-8 relative" id="catalogo">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -64,10 +64,8 @@ export default function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className={`relative backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-md pt-0 hover:bg-gray-50 dark:hover:bg-transparent hover:border-blue-600/40 dark:hover:border-blue-400/40 hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.15)_0%,_transparent_100%)] dark:hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%)] transition-all duration-300 ${plan.popular
-                ? "border border-blue-300/50 dark:border-blue-400/50  bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.15)_0%,_transparent_100%)] dark:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%),#0a0b0f] md:scale-105 md:-mt-4"
-                : " md:scale-95 bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.15)_0%,_transparent_100%)] dark:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%),#0a0b0f]  md:-mt-4"
-                }`}
+              className={`relative backdrop-blur-sm border-2 border-gray-200 dark:border-white/10 rounded-md pt-0 hover:bg-gray-50 dark:hover:bg-transparent hover:border-blue-600 dark:hover:border-blue-600 transform transition-all duration-500
+                ${plan.popular? "border border-blue-300/50 dark:border-blue-400/50": ""}`} style={{backgroundColor: "#0a0a0a;", borderRadius: "12px"}}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 z-50 transform -translate-x-1/2">
@@ -77,14 +75,14 @@ export default function PricingSection() {
                 </div>
               )}
 
-              <div className="relative h-32 sm:h-40 overflow-hidden rounded-t-md mb-4">
+              <div className="relative h-32 sm:h-37 overflow-hidden rounded-t-md mb-4">
                 <Image 
                   src={plan.image || "/placeholder.svg"} 
                   alt={plan.title} 
                   fill 
                   className="object-cover" 
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  quality={85}
+                  quality={100}
                   priority={plan.popular}
                 />
                 {/* Dark overlay for text readability on image */}
@@ -98,7 +96,7 @@ export default function PricingSection() {
                 <div className="text-center mb-6 sm:mb-8">
                   <div className="mb-4 sm:mb-6">
                     <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-1">Desde</p>
-                    <span className="text-3xl sm:text-4xl orbitron-font font-bold text-gray-900 dark:text-white">{convertPrice(plan.basePrice.toString())}</span>
+                    <span className="text-3xl sm:text-4xl orbitron-font font-bold text-gray-900 dark:text-blue-400">{convertPrice(plan.basePrice.toString())}</span>
                     <span className="text-sm text-gray-500 dark:text-gray-400">/mes</span>
                   </div>
                 </div>
@@ -106,8 +104,8 @@ export default function PricingSection() {
                 <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-blue-600 dark:text-blue-100 bg-blue-100 dark:bg-blue-600/30 rounded-xl flex-shrink-0 p-1" />
-                      <span className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">{feature}</span>
+                      <Check className="w-5 h-5 text-blue-600 dark:text-blue-100 bg-blue-100 dark:bg-blue-600/80 rounded-xl flex-shrink-0 p-1" />
+                      <span className="text-gray-600 dark:text-white text-sm sm:text-base">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -115,8 +113,8 @@ export default function PricingSection() {
                 <Link
                   href={plan.link}
                   className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 flex items-center justify-between group ${plan.buttonStyle === "primary"
-                    ? "bg-blue-100 dark:bg-blue-600/20 border border-blue-400 dark:border-none border-blue-600/40  hover:bg-blue-200 dark:hover:bg-blue-600/20 text-blue-700 dark:text-blue-400"
-                    : "bg-blue-100 dark:bg-transparent border border-blue-600/60 dark:border-blue-400/40 hover:bg-blue-200 dark:hover:bg-blue-600/20 text-blue-700 dark:text-blue-400"
+                    ? "bg-blue-100 dark:bg-blue-600 border border-blue-600 dark:border-none border-blue-600/40  hover:bg-blue-200 hover:scale-105 text-blue-700 dark:text-black"
+                    : "bg-blue-100 dark:bg-black border border-blue-600/60 dark:border-blue-400/40 hover:bg-blue-200 hover:scale-105 text-blue-700 dark:text-blue-600"
                     }`}
                 >
                   <span className="w-full orbitron-font text-center">{plan.buttonText}</span>

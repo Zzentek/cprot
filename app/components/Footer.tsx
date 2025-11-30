@@ -33,7 +33,7 @@ export default function Footer() {
         <DiscordBanner />
       </div>
       
-      <footer className="bg-gray-100 dark:bg-[#0a0b0f] border-t border-gray-200 dark:border-white/10 relative z-10 pt-8">
+      <footer className="bg-gray-100 dark:bg-[#000000] border-t border-gray-200 dark:border-white/10 relative z-10 pt-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 mt-24  md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and Company Info */}
@@ -53,10 +53,10 @@ export default function Footer() {
                 className="h-12 w-auto"
               />
             </div>
-            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6">
+            <p className="text-gray-300 dark:text-gray-300 text-sm leading-relaxed mb-6">
               Hosting premium pensado en público Mexicano y Latinoamericano.
             </p>
-            <div className="text-xs text-gray-500 dark:text-gray-500">
+            <div className="text-xs text-gray-300 dark:text-gray-300">
               Hecho por <span className="text-blue-600 dark:text-blue-400 font-medium">TEAM CPROT</span>
             </div>
           </motion.div>
@@ -75,7 +75,7 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-sm flex items-center group"
+                    className="text-gray-300 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-sm flex items-center group"
                   >
                     <span>{link.name}</span>
                     <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -99,7 +99,7 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-sm flex items-center group"
+                    className="text-gray-300 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-sm flex items-center group"
                   >
                     <span>{link.name}</span>
                     <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -123,7 +123,7 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href={contact.href}
-                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-sm flex items-center group"
+                    className="text-gray-300 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 text-sm flex items-center group"
                   >
                     <contact.icon className="w-4 h-4 mr-3 text-blue-600 dark:text-blue-400" />
                     <div>
@@ -146,13 +146,13 @@ export default function Footer() {
         className="mt-12 pt-8 border-t border-gray-200 dark:border-white/10"
       >
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-500 dark:text-gray-500 text-sm mb-4 md:mb-0">
+            <div className="text-white text-sm mb-4 md:mb-0">
               © {new Date().getFullYear()} CPROT todos los derechos reservados.
             </div>
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-gray-600 dark:text-gray-400 text-sm"><a href="https://uptime.cprot.net" target="_BLANK">Todos los sistemas operando</a></span>
+                <span className="text-white text-sm"><a href="https://uptime.cprot.net" target="_BLANK">Todos los sistemas operando</a></span>
               </div>
             </div>
           </div>

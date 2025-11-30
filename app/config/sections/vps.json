@@ -3,8 +3,8 @@
     "badge": {
       "text": "VPS Ryzen Miami Hosting"
     },
-    "title": "¡LLEGÓ EL BUEN FIN A LOS VPS!",
-    "description1": "APROVECHA NUESTRAS OFERTAS EN VPS CON CPUs AMD RYZEN hASTA EL DÍA 17 DE NOVIEMBRE",
+    "title": "PREVENTA RYZEN 9950X VPS",
+    "description1": "DESDE $1/GB DISPONIBLE EL 14 DE DICIEMBRE - RESERVA EL TUYO AHORA",
     "description": "2 Ubicaciones - CPUs AMD Ryzen - Almacenamiento NVMe - Proteccion AntiDDoS - Soporte 24/7"
   },
   "planTypes": [
@@ -183,7 +183,7 @@
         "id": "AV-VPS-1",
         "name": "AVANZADO 1",
         "badge": "€4.00",
-        "oferta": "60%",
+        "oferta": "33%",
         "image": "/cpu/ryzen9.png",
         "cpu": "1 Core",
         "cpuDetail": "Cores",
@@ -197,15 +197,15 @@
         "antiddosDetail": "Premium Antiddos",
         "uplink": "2 Gbps",
         "uplinkDetail": "Uplink",
-        "price": "€1.58",
+        "price": "€2.95",
         "period": "/mes",
-        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-1&promocode=BUENFIN"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-1"
       },
       {
         "id": "AV-VPS-2",
         "name": "AVANZADO 2",
         "badge": "€8.00",
-        "oferta": "60%",
+        "oferta": "5%",
         "image": "/cpu/ryzen9.png",
         "cpu": "1 Core",
         "cpuDetail": "Cores",
@@ -219,15 +219,15 @@
         "antiddosDetail": "Premium Antiddos",
         "uplink": "2 Gbps",
         "uplinkDetail": "Uplink",
-        "price": "€3.19",
+        "price": "€7.95",
         "period": "/mes",
-        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-2&promocode=BUENFIN"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-2"
       },
       {
         "id": "AV-VPS-3",
         "name": "AVANZADO 3",
         "badge": "€16.00",
-        "oferta": "60%",
+        "oferta": "5%",
         "image": "/cpu/ryzen9.png",
         "cpu": "2 Cores",
         "cpuDetail": "Cores",
@@ -241,15 +241,15 @@
         "antiddosDetail": "Premium Antiddos",
         "uplink": "2 Gbps",
         "uplinkDetail": "Uplink",
-        "price": "6.4€",
+        "price": "€15.95",
         "period": "/mes",
-        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-3&promocode=BUENFIN"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-3"
       },
       {
         "id": "AV-VPS-4",
         "name": "AVANZADO 4",
         "badge": "€24.00",
-        "oferta": "60%",
+        "oferta": "5%",
         "image": "/cpu/ryzen9.png",
         "cpu": "3 Cores",
         "cpuDetail": "Cores",
@@ -263,15 +263,15 @@
         "antiddosDetail": "Premium Antiddos",
         "uplink": "2 Gbps",
         "uplinkDetail": "Uplink",
-        "price": "€9.59",
+        "price": "€23.95",
         "period": "/mes",
-        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-4&promocode=BUENFIN"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-4"
       },
       {
         "id": "AV-VPS-5",
         "name": "AVANZADO 5",
         "badge": "€32.00",
-        "oferta": "60%",
+        "oferta": "10%",
         "image": "/cpu/ryzen9.png",
         "cpu": "4 Cores",
         "cpuDetail": "Cores",
@@ -285,15 +285,15 @@
         "antiddosDetail": "Premium Antiddos",
         "uplink": "2 Gbps",
         "uplinkDetail": "Uplink",
-        "price": "€12.79",
+        "price": "€29.95",
         "period": "/mes",
-        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-5&promocode=BUENFIN"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-5"
       },
       {
         "id": "AV-VPS-6",
         "name": "AVANZADO 6",
         "badge": "€48.00",
-        "oferta": "60%",
+        "oferta": "10%",
         "image": "/cpu/ryzen9.png",
         "cpu": "5 Cores",
         "cpuDetail": "Cores",
@@ -307,15 +307,15 @@
         "antiddosDetail": "Premium Antiddos",
         "uplink": "2 Gbps",
         "uplinkDetail": "Uplink",
-        "price": "€19.19",
+        "price": "€45.95",
         "period": "/mes",
-        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-6&promocode=BUENFIN"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-6"
       },
       {
         "id": "AV-VPS-7",
         "name": "AVANZADO 7",
         "badge": "€64.00",
-        "oferta": "60%",
+        "oferta": "11%",
         "image": "/cpu/ryzen9.png",
         "cpu": "6 Cores",
         "cpuDetail": "Cores",
@@ -329,15 +329,15 @@
         "antiddosDetail": "Premium Antiddos",
         "uplink": "2 Gbps",
         "uplinkDetail": "Uplink",
-        "price": "€25.59",
+        "price": "€61.95",
         "period": "/mes",
-        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-7&promocode=BUENFIN"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier-7"
       },
       {
         "id": "AV-VPS-8",
         "name": "AVANZADO 8",
         "badge": "€96.00",
-        "oferta": "60%",
+        "oferta": "15%",
         "image": "/cpu/ryzen9.png",
         "cpu": "8 Cores",
         "cpuDetail": "Cores",
@@ -351,9 +351,9 @@
         "antiddosDetail": "Premium Antiddos",
         "uplink": "2 Gbps",
         "uplinkDetail": "Uplink",
-        "price": "€38.39",
+        "price": "€89.95",
         "period": "/mes",
-        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier8&promocode=BUENFIN"
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/vps-avanzado/tier8"
       }
     ],
     "ryzen-9950x": [

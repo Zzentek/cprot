@@ -16,7 +16,7 @@ const locations = [
   {
     name: "Miami, US",
     flag: "/flags/usa.webp",
-    cpu: "AMD Ryzen 7900/9900X",
+    cpu: "AMD Ryzen 7900",
     lat: 22.9128,
     lng: -114.5060,
   }
@@ -153,7 +153,7 @@ const WorldMapSVG = memo(() => {
         >
           <Image
             src="/World_map_with_points.svg"
-            alt="World Map"
+            alt="Mapa mundial"
             fill
             className="object-contain filter dark:invert opacity-50 dark:hue-rotate-180 dark:brightness-0 dark:contrast-0"
             onLoad={() => setImageLoaded(true)}
@@ -268,7 +268,7 @@ export default function LocationsSection() {
   }), []);
 
   return (
-    <div className="relative py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-black relative py-16 px-4 sm:px-6 lg:px-8">
       <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
           variants={containerVariants}

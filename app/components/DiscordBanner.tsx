@@ -7,7 +7,7 @@ import { AiOutlineDiscord } from "react-icons/ai";
 
 export default function DiscordBanner() {
     return (
-        <div className=" py-18 px-4 sm:px-6 lg:px-8 relative">
+        <div className="dc bg-black py-12 px-4 sm:px-6 lg:px-8 relative">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

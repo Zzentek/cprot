@@ -25,6 +25,18 @@ const faqs: FAQItem[] = [
     answer: "Sí, nuestra capacidad es la gran suma de 10Tbps y 100Gbps."
   },
   {
+    question: "¿Qué servicios ofrecen?",
+    answer: "Ofrecemos los siguientes: Minecraft Hosting, VPS Hosting, Servidores dedicados, Soporte Profesional, Protección AntiDDoS mediante GRE."
+  },
+  {
+    question: "¿Planes a futuro?",
+    answer: "Esperamos en 2026 rentar un QUARTER RACK (ANUAL - BIANUAL) en Miami para ofrecer servidores dedicados y VPS con mejor conectividad internacional."
+  },
+  {
+    question: "¿Servidores propios?",
+    answer: "Sí, todos los servidores (VPS / MC HOST) que vendemos nosotros los proveemos."
+  },
+  {
     question: "¿Tienen IPs dedicadas?",
     answer: "Sí, en VPS ofrecemos 1 IPv4 dedicada sin costo. En Minecraft Hosting, las IPv4 son compartidas y una dedicada tiene un costo adicional de 2.00EUR"
   }
@@ -34,9 +46,9 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <div className="bg-gray-50 dark:bg-[#0a0b0f] relative py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-black dark:bg-[#08228e] relative py-16 px-4 sm:px-6 lg:px-8">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-gray-50/90 to-gray-50 dark:from-[#0a0b0f] dark:via-[#0a0b0f]/90 dark:to-[#0a0b0f]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black dark:from-[#000000] dark:via-[#0a0b0f]/70 dark:to-[#000000]" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -64,12 +76,12 @@ export default function FAQSection() {
           </div>
 
           {/* Right Column - FAQ Content */}
-          <div>
+          <div className="bg-black" style={{padding: '1rem', borderRadius: '8px', border: '1px solid gray' }}>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1.2 }}
               className="mb-8"
             >
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-4 orbitron-font">
@@ -118,7 +130,7 @@ export default function FAQSection() {
                       openIndex === index ? "pb-3 sm:pb-4 pl-[52px] sm:pl-[72px]" : "h-0"
                     }`}
                   >
-                    <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">{faq.answer}</p>
+                    <p className="text-gray-200 dark:text-gray-200 text-sm sm:text-base">{faq.answer}</p>
                   </div>
                 </motion.div>
               ))}

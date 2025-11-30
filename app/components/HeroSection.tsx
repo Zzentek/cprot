@@ -139,7 +139,7 @@ export default function HeroSection() {
 
   return (
     <motion.div
-      className="bg-gray-50 dark:bg-[#0a0b0f] relative overflow-hidden"
+      className="bg-[#000000] relative overflow-hidden"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -152,18 +152,15 @@ export default function HeroSection() {
           loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-b 
-                  from-white via-white/40 to-transparent 
-                  dark:from-[#0a0b0f]/50 dark:via-[#0a0b0f]/10 dark:to-transparent" />
+                  from-black via-black to-transparent 
+                  dark:from-[#000000]/50 dark:via-[#000000]/10 dark:to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t 
-                  from-white via-white/60 to-white/40 
-                  dark:from-[#0a0b0f] dark:via-[#0a0b0f]/90 dark:to-[#0a0b0f]/40" />
+                  from-black via-black to-black
+                  dark:from-[#000000]  dark:to-[#000000]/40" />
 
 
         <motion.div
-          className="absolute inset-0 bg-gradient-to-b from-gray-50 via-gray-50/40 to-transparent dark:from-[#0a0b0f]/50 dark:via-[#0a0b0f]/10 dark:to-transparent"
-        />
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-t from-gray-50 via-gray-50/60 to-gray-50/40 dark:from-[#0a0b0f] dark:via-[#0a0b0f]/90 dark:to-[#0a0b0f]/40"
+          className="absolute inset-0 bg-gradient-to-t from-black via-black to-black dark:from-[#000000] dark:via-[#000000]/90 dark:to-[#000000]/40"
         />
       </div>
       <motion.div

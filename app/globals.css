@@ -19,6 +19,10 @@
   animation: scroll 40s linear infinite;
 }
 
+.dc {
+  margin: 0px 0px 15px 0px;
+}
+
 .texxt {
   margin-top: 5px;
   text-align: center;
@@ -245,7 +249,11 @@
   }
 ::-webkit-scrollbar {
   width: 8px;
-  background: transparent;
+  background-color: transparent;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #225cb9f3; 

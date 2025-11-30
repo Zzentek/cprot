@@ -71,7 +71,7 @@ export default function PanelShowcase() {
   }
 
   return (
-    <div className="bg-gray-50 dark:bg-[#0a0b0f] relative py-12 sm:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="bg-gray-50 dark:bg-[#000000] relative py-12 sm:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background gradient */}
 
       {/* Decorative blobs */}

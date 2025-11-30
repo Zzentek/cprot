@@ -95,7 +95,7 @@ export default function FeaturesSection() {
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.6, delay: index * 0.2 }}
-        className="bg-white dark:bg-white/3 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-md hover:bg-gray-50 dark:hover:bg-transparent hover:border-blue-600/40 dark:hover:border-blue-400/40 hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.15)_0%,_transparent_100%)] dark:hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%)] hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 relative"
+        className="bg-black dark:bg-black backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-md hover:bg-gray-50 dark:hover:bg-transparent hover:border-blue-600/40 dark:hover:border-blue-400/40 hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.15)_0%,_transparent_100%)] dark:hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%)] hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 relative"
       >
         <div className="flex justify-between items-start">
           <div className="flex-1 p-4 sm:p-6">
@@ -113,7 +113,7 @@ export default function FeaturesSection() {
   return (
     <div className="bg-gray-50 dark:bg-[#0a0b0f] relative py-12 sm:py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-gray-50/90 to-gray-50 dark:from-[#0a0b0f] dark:via-[#0a0b0f]/90 dark:to-[#0a0b0f]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black dark:from-[#000000] dark:via-[#000000]/90 dark:to-[#000000]" />
       
       {/* Decorative blobs */}
       <div className="absolute top-20 -left-32 w-64 h-64 bg-blue-400/20 dark:bg-blue-400/10 rounded-full blur-3xl" />
