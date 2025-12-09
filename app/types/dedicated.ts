@@ -14,6 +14,8 @@ export interface DedicatedPlan {
   period: string
   features: string[]
   orderLink: string
+  time: string
+  delivery: string
 }
 
 export interface PlanType {

@@ -8,9 +8,7 @@ import dediConfig from "../../config/sections/dedicated.json"
 import type { DediConfig } from "../../types/dedicated"
 import { CurrencySelector, useCurrency } from "../ui/CurrencySelector"
 import { useLanguage } from "../../contexts/LanguageContext"
-
-const config = dediConfig as DediConfig
-
+const config = dediConfig as unknown as DediConfig
 export default function VDSPricingSection() {
   const { selectedCurrency, setSelectedCurrency, convertPrice } = useCurrency()
   const { t } = useLanguage()
@@ -49,8 +47,8 @@ export default function VDSPricingSection() {
   return (
     <div className="bg-gray-50 dark:bg-[#0a0a0a] relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-gray-50/40 to-transparent dark:from-[#0a0a0a] dark:via-[#0a0a0a] dark:to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-gray-50/80 to-gray-50/40 dark:from-[#000000] dark:via-[#000000] dark:to-[#000000]" />
+        <div className="absolute inset-0 bg-linear-to-b from-gray-50 via-gray-50/40 to-transparent dark:from-[#0a0a0a] dark:via-[#0a0a0a] dark:to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-gray-50 via-gray-50/80 to-gray-50/40 dark:from-[#000000] dark:via-[#000000] dark:to-[#000000]" />
       </div>
 
       <div className="relative z-10 mt-16 max-w-7xl mx-auto">
@@ -272,7 +270,7 @@ export default function VDSPricingSection() {
                       </div>
                       <a
                         href={plan.orderLink}
-                        className="orbitron-font w-full button-primary text-button-primary px-6 py-3 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2 border border-transparent hover:bg-[var(--hover-gradient)] hover:text-[var(--icon-text-primary)] hover:border-[var(--border-secondary)]"
+                        className="orbitron-font w-full button-primary text-button-primary px-6 py-3 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2 border border-transparent hover:bg-(--hover-gradient) hover:text-(--icon-text-primary) hover:border-(--border-secondary)"
                       >
                         {t('common.orderNow')}
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
