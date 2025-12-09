@@ -1,7 +1,7 @@
-export interface DedicatedPlan {
+export interface DiscordPlan {
   id: string
   name: string
-  badge: string
+  badge?: string
   cpu: string
   cpuDetail: string
   ram: string
@@ -10,9 +10,9 @@ export interface DedicatedPlan {
   storageDetail: string
   bandwidth: string
   bandwidthDetail: string
+  uptime: string
   price: string
   period: string
-  features: string[]
   orderLink: string
 }
 
@@ -23,25 +23,10 @@ export interface PlanType {
   image: string
 }
 
-export interface Location {
-  id: string
-  name: string
-  flag: string
-  displayName: string
-  cpu: string
-}
+export interface DiscordConfig {
 
-export interface DediConfig {
-  header: {
-    badge: {
-      text: string
-    }
-    title: string
-    description: string
-  }
   planTypes: PlanType[]
-  locations: Location[]
   plans: {
-    [key: string]: DedicatedPlan[]
+    [key: string]: DiscordPlan[]
   }
 }

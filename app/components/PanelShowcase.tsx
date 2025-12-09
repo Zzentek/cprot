@@ -89,11 +89,11 @@ export default function PanelShowcase() {
         >
           <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-600/20 px-4 py-2 rounded-full mb-4">
             <Zap className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-            <span className="text-blue-600 dark:text-blue-400 orbitron-font text-sm">Minecraft y VPS Panel</span>
+            <span className="text-blue-500 dark:text-blue-400 orbitron-font text-sm">Minecraft y VPS Panel</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3 orbitron-font sm:mb-4">
-            Acerca de nuestras <span className="text-blue-600 dark:text-blue-400">Platformas</span>
+            Acerca de nuestras <span className="text-blue-500 dark:text-blue-500">Platformas</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300">
             Usamos Pterodactyl Panel para Minecraft Server y VirtFusion para VPS
@@ -122,9 +122,10 @@ export default function PanelShowcase() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     onClick={() => handleCardClick(index)}
                     className={`relative cursor-pointer transition-all duration-300 backdrop-blur-sm border ${isActive
-                        ? 'bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.15)_0%,_transparent_100%)] dark:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%),#0a0b0f] border-blue-600/60 dark:border-blue-400/10'
+                        ? 'bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.15)_0%,_transparent_100%)] border-blue-600/60 dark:border-blue-400/10'
                         : ' dark:border-white/5 hover:border-blue-600/60 dark:hover:border-blue-400/60 bg-transparent '
                       } rounded-md overflow-hidden flex-1`}
+                      style={{backgroundColor:"#0a0a0a"}}
                   >
                     <div className="flex justify-between items-start">
                       <div className="flex-1 p-4 sm:p-6">
@@ -135,14 +136,14 @@ export default function PanelShowcase() {
                           {card.title}
                         </h3>
                         <p className={`text-xs sm:text-sm ${isActive
-                            ? 'text-gray-600 dark:text-gray-400'
-                            : 'text-gray-600 dark:text-gray-400'
+                            ? 'text-gray-600 dark:text-white'
+                            : 'text-gray-600 dark:text-white'
                           }`}>
                           {card.description}
                         </p>
                       </div>
                       <div className="bg-white dark:bg-white/3 w-10 h-10 sm:w-12 sm:h-12 border-l border-b border-gray-200 dark:border-white/3 rounded-tr-md flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-400" />
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-600" />
                       </div>
                     </div>
 
@@ -170,7 +171,8 @@ export default function PanelShowcase() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative flex h-full"
           >
-            <div className="relative w-full bg-white dark:bg-white/2 backdrop-blur-sm border border-gray-200 dark:border-white/5 rounded-md overflow-hidden flex flex-col h-full">
+            <div className="relative w-full dark:bg-white/2 backdrop-blur-sm border border-gray-200 dark:border-white/5 rounded-md overflow-hidden flex flex-col h-full"
+            style={{backgroundColor:"#0a0a0a"}}>
               {/* Image container */}
               <div className="flex-1 p-6 pb-0">
                 <div className="relative w-full h-full rounded-lg overflow-hidden">

@@ -38,13 +38,6 @@ export interface PlanType {
 }
 
 export interface GamesConfig {
-  header: {
-    badge: {
-      text: string
-    }
-    title: string
-    description: string
-  }
   planTypes: PlanType[]
   locations: GameLocation[]
   games: Game[]

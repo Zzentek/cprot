@@ -11,8 +11,8 @@ function LoadingScreen() {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-50 dark:bg-[#0a0b0f] transition-colors duration-300">
       <div className="flex flex-col items-center gap-4">
         <div className="relative">
-          <div className="w-12 h-12 border-2 border-blue-200 dark:border-blue-900 rounded-full animate-spin border-t-blue-600 dark:border-t-blue-400"></div>
-          <div className="absolute inset-2 w-8 h-8 border-2 border-blue-100 dark:border-blue-800 rounded-full animate-spin border-t-blue-500 dark:border-t-blue-300 animate-reverse"></div>
+          <div className="w-12 h-12 border-2 border-gray-200 dark:border-gray-800 rounded-full animate-spin border-t-icon-primary"></div>
+          <div className="absolute inset-2 w-8 h-8 border-2 border-gray-100 dark:border-gray-700 rounded-full animate-spin border-t-icon-primary animate-reverse opacity-70"></div>
         </div>
         <div className="flex items-center gap-2">
           <span className="text-lg text-gray-900 dark:text-white orbitron-font">

@@ -16,18 +16,17 @@ interface MapProps {
 
 export default function WorldMap({
   dots = [],
-  lineColor = "#60A5FA", // Changed to match the blue-400 color
+  lineColor = "#3b82f6", 
 }: MapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const { theme } = useTheme();
 
-  // Memoize the map instance to prevent recreation on every render
   const map = useMemo(() => new DottedMap({ 
     height: 100, 
     grid: "diagonal" 
   }), []);
 
-  // Memoize the SVG map generation
+  
   const svgMap = useMemo(() => 
     map.getSVG({
       radius: 0.35,
@@ -36,14 +35,12 @@ export default function WorldMap({
       backgroundColor: "transparent",
     }), [map, theme]);
 
-  // Memoize projection function
   const projectPoint = useCallback((lat: number, lng: number) => {
     const x = (lng + 180) * (800 / 360);
     const y = (90 - lat) * (400 / 180);
     return { x, y };
   }, []);
 
-  // Memoize curve path creation
   const createCurvedPath = useCallback((
     start: { x: number; y: number },
     end: { x: number; y: number }
@@ -53,7 +50,6 @@ export default function WorldMap({
     return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`;
   }, []);
 
-  // Memoize projected points to avoid recalculation
   const projectedDots = useMemo(() => 
     dots.map(dot => ({
       startPoint: projectPoint(dot.start.lat, dot.start.lng),
@@ -64,7 +60,6 @@ export default function WorldMap({
       )
     })), [dots, projectPoint, createCurvedPath]);
 
-  // Memoize the encoded SVG data URL
   const encodedSvgMap = useMemo(() => 
     `data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`, 
     [svgMap]

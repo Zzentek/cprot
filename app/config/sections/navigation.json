@@ -52,13 +52,13 @@
     }
   ],
   "clientSpace": {
-    "name": "CLIENT SPACE",
+    "name": "LOBBY CLIENTES",
     "href": "https://lobby.cprot.net",
     "icon": "User"
   },
   "banner": {
     "show": true,
-    "text": "PREVENTA Limitada 66% en VPS RYZEN 9950X 14/11/25 ",
+    "text": "PREVENTA Limitada 66% en VPS RYZEN 9950X 25/12/25 ",
     "couponCode": "9950XPREVENTA",
     "backgroundColor": "bg-blue-500"
   }

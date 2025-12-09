@@ -1,33 +1,56 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Server, Cpu, MemoryStick, HardDrive, Wifi, Check } from "lucide-react"
+import { Server, Cpu, MemoryStick, HardDrive, Wifi, Check, TimerIcon, Timer } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
 import dediConfig from "../../config/sections/dedicated.json"
-import type { DediConfig } from "../../types/servidores-dedicados"
+import type { DediConfig } from "../../types/dedicated"
 import { CurrencySelector, useCurrency } from "../ui/CurrencySelector"
+import { useLanguage } from "../../contexts/LanguageContext"
 
 const config = dediConfig as DediConfig
 
 export default function VDSPricingSection() {
   const { selectedCurrency, setSelectedCurrency, convertPrice } = useCurrency()
+  const { t } = useLanguage()
   const [selectedLocation, setSelectedLocation] = useState(config.locations[0].id)
-  const [selectedCPU, setSelectedCPU] = useState(config.planTypes[0].id)
+  const [selectedCPU, setSelectedCPU] = useState(() => {
+    const firstLocation = config.locations[0]
+    return firstLocation.availableCpus[0] || config.planTypes[0].id
+  })
 
-  const currentPlans = config.plans[selectedCPU] || config.plans[config.planTypes[0].id]
+  const currentLocation = config.locations.find(loc => loc.id === selectedLocation)
+  const availableCPUs = currentLocation?.availableCpus || []
+  const currentPlans = config.plans[selectedCPU] || []
+
+  const handleCPUSelection = (cpuId: string) => {
+    setSelectedCPU(cpuId)
+    const currentLoc = config.locations.find(loc => loc.id === selectedLocation)
+    if (currentLoc && !currentLoc.availableCpus.includes(cpuId)) {
+      const compatibleLocation = config.locations.find(loc => loc.availableCpus.includes(cpuId))
+      if (compatibleLocation) {
+        setSelectedLocation(compatibleLocation.id)
+      }
+    }
+  }
+
+  const handleLocationSelection = (locationId: string) => {
+  setSelectedLocation(locationId)
+
+  const newLocation = config.locations.find(loc => loc.id === locationId)
+  if (!newLocation) return
+
+  if (!newLocation.availableCpus.includes(selectedCPU)) {
+    setSelectedCPU(newLocation.availableCpus[0])
+  }
+}
 
   return (
-    <div className="bg-gray-50 dark:bg-[#0a0b0f] relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="bg-gray-50 dark:bg-[#0a0a0a] relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('/dedicated.webp')`,
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-gray-50/40 to-transparent dark:from-[#0a0b0f] dark:via-[#0a0b0f]/60 dark:to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-gray-50/80 to-gray-50/40 dark:from-[#0a0b0f] dark:via-[#0a0b0f]/95 dark:to-[#0a0b0f]/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-gray-50/40 to-transparent dark:from-[#0a0a0a] dark:via-[#0a0a0a] dark:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-gray-50/80 to-gray-50/40 dark:from-[#000000] dark:via-[#000000] dark:to-[#000000]" />
       </div>
 
       <div className="relative z-10 mt-16 max-w-7xl mx-auto">
@@ -39,18 +62,17 @@ export default function VDSPricingSection() {
         >
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
             <div className="flex-1">
-              <div className="inline-flex items-left gap-2 bg-blue-100 dark:bg-blue-600/20 px-4 py-2 rounded-full mb-4">
-                <Server className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                <span className="text-blue-600 dark:text-blue-400 text-sm">{config.header.badge.text}</span>
+              <div className="inline-flex items-left gap-2 card-primary px-4 py-2 rounded-tl-xl rounded-br-2xl mb-4 border border-secondary">
+                <span className="icon-text-primary text-blue-400 text-sm">{t('dedicated.badge')}</span>
               </div>
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 orbitron-font">
-                {config.header.title.split(" ").slice(0, -1).join(" ")}{" "}
-                <span className="text-blue-600 dark:text-blue-400 relative">
-                  {config.header.title.split(" ").slice(-1)[0]}
+                {"Servidores "}
+                <span className="icon-text-primary relative">
+                  {t('dedicated.title').split(" ").slice(-1)[0]}
                   <motion.svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 1418 125"
-                    className="absolute left-0 w-full text-blue-400"
+                    className="absolute left-0 w-full text-icon-text-primary"
                     initial={{ opacity: 0, pathLength: 0 }}
                     animate={{ opacity: 1, pathLength: 1 }}
                     transition={{ duration: 1, delay: 0.5 }}
@@ -62,7 +84,7 @@ export default function VDSPricingSection() {
                   </motion.svg>
                 </span>
               </h2>
-              <p className="text-md text-gray-600 max-w-3xl dark:text-gray-300">{config.header.description}</p>
+              <p className="text-m text-gray-600 max-w-3xl dark:text-gray-300">Servidores KVM Baratos de alta calidad y rendimiento con un uptime del 99.99%.</p>
             </div>
             <CurrencySelector
               selectedCurrency={selectedCurrency}
@@ -80,59 +102,78 @@ export default function VDSPricingSection() {
         >
           <div className="flex flex-col lg:flex-row gap-6 justify-left items-left">
             <div className="flex flex-col items-left">
-              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">1. CPU Type</h3>
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3.5">{t('dedicated.step1')}</h3>
               <div className="flex flex-wrap gap-2">
-                {config.planTypes.map((cpu) => (
-                  <button
-                    key={cpu.id}
-                    onClick={() => setSelectedCPU(cpu.id)}
-                    className={`flex items-center gap-3 px-6 py-2 rounded-lg font-medium transition-all duration-300 ${selectedCPU === cpu.id
-                        ? "bg-blue-600 dark:bg-blue-500/40 dark:text-blue-400 text-white shadow-lg"
-                        : "bg-gray-200 dark:bg-gray-800/20 dark:border-blue-600/40 border border-blue-600/20 text-gray-700 dark:text-blue-400 "
+                {config.planTypes
+                  .filter(cpu => availableCPUs.includes(cpu.id))
+                  .map((cpu) => {
+                  const isAvailable = availableCPUs.includes(cpu.id)
+                  const isSelected = selectedCPU === cpu.id
+                  
+                  return (
+                    <button
+                      key={cpu.id}
+                      onClick={() => handleCPUSelection(cpu.id)}
+                      disabled={!isAvailable}
+                      className={`flex items-center gap-3 px-6 py-2 rounded-tl-2xl rounded-br-2xl font-medium transition-all duration-300 ${
+                        isSelected
+                          ? "button-primary border-primary text-button-primary shadow-lg"
+                          : isAvailable
+                          ? "bg-gray-200 dark:bg-gray-800/20 border border-secondary text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700/30 hover:border-secondary"
+                          : "bg-gray-100 dark:bg-gray-800/10 border border-primary text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-50"
                       }`}
-                  >
-                    <Image
-                      src={cpu.image || "/placeholder.svg"}
-                      alt={cpu.name}
-                      width={32}
-                      height={32}
-                      className="rounded-md object-contain"
-                    />
-                    <span className="text-sm font-semibold">{cpu.displayName}</span>
-                  </button>
-                ))}
+                    >
+                      <Image
+                        src={cpu.image || "/placeholder.svg"}
+                        alt={cpu.name}
+                        width={32}
+                        height={32}
+                        className={`rounded-md object-contain ${!isAvailable ? 'opacity-50' : ''}`}
+                      />
+                      <span className="text-sm font-semibold">{cpu.displayName}</span>
+                    </button>
+                  )
+                })}
               </div>
             </div>
 
             <div className="flex flex-col items-left">
-              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3.5">Location</h3>
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3.5">{t('dedicated.location')}</h3>
               <div className="flex flex-wrap gap-2">
-                {config.locations.map((location) => (
-                  <button
-                    key={location.id}
-                    onClick={() => setSelectedLocation(location.id)}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-md font-medium transition-all duration-300  ${selectedLocation === location.id
-                        ? "bg-blue-600 dark:bg-blue-500/40 dark:text-blue-400 text-white shadow-lg"
-                        : "bg-gray-200 dark:bg-gray-800/20 dark:border-blue-600/40 border border border-blue-600/20 text-gray-700 dark:text-blue-400 "
+                {config.locations.map((location) => {
+                  const hasAvailableCpus = location.availableCpus.length > 0
+                  const isSelected = selectedLocation === location.id
+                  
+                  return (
+                    <button
+                      key={location.id}
+                      onClick={() => handleLocationSelection(location.id)}
+                      disabled={!hasAvailableCpus}
+                      className={`flex items-center gap-3 px-6 py-3.5 rounded-tl-2xl rounded-br-2xl font-medium transition-all duration-300 ${
+                        isSelected
+                          ? "button-primary border-primary text-button-primary shadow-lg"
+                          : hasAvailableCpus
+                          ? "bg-gray-200 dark:bg-gray-800/20 border border-secondary text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700/30 hover:border-secondary"
+                          : "bg-gray-100 dark:bg-gray-800/10 border border-primary text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-50"
                       }`}
-                  >
-                    <Image
-                      src={location.flag || "/placeholder.svg"}
-                      alt={`${location.name} flag`}
-                      width={24}
-                      height={24}
-                      className="rounded-full object-cover"
-                    />
-                    <span className="text-sm font-medium">{location.displayName}</span>
-                  </button>
-                ))}
+                    >
+                      <Image
+                        src={location.flag || "/placeholder.svg"}
+                        alt={`${location.name} flag`}
+                        width={32}
+                        height={32}
+                        className={`rounded-full object-cover ${!hasAvailableCpus ? 'opacity-50' : ''}`}
+                      />
+                      <span className="text-sm font-medium">{location.displayName}</span>
+                    </button>
+                  )
+                })}
               </div>
             </div>
           </div>
         </motion.div>
-        <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">2. Choose Plan</h3>
+        <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">{t('dedicated.step2')}</h3>
 
-        {/* Plans Section - Now shows "No Stock Available" */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -147,16 +188,18 @@ export default function VDSPricingSection() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  className="relative bg-white dark:bg-gray-900/20 backdrop-blur-xl rounded-md overflow-hidden border border-blue-600/30 dark:border-blue-400/20 hover:border-blue-400 dark:hover:border-blue-400/50 transition-all duration-300"
+                  className="relative bg-white dark:bg-gray-950/20 backdrop-blur-xl rounded-md overflow-hidden border border-secondary hover:border-secondary dark:hover:border-secondary transition-all duration-300"
                 >
                   {plan.badge && (
                     <div className="absolute top-4 right-4">
-                      <span className="px-3 py-1 text-xs font-medium text-white bg-blue-600 rounded-full">
+                      <span className="px-3 py-1 text-xs font-medium text-white button-primary rounded-md">
                         {plan.badge}
                       </span>
                     </div>
                   )}
-                  <div className="p-6">
+                  <div
+                  style={{backgroundColor:"#0a0a0a"}}
+                  className="p-6">
                     <div className="flex items-center gap-4 mb-6">
                       <Image
                         src={
@@ -174,41 +217,49 @@ export default function VDSPricingSection() {
                         </p>
                       </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div 
+                    className="grid grid-cols-2 gap-4 mb-6">
                       <div className="flex flex-col gap-1">
                         <div className="flex items-center gap-2">
-                          <Cpu className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                          <span className="text-sm text-gray-600 dark:text-gray-400">{plan.cpuDetail}</span>
+                          <Cpu className="w-4 h-4 icon-primary" />
+                          <span className="text-sm text-gray-600 dark:text-gray-200">{plan.cpuDetail}</span>
                         </div>
                         <span className="text-lg font-medium text-gray-900 dark:text-white">{plan.cpu}</span>
                       </div>
                       <div className="flex flex-col gap-1">
                         <div className="flex items-center gap-2">
-                          <MemoryStick className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                          <span className="text-sm text-gray-600 dark:text-gray-400">{plan.ramDetail}</span>
+                          <MemoryStick className="w-4 h-4 icon-primary" />
+                          <span className="text-sm text-gray-600 dark:text-gray-200">{plan.ramDetail}</span>
                         </div>
                         <span className="text-lg font-medium text-gray-900 dark:text-white">{plan.ram}</span>
                       </div>
                       <div className="flex flex-col gap-1">
                         <div className="flex items-center gap-2">
-                          <HardDrive className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                          <span className="text-sm text-gray-600 dark:text-gray-400">{plan.storageDetail}</span>
+                          <HardDrive className="w-4 h-4 icon-primary" />
+                          <span className="text-sm text-gray-600 dark:text-gray-200">{plan.storageDetail}</span>
                         </div>
                         <span className="text-lg font-medium text-gray-900 dark:text-white">{plan.storage}</span>
                       </div>
                       <div className="flex flex-col gap-1">
                         <div className="flex items-center gap-2">
-                          <Wifi className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                          <span className="text-sm text-gray-600 dark:text-gray-400">{plan.bandwidthDetail}</span>
+                          <Wifi className="w-4 h-4 icon-primary" />
+                          <span className="text-sm text-gray-600 dark:text-gray-200">{plan.bandwidthDetail}</span>
                         </div>
                         <span className="text-lg font-medium text-gray-900 dark:text-white">{plan.bandwidth}</span>
+                      </div>
+                      <div className="flex flex-col gap-1">
+                        <div className="flex items-center gap-2">
+                          <Timer className="w-4 h-4 icon-primary" />
+                          <span className="text-sm text-gray-600 dark:text-gray-200">{plan.delivery}</span>
+                        </div>
+                        <span className="text-lg font-medium text-gray-900 dark:text-white">{plan.time}</span>
                       </div>
                     </div>
                     <div className="space-y-2 mb-6">
                       {plan.features.map((feature, i) => (
                         <div key={i} className="flex items-center gap-2">
-                          <Check className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                          <span className="text-sm text-gray-600 dark:text-gray-400">{feature}</span>
+                          <Check className="w-4 h-4 icon-primary" />
+                          <span className="text-sm text-gray-600 dark:text-gray-200">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -217,13 +268,13 @@ export default function VDSPricingSection() {
                         <span className="text-3xl font-bold text-gray-900 dark:text-white">
                           {convertPrice(plan.price)}
                         </span>
-                        <span className="ml-1 text-gray-500 dark:text-gray-400">{plan.period}</span>
+                        <span className="ml-1 text-gray-500 dark:text-gray-200">{plan.period}</span>
                       </div>
                       <a
                         href={plan.orderLink}
-                        className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-600/20 text-white dark:text-blue-400 px-6 py-3 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2"
+                        className="orbitron-font w-full button-primary text-button-primary px-6 py-3 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2 border border-transparent hover:bg-[var(--hover-gradient)] hover:text-[var(--icon-text-primary)] hover:border-[var(--border-secondary)]"
                       >
-                        NO STOCK
+                        {t('common.orderNow')}
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
@@ -239,10 +290,9 @@ export default function VDSPricingSection() {
                 <div className="w-24 h-24 mx-auto mb-6  rounded-full flex items-center justify-center">
                   <Server className="w-12 h-12 text-gray-400 dark:text-gray-500" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">No Stock Available</h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('dedicated.noStock')}</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md">
-                  We're currently out of stock for all VDS configurations. Please check back later or contact our
-                  support team for updates.
+                  {t('dedicated.noStockDescription')}
                 </p>
 
               </div>

@@ -1,66 +1,387 @@
 {
-  "header": {
-    "badge": {
-      "text": "Servidores Dedicados"
-    },
-    "title": "Elige tu dedicado",
-    "description": "Tenemos Servidores Dedicados de Alta Gama más económicos de México con la mejor latencia nacional y mundial, protegidos con 15Gbps antiddos."
-  },
   "planTypes": [
-    {
-      "id": "ryzen-7",
-      "name": "AMD Ryzen 7",
-      "displayName": "AMD Ryzen 7",
-      "image": "/cpu/ryzen7.png"
-    },
-    {
-      "id": "ryzen-9",
-      "name": "AMD Ryzen 9",
-      "displayName": "AMD Ryzen 9",
-      "image": "/cpu/ryzen9.png"
-    }
+    { "id": "miami-ryzen-5", "name": "AMD Ryzen 5", "displayName": "AMD Ryzen 5", "image": "/cpu/ryzen5.webp" },
+    { "id": "miami-ryzen-7", "name": "AMD Ryzen 7", "displayName": "AMD Ryzen 7", "image": "/cpu/ryzen7.png" },
+    { "id": "miami-ryzen-9", "name": "AMD Ryzen 9", "displayName": "AMD Ryzen 9", "image": "/cpu/ryzen9.png" },
+
+    { "id": "la-ryzen-5", "name": "AMD Ryzen 5", "displayName": "AMD Ryzen 5", "image": "/cpu/ryzen5.webp" },
+    { "id": "la-ryzen-7", "name": "AMD Ryzen 7", "displayName": "AMD Ryzen 7", "image": "/cpu/ryzen7.png" },
+    { "id": "la-ryzen-9", "name": "AMD Ryzen 9", "displayName": "AMD Ryzen 9", "image": "/cpu/ryzen9.png" },
+
+    { "id": "nyc-ryzen-5", "name": "AMD Ryzen 5", "displayName": "AMD Ryzen 5", "image": "/cpu/ryzen5.webp" },
+    { "id": "nyc-ryzen-7", "name": "AMD Ryzen 7", "displayName": "AMD Ryzen 7", "image": "/cpu/ryzen7.png" },
+    { "id": "nyc-ryzen-9", "name": "AMD Ryzen 9", "displayName": "AMD Ryzen 9", "image": "/cpu/ryzen9.png" }
   ],
+
   "locations": [
     {
-      "id": "usa",
-      "name": "MEXICO",
-      "flag": "/flags/mexico.webp",
-      "displayName": "MEXICO",
-      "cpu": "AMD Ryzen 9"
+      "id": "miami",
+      "name": "MIA",
+      "flag": "/flags/usa.png",
+      "displayName": "MIA",
+      "availableCpus": ["miami-ryzen-5", "miami-ryzen-7", "miami-ryzen-9"]
+    },
+    {
+      "id": "losangeles",
+      "name": "LA",
+      "flag": "/flags/usa.png",
+      "displayName": "LA",
+      "availableCpus": ["la-ryzen-5", "la-ryzen-7", "la-ryzen-9"]
+    },
+    {
+      "id": "new-york",
+      "name": "NYC",
+      "flag": "/flags/usa.png",
+      "displayName": "NYC",
+      "availableCpus": ["nyc-ryzen-5", "nyc-ryzen-7", "nyc-ryzen-9"]
     }
   ],
+
   "plans": {
-    "ryzen-7": [
+    "la-ryzen-5": [
       {
-        "id": "VDS-R7-04",
-        "name": "NO STOCK",
-        "badge": "Enterprise",
-        "cpu": "16 Cores",
-        "cpuDetail": "AMD Ryzen 7",
+        "id": "DEDI-R5-02",
+        "name": "6 Core Server",
+        "badge": "Popular",
+        "cpu": "6 Cores",
+        "cpuDetail": "AMD Ryzen 5600X",
         "ram": "128 GB",
         "ramDetail": "DDR4 RAM",
+        "storage": "1 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Ancho de banda",
+        "price": "£99.00",
+        "period": "/mo",
+        "time": "10 MIN",
+        "delivery": "Entrega Rapida",
+        "features": [
+          "Acceso ROOT",
+          "Soporte Profesional Prioritario",
+          "99.99% Uptime",
+          "100Gbps Proteccion DDoS",
+          "KVM",
+          "10Tbps AntiDDoS + 15.00EUR/mes"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-7/basic"
+      }
+    ],
+    "la-ryzen-7": [
+      {
+        "id": "DEDI-R7-01",
+        "name": "8 Core Server",
+        "badge": "Popular",
+        "cpu": "8 Cores",
+        "cpuDetail": "AMD Ryzen 3700X",
+        "ram": "64 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "2X 512GB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Ancho de banda",
+        "price": "£84.00",
+        "period": "/mo",
+        "time": "10 MIN",
+        "delivery": "Entrega Rapida",
+        "features": [
+          "Acceso ROOT",
+          "Soporte Profesional Prioritario",
+          "99.99% Uptime",
+          "100Gbps Proteccion DDoS",
+          "KVM",
+          "10Tbps AntiDDoS + 15.00EUR/mes"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-7/basic"
+      },
+      {
+        "id": "DEDI-R7-02",
+        "name": "8 Core Server",
+        "badge": "Popular",
+        "cpu": "8 Cores",
+        "cpuDetail": "AMD Ryzen 5800X",
+        "ram": "64 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "512 GB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Ancho de banda",
+        "price": "£99.00",
+        "period": "/mo",
+        "time": "10 MIN",
+        "delivery": "Entrega Rapida",
+        "features": [
+          "Acceso ROOT",
+          "Soporte Profesional Prioritario",
+          "99.99% Uptime",
+          "100Gbps Proteccion DDoS",
+          "KVM",
+          "10Tbps AntiDDoS + 15.00EUR/mes"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-7/basic"
+      },
+      {
+        "id": "DEDI-R7-03",
+        "name": "8 Core Server",
+        "badge": "Popular",
+        "cpu": "8 Cores",
+        "cpuDetail": "AMD Ryzen 5800X",
+        "ram": "128 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "1 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Ancho de banda",
+        "price": "£119.00",
+        "period": "/mo",
+        "time": "10 MIN",
+        "delivery": "Entrega Rapida",
+        "features": [
+          "Acceso ROOT",
+          "Soporte Profesional Prioritario",
+          "99.99% Uptime",
+          "100Gbps Proteccion DDoS",
+          "KVM",
+          "10Tbps AntiDDoS + 15.00EUR/mes"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-7/basic"
+      },
+      {
+        "id": "DEDI-R7-04",
+        "name": "8 Core Server",
+        "badge": "Popular",
+        "cpu": "8 Cores",
+        "cpuDetail": "AMD Ryzen 7700",
+        "ram": "128 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "2x1 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Ancho de banda",
+        "price": "£139.00",
+        "period": "/mo",
+        "time": "10 MIN",
+        "delivery": "Entrega Rapida",
+        "features": [
+          "Acceso ROOT",
+          "Soporte Profesional Prioritario",
+          "99.99% Uptime",
+          "100Gbps Proteccion DDoS",
+          "KVM",
+          "10Tbps AntiDDoS + 15.00EUR/mes"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-7/basic"
+      }
+    ],
+    "la-ryzen-9": [
+      {
+        "id": "DEDI-R9-01",
+        "name": "12 Core Server",
+        "badge": "Popular",
+        "cpu": "12 Cores",
+        "cpuDetail": "AMD Ryzen 5900X",
+        "ram": "128 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "2 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Ancho de banda",
+        "price": "£119.00",
+        "period": "/mo",
+        "time": "10 MIN",
+        "delivery": "Entrega Rapida",
+        "features": [
+          "Acceso ROOT",
+          "Soporte Profesional Prioritario",
+          "99.99% Uptime",
+          "100Gbps Proteccion DDoS",
+          "KVM",
+          "10Tbps AntiDDoS + 15.00EUR/mes"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-7/basic"
+      },
+      {
+        "id": "DEDI-R9-02",
+        "name": "12 Core Server",
+        "badge": "Popular",
+        "cpu": "12 Cores",
+        "cpuDetail": "AMD Ryzen 7900X",
+        "ram": "192 GB",
+        "ramDetail": "DDR7 RAM",
+        "storage": "2X4 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Ancho de banda",
+        "price": "£179.00",
+        "period": "/mo",
+        "time": "10 MIN",
+        "delivery": "Entrega Rapida",
+        "features": [
+          "Acceso ROOT",
+          "Soporte Profesional Prioritario",
+          "99.99% Uptime",
+          "100Gbps Proteccion DDoS",
+          "KVM",
+          "10Tbps AntiDDoS + 15.00EUR/mes"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-7/basic"
+      },
+      {
+        "id": "DEDI-R9-03",
+        "name": "12 Core Server",
+        "badge": "Popular",
+        "cpu": "12 Cores",
+        "cpuDetail": "AMD Ryzen 9900X",
+        "ram": "192 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "2X4 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Ancho de banda",
+        "price": "£199.00",
+        "period": "/mo",
+        "time": "10 MIN",
+        "delivery": "Entrega Rapida",
+        "features": [
+          "Acceso ROOT",
+          "Soporte Profesional Prioritario",
+          "99.99% Uptime",
+          "100Gbps Proteccion DDoS",
+          "KVM",
+          "10Tbps AntiDDoS + 15.00EUR/mes"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-7/basic"
+      }
+    ],
+    "miami-ryzen-5": [
+      {
+        "id": "DEDI-R5-01",
+        "name": "6 Core Server",
+        "badge": "Popular",
+        "cpu": "6 Cores",
+        "cpuDetail": "AMD Ryzen 5600X",
+        "ram": "64 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "500 GB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Ancho de banda",
+        "price": "£89.00",
+        "period": "/mo",
+        "time": "10 MIN",
+        "delivery": "Entrega Rapida",
+        "features": [
+          "Acceso ROOT",
+          "Soporte Profesional Prioritario",
+          "99.99% Uptime",
+          "100Gbps Proteccion DDoS",
+          "KVM",
+          "10Tbps AntiDDoS + 15.00EUR/mes"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-7/basic"
+      },
+      {
+        "id": "DEDI-R5-02",
+        "name": "6 Core Server",
+        "badge": "Popular",
+        "cpu": "6 Cores",
+        "cpuDetail": "AMD Ryzen 5600X",
+        "ram": "128 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "1 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Ancho de banda",
+        "price": "£99.00",
+        "period": "/mo",
+        "time": "10 MIN",
+        "delivery": "Entrega Rapida",
+        "features": [
+          "Acceso ROOT",
+          "Soporte Profesional Prioritario",
+          "99.99% Uptime",
+          "100Gbps Proteccion DDoS",
+          "KVM",
+          "10Tbps AntiDDoS + 15.00EUR/mes"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-7/basic"
+      }
+    ],
+    "miami-ryzen-7": [
+      {
+        "id": "VDS-R9-01",
+        "name": "VDS-R9-Basic",
+        "badge": "Popular",
+        "cpu": "6 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "32 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "1 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "£85.00",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-9/basic"
+      },
+      {
+        "id": "VDS-R9-02",
+        "name": "VDS-R9-Standard",
+        "badge": "Best Value",
+        "cpu": "8 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "64 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "2 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "£145.00",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-9/standard"
+      },
+      {
+        "id": "VDS-R9-03",
+        "name": "VDS-R9-Pro",
+        "badge": "Professional",
+        "cpu": "12 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "128 GB",
+        "ramDetail": "DDR5 RAM",
         "storage": "4 TB",
         "storageDetail": "NVMe SSD",
         "bandwidth": "Unlimited",
         "bandwidthDetail": "Bandwidth",
-        "price": "£245.00",
+        "price": "£225.00",
         "period": "/mo",
         "features": [
-          "Acceso completo Root",
-          "Soporte avanzado",
+          "Full Root Access",
+          "24/7 Support",
           "99.9% Uptime",
-          "Protección DDoS",
-          "RAM DDR5",
-          "IP Dedicada",
-          "Configuracion personalizada"
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
         ],
-        "orderLink": "https://lobby.cprot.net"
-      }
-    ],
-    "ryzen-9": [
+        "orderLink": "https://example.com/order/vds/ryzen-9/pro"
+      },
       {
         "id": "VDS-R9-04",
-        "name": "NO STOCK",
+        "name": "VDS-R9-Enterprise",
         "badge": "Enterprise",
         "cpu": "16 Cores",
         "cpuDetail": "AMD Ryzen 9",
@@ -73,15 +394,362 @@
         "price": "£395.00",
         "period": "/mo",
         "features": [
-          "Acceso completo Root",
-          "Soporte avanzado",
+          "Full Root Access",
+          "24/7 Support",
           "99.9% Uptime",
-          "Protección DDoS",
-          "RAM DDR5",
-          "IP Dedicada",
-          "Configuracion personalizada"
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
         ],
-        "orderLink": "https://lobby.cprot.net"
+        "orderLink": "https://example.com/order/vds/ryzen-9/enterprise"
+      }
+    ],
+    "miami-ryzen-9": [
+      {
+        "id": "VDS-R9-01",
+        "name": "VDS-R9-Basic",
+        "badge": "Popular",
+        "cpu": "6 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "32 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "1 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "£85.00",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-9/basic"
+      },
+      {
+        "id": "VDS-R9-02",
+        "name": "VDS-R9-Standard",
+        "badge": "Best Value",
+        "cpu": "8 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "64 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "2 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "£145.00",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-9/standard"
+      },
+      {
+        "id": "VDS-R9-03",
+        "name": "VDS-R9-Pro",
+        "badge": "Professional",
+        "cpu": "12 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "128 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "4 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "£225.00",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-9/pro"
+      },
+      {
+        "id": "VDS-R9-04",
+        "name": "VDS-R9-Enterprise",
+        "badge": "Enterprise",
+        "cpu": "16 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "256 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "8 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "£395.00",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-9/enterprise"
+      }
+    ],
+    "nyc-ryzen-5": [
+      {
+        "id": "DEDI-R5-02",
+        "name": "6 Core Server",
+        "badge": "Popular",
+        "cpu": "6 Cores",
+        "cpuDetail": "AMD Ryzen 5600X",
+        "ram": "128 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "1 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Ancho de banda",
+        "price": "£99.00",
+        "period": "/mo",
+        "time": "10 MIN",
+        "delivery": "Entrega Rapida",
+        "features": [
+          "Acceso ROOT",
+          "Soporte Profesional Prioritario",
+          "99.99% Uptime",
+          "100Gbps Proteccion DDoS",
+          "KVM",
+          "10Tbps AntiDDoS + 15.00EUR/mes"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-7/basic"
+      },
+      {
+        "id": "DEDI-R5-03",
+        "name": "6 Core Server",
+        "badge": "Popular",
+        "cpu": "6 Cores",
+        "cpuDetail": "AMD Ryzen 7600",
+        "ram": "128 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "2x1 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Ancho de banda",
+        "price": "£119.00",
+        "period": "/mo",
+        "time": "10 MIN",
+        "delivery": "Entrega Rapida",
+        "features": [
+          "Acceso ROOT",
+          "Soporte Profesional Prioritario",
+          "99.99% Uptime",
+          "100Gbps Proteccion DDoS",
+          "KVM",
+          "10Tbps AntiDDoS + 15.00EUR/mes"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-7/basic"
+      }
+    ],
+    "nyc-ryzen-7": [
+      {
+        "id": "VDS-R9-01",
+        "name": "VDS-R9-Basic",
+        "badge": "Popular",
+        "cpu": "6 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "32 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "1 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "£85.00",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-9/basic"
+      },
+      {
+        "id": "VDS-R9-02",
+        "name": "VDS-R9-Standard",
+        "badge": "Best Value",
+        "cpu": "8 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "64 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "2 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "£145.00",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-9/standard"
+      },
+      {
+        "id": "VDS-R9-03",
+        "name": "VDS-R9-Pro",
+        "badge": "Professional",
+        "cpu": "12 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "128 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "4 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "£225.00",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-9/pro"
+      },
+      {
+        "id": "VDS-R9-04",
+        "name": "VDS-R9-Enterprise",
+        "badge": "Enterprise",
+        "cpu": "16 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "256 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "8 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "£395.00",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-9/enterprise"
+      }
+    ],
+    "nyc-ryzen-9": [
+      {
+        "id": "VDS-R9-01",
+        "name": "VDS-R9-Basic",
+        "badge": "Popular",
+        "cpu": "6 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "32 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "1 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "£85.00",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-9/basic"
+      },
+      {
+        "id": "VDS-R9-02",
+        "name": "VDS-R9-Standard",
+        "badge": "Best Value",
+        "cpu": "8 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "64 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "2 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "£145.00",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-9/standard"
+      },
+      {
+        "id": "VDS-R9-03",
+        "name": "VDS-R9-Pro",
+        "badge": "Professional",
+        "cpu": "12 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "128 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "4 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "£225.00",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-9/pro"
+      },
+      {
+        "id": "VDS-R9-04",
+        "name": "VDS-R9-Enterprise",
+        "badge": "Enterprise",
+        "cpu": "16 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "256 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "8 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "£395.00",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://example.com/order/vds/ryzen-9/enterprise"
       }
     ]
   }

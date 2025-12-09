@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 import uiConfig from "../../config/sections/ui.json";
 import type { UIConfig, Currency } from "../../types/ui";
 
@@ -22,7 +23,6 @@ export function CurrencySelector({
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Click outside to close dropdown
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -100,6 +100,24 @@ export function CurrencySelector({
           <ChevronDown className="w-4 h-4" />
         </motion.div>
       </motion.button>
+       {uiConfig.christmasTheme.enabled && (
+        <>
+          <Image
+            src="/christmas/button-deco-up.png"
+            alt="Christmas decoration"
+            width={28}
+            height={28}
+            className="absolute -top-2 -right-2 pointer-events-none"
+          />
+          <Image
+            src="/christmas/button-deco-down.png"
+            alt="Christmas decoration"
+            width={28}
+            height={28}
+            className="absolute -bottom-2 -left-2 pointer-events-none"
+          />
+        </>
+      )}
 
       <AnimatePresence>
         {isDropdownOpen && (
@@ -195,14 +213,13 @@ export function useCurrency(): UseCurrencyReturn {
   }, []);
 
   const convertPrice = (price: string): string => {
-    // Remove any currency symbols and extract the numeric value
+    
     const numericPrice = parseFloat(price.replace(/[£$€¥C\$A\$]/g, ''));
     
     if (isNaN(numericPrice)) {
       return `${selectedCurrency.symbol}0.00`;
     }
 
-    // If the selected currency is the same as base currency, no conversion needed
     if (selectedCurrency.code === config.currency.baseCurrency) {
       if (selectedCurrency.code === "JPY") {
         return `${selectedCurrency.symbol}${Math.round(numericPrice)}`;
@@ -210,7 +227,6 @@ export function useCurrency(): UseCurrencyReturn {
       return `${selectedCurrency.symbol}${numericPrice.toFixed(2)}`;
     }
     
-    // Check if we have exchange rates
     if (!exchangeRates[selectedCurrency.code]) {
       if (selectedCurrency.code === "JPY") {
         return `${selectedCurrency.symbol}${Math.round(numericPrice)}`;

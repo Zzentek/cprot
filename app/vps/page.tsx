@@ -14,10 +14,10 @@ export default function Home() {
       <Navbar />
       <VPSPricingSection />
       <OSSelectionSection />
-      <PanelShowcase />
       <FeaturesSection />
       <LocationsSection />
       <FAQSection />
+      <PanelShowcase />
       <Footer />
     </div>
   )

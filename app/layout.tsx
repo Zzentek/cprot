@@ -3,6 +3,11 @@ import { Geist, Geist_Mono, Orbitron, Quicksand } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/theme-provider";
 import { LayoutWrapper } from "./components/layout-wrapper";
+import { LanguageProvider } from "./contexts/LanguageContext";
+import CookieConsent from "./components/CookieConsent";
+import ThemeSwitcher from "./components/ThemeSwitcher";
+import ChristmasSnowfall from "./components/ChristmasSnowfall";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,7 +15,7 @@ const geistSans = Geist({
   display: "swap",
   preload: true,
 });
-
+// hi there
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -33,7 +38,7 @@ const quicksand = Quicksand({
   display: "swap",
   preload: false,
 });
-
+// hello again
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -46,66 +51,60 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "CPROT Hosting, Minecraft Servers y VPS",
+    default: "CPROT - VPS, Minecraft Hosting y Servidores Dedicados",
     template: "%s | CPROT"
   },
-  description: "El mejor Hosting de México te ofrece: Minecraft Servers, VPS y la mejor latencia a nivel nacional y LATAM.",
+  description: "El mejor hosting VPS y Minecraft en Latinoamérica. Protección DDoS, soporte rapido y profesional",
   keywords: [
     "game hosting",
     "minecraft hosting",
-    "minecraft server",
-    "minecraft server hosting",
     "discord bot hosting",
     "VPS hosting",
-    "VPS",
-    "VPS Mexico",
-    "VPS Ryzen",
-    "VPS Intel",
-    "VPS barato",
     "dedicated servers",
-    "Servidores dedicados",
     "cloud servers",
     "gaming servers",
-    "Hosting bajo ping",
-    "Proteccion ddos",
-    "Soporte 24/7",
-    "Hosting Mexico",
-    "Hostinguer",
-    "SuperCores"
+    "CPROT Hosting",
+    "CPROT servers",
+    "CPROT",
+    "Minecraft Servers",
+    "VPS miami",
+    "Cheap VPS",
+    "Dedicated server rental",
+    "cloud hosting",
+    "low latency hosting",
+    "DDoS protection",
+    "24/7 support",
+    "custom server hosting",
+    "modded game hosting",
+    "server rental"
   ],
-  authors: [{ name: "Carlos Soltero" }],
-  creator: "Carlos Soltero",
-  publisher: "CPROT Hosting",
-  category: "VPS Hosting & Minecraft servers",
-  
-  // Open Graph metadata
+  authors: [{ name: "CPROT " }],
+  creator: "CPROT",
+  publisher: "TEAM CPROT",
+  category: "Minecraft Hosting y VPS",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_ES",
     url: "https://cprot.net",
-    siteName: "CPROT Hosting",
-    title: "El mejor Hosting VPS y Minecraft Servers de Mexico",
-    description: "Ofrecemos los servicios de Hosting con la latencia más baja a nivel nacional e internacional con proteccion DDoS.",
+    siteName: "CPROT - VPS & Minecraft Servers",
+    title: "CPROT - VPS & Minecraft Servers",
+    description: "El mejor hosting VPS y Minecraft en Latinoamérica. Protección DDoS, soporte rapido y profesional",
     images: [
       {
         url: "https://cdn.cprot.net/CPROT-LANDING/Banner.webp",
         width: 1200,
         height: 630,
-        alt: "CPROT - Minecraft Hosting y VPS barato",
-        type: "image/webp"
+        alt: "CPROT Hosting",
+        type: "image/png"
       }
     ]
   },
-
-  // Twitter Card metadata
   twitter: {
     card: "summary_large_image",
-    title: "CPROT Hosting - VPS y Minecraft Servers barato",
-    description: "Ofrecemos los servicios de Hosting con la latencia más baja a nivel nacional e internacional con proteccion DDoS.",
-    images: ["https://cdn.cprot.net/CPROT-LANDING/Banner.webp"],
+    title: "CPROT - VPS & Minecraft Servers",
+    description: "El mejor hosting VPS y Minecraft en Latinoamérica. Protección DDoS, soporte rapido y profesional",
+    images: ["https://cdn.cprot.net/CPROT-LANDING/Banner.webp"]
   },
-
-  // Additional metadata with bot protection
   robots: {
     index: true,
     follow: true,
@@ -123,22 +122,22 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: "vzsKvhNUgAPlCbf1annB0Sl-bttSFos87mhOyQSU2aY", // Replace with actual verification code
+    google: "vzsKvhNUgAPlCbf1annB0Sl-bttSFos87mhOyQSU2aY", 
   },
 
-  applicationName: "CPROT",
+  applicationName: "CPROT Hosting",
   referrer: "origin-when-cross-origin",
 
   manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/meta/Favicon.svg", sizes: "32x32", type: "image/svg" },
-      { url: "/meta/Favicon.svg", sizes: "16x16", type: "image/svg" }
+      { url: "https://cdn.cprot.net/CPROT-LANDING/Favicon.svg", sizes: "32x32", type: "image/png" },
+      { url: "https://cdn.cprot.net/CPROT-LANDING/Favicon.svg", sizes: "16x16", type: "image/png" }
     ],
     apple: [
-      { url: "/meta/Favicon.svg", sizes: "180x180", type: "image/svg" }
+      { url: "https://cdn.cprot.net/CPROT-LANDING/Favicon.svg", sizes: "180x180", type: "image/png" }
     ],
-    shortcut: "/meta/Favicon.svg"
+    shortcut: "https://cdn.cprot.net/CPROT-LANDING/Favicon.svg"
   },
 
   alternates: {
@@ -148,23 +147,23 @@ export const metadata: Metadata = {
     "msapplication-TileColor": "#1e40af",
     "msapplication-config": "/browserconfig.xml",
     "terms-of-service": "https://cprot.net/terms-of-services",
-    "privacy-policy": "https://cprot.net/aviso-privacidad",
+    "privacy-policy": "https://cprot.net/privacy-policy"
   }
 };
-
+// yo yo, wassup, ma name is big A aka the big ANTHONYYYYYYYYYYYYYYYYYY. like my work so far? rate it a 5 star on BBB pweaseeeeeeeeee
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="CPROT" />
+        <meta name="apple-mobile-web-app-title" content="DezerNova" />
         <meta name="crawl-delay" content="10" />
         <meta name="revisit-after" content="7 days" />
         <script
@@ -173,22 +172,22 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "CPROT Hosting",
+              "name": "TEAM CPROT ",
               "url": "https://cprot.net",
-              "logo": "https://cdn.cprot.net/CPROT-LANDING/Favicon.svg",
-              "description": "El mejor Hosting de México te ofrece: Minecraft Servers, VPS y la mejor latencia a nivel nacional y LATAM.",
-              "serviceType": ["Game Server Hosting", "VPS Hosting", "Servidores Dedicados", "Minecraft server", "VPS Miami", "VPS Mexico"],
+              "logo": "https://cdn.cprot.net/CPROT-LANDING/Banner.webp",
+    description: "El mejor hosting VPS y Minecraft en Latinoamérica. Protección DDoS, soporte rapido y profesional",
+              "serviceType": ["Game Server Hosting", "VPS Hosting", "Dedicated Servers", "Minecraft Servers"],
               "areaServed": "Worldwide",
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
-                "name": "Minecraft Servers y VPS Hosting",
+                "name": "VPS y Minecraft Hosting",
                 "itemListElement": [
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
                       "name": "Minecraft Hosting",
-                      "description": "Alto rendimiento con bajisima latencia para Mexico y LATAM con proteccion DDoS."
+                      "description": "Servidores de alto rendimiento con soporte rápido y profesional"
                     }
                   },
                   {
@@ -196,15 +195,15 @@ export default function RootLayout({
                     "itemOffered": {
                       "@type": "Service",
                       "name": "VPS Hosting",
-                      "description": "Servidores VPS KVM con full root y proteccion DDoS."
+                      "description": "Servidores privados virtuales con soporte rápido y profesional"
                     }
                   },
                   {
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service", 
-                      "name": "Servidores Dedicados",
-                      "description": "Servidores BareMetal con una entrega instantánea."
+                      "name": "Dedicated Servers",
+                      "description": "Bare metal servers for maximum performance"
                     }
                   }
                 ]
@@ -214,29 +213,35 @@ export default function RootLayout({
               ],
               "contactPoint": {
                 "@type": "ContactPoint",
-                "contactType": "Soporte al cliente",
+                "contactType": "customer service",
                 "availableLanguage": "Spanish",
                 "serviceType": "Soporte Técnico",
-                "url": "https://lobby.cprot.net"
+                "url": "https://discord.cprot.net"
               },
               "founder": {
                 "@type": "Person",
-                "name": "Carlos SOltero "
+                "name": "TEAM CPROT "
               },
               "termsOfService": "https://cprot.net/terms-of-services",
-              "privacyPolicy": "https://cprot.net/aviso-privacidad"
+              "privacyPolicy": "https://cprot.net/privacy-policy"
             })
           }}
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${quicksand.variable} antialiased min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300`}
+        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${quicksand.variable} antialiased min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-300`}
         suppressHydrationWarning
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <LayoutWrapper>
-            {children}
-          </LayoutWrapper>
+          <LanguageProvider>
+            <ChristmasSnowfall />
+            <LayoutWrapper>
+              {children}
+              <Analytics />
+            </LayoutWrapper>
+            <CookieConsent />
+            <ThemeSwitcher />
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

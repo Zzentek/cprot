@@ -7,6 +7,8 @@ import Link from "next/link"
 import { CurrencySelector, useCurrency } from "./ui/CurrencySelector"
 import pricingConfig from "../config/sections/pricing.json"
 import type { PricingConfig } from "../types/pricing"
+import uiConfig from "../config/sections/ui.json";
+import type { UIConfig, Currency } from "../types/ui";
 
 const config = pricingConfig as PricingConfig
 
@@ -64,8 +66,9 @@ export default function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className={`relative backdrop-blur-sm border-2 border-gray-200 dark:border-white/10 rounded-md pt-0 hover:bg-gray-50 dark:hover:bg-transparent hover:border-blue-600 dark:hover:border-blue-600 transform transition-all duration-500
-                ${plan.popular? "border border-blue-300/50 dark:border-blue-400/50": ""}`} style={{backgroundColor: "#0a0a0a;", borderRadius: "12px"}}
+              style={{backgroundColor: "#0a0a0a", borderRadius: "12px"}}
+              className={`relative backdrop-blur-sm border-2 border-gray-200 dark:border-white/10 rounded-md pt-0 hover:border-blue-600 dark:hover:border-blue-600 transform transition-all duration-500
+                ${plan.popular? "border border-blue-300/50 dark:border-blue-400/50": ""}`} 
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 z-50 transform -translate-x-1/2">
@@ -109,17 +112,37 @@ export default function PricingSection() {
                     </li>
                   ))}
                 </ul>
-
-                <Link
-                  href={plan.link}
-                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 flex items-center justify-between group ${plan.buttonStyle === "primary"
-                    ? "bg-blue-100 dark:bg-blue-600 border border-blue-600 dark:border-none border-blue-600/40  hover:bg-blue-200 hover:scale-105 text-blue-700 dark:text-black"
-                    : "bg-blue-100 dark:bg-black border border-blue-600/60 dark:border-blue-400/40 hover:bg-blue-200 hover:scale-105 text-blue-700 dark:text-blue-600"
+                <div className="relative">
+                  <Link
+                    href={plan.link}
+                    className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 flex items-center justify-between group ${plan.buttonStyle === "primary"
+                    ? "bg-blue-100 dark:bg-blue-600 border border-blue-600 dark:border-none border-blue-600/40  hover:bg-blue-200 hover:scale-105 text-blue-500 dark:text-black"
+                    : "bg-blue-100 dark:bg-black border border-blue-600/60 dark:border-blue-400/40 hover:bg-blue-200 hover:scale-105 text-blue-500 dark:text-blue-500"
                     }`}
-                >
-                  <span className="w-full orbitron-font text-center">{plan.buttonText}</span>
-                  <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
+                  >
+                    <span className="w-full orbitron-font text-center">ORDENA AHORA</span>
+                    <ChevronRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
+                  {uiConfig.christmasTheme.enabled && (
+                    <>
+                      <Image
+                        src="/christmas/button-deco-up.png"
+                        alt="Christmas decoration"
+                        width={32}
+                        height={32}
+                        className="absolute -top-2 -right-2 pointer-events-none"
+                      />
+                      <Image
+                        src="/christmas/button-deco-down.png"
+                        alt="Christmas decoration"
+                        width={32}
+                        height={32}
+                        className="absolute -bottom-2 -left-2 pointer-events-none"
+                      />
+                    </>
+                  )}
+                </div>
+
               </div>
             </motion.div>
           ))}
@@ -134,10 +157,15 @@ export default function PricingSection() {
         >
           <p className="text-gray-600 dark:text-gray-400">
             {config.section.footer.text}{" "}
-            <span className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 cursor-pointer">{config.section.footer.linkText}</span>
+            <span className="text-blue-500 dark:text-blue-500 hover:text-blue-500 dark:hover:text-blue-300 cursor-pointer">{config.section.footer.linkText}</span>
           </p>
         </motion.div>
       </div>
     </div>
   )
 }
+
+
+
+
+

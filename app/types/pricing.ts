@@ -8,6 +8,10 @@ export interface PricingPlan {
   buttonStyle: "primary" | "secondary";
   popular: boolean;
   link: string;
+  titleKey: string;
+  descriptionKey: string;
+  featuresKeys: string[];
+  buttonTextKey: string;
 }
 
 export interface PricingSection {

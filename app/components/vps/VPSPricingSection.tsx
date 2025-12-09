@@ -59,7 +59,7 @@ export default function VPSPricingSection() {
   }
 
   return (
-    <div className="bg-gray-50 dark:bg-[#0a0b0f] relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="bg-black relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background Image and Gradients */}
       <div className="absolute inset-0">
         <div
@@ -68,8 +68,8 @@ export default function VPSPricingSection() {
             backgroundImage: `url('/vps/vps-hero-2.webp')`,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-gray-50/40 to-transparent dark:from-[#0a0b0f] dark:via-[#0a0b0f]/60 dark:to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-gray-50/80 to-gray-50/40 dark:from-[#0a0b0f] dark:via-[#0a0b0f]/60 dark:to-[#0a0b0f]/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-transparent dark:from-[#000000] dark:via-[#000000]/60 dark:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/40 dark:from-[#000000] dark:via-[#000000]/60 dark:to-[#000000]/60" />
       </div>
 
       {/* Content */}
@@ -141,10 +141,10 @@ export default function VPSPricingSection() {
                       disabled={!hasAvailableCpus}
                       className={`flex items-center gap-3 px-4 py-3 rounded-md font-medium transition-all duration-300 ${
                         isSelected
-                          ? "bg-blue-600 dark:bg-blue-500/20 dark:text-blue-400 text-white shadow-lg"
+                          ? "button-primary border-primary text-button-primary shadow-lg"
                           : hasAvailableCpus
-                          ? "bg-gray-200 dark:bg-gray-800/20 dark:border-blue-600/40 border border-blue-600/20 text-gray-700 dark:text-blue-400 hover:bg-gray-300 dark:hover:bg-gray-700/30"
-                          : "bg-gray-100 dark:bg-gray-800/10 border border-gray-300/40 dark:border-gray-600/20 text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-50"
+                          ? "bg-gray-200 dark:bg-gray-800/20 border border-secondary text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700/30 hover:border-secondary"
+                          : "bg-gray-100 dark:bg-gray-800/10 border button-primary text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-50"
                       }`}
                     >
                       <Image
@@ -176,10 +176,10 @@ export default function VPSPricingSection() {
                       disabled={!isAvailable}
                       className={`flex items-center gap-3 px-6 py-2 rounded-lg font-medium transition-all duration-300 ${
                         isSelected
-                          ? "bg-blue-600 dark:bg-blue-500/20 dark:text-blue-400 text-white shadow-lg"
+                          ? "button-primary border-primary text-button-primary shadow-lg"
                           : isAvailable
-                          ? "bg-gray-200 dark:bg-gray-800/20 dark:border-blue-600/40 border border-blue-600/20 text-gray-700 dark:text-blue-400 hover:bg-gray-300 dark:hover:bg-gray-700/30"
-                          : "bg-gray-100 dark:bg-gray-800/10 border border-gray-300/40 dark:border-gray-600/20 text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-50"
+                          ? "bg-gray-200 dark:bg-gray-800/20 border border-secondary text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700/30 hover:border-secondary"
+                          : "bg-gray-100 dark:bg-gray-800/10 border border-primary text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-50"
                       }`}
                     >
                       <Image
@@ -212,8 +212,9 @@ export default function VPSPricingSection() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.2, delay: 0.1 }}
-              className="bg-white dark:bg-gray-900/20 backdrop-blur-xl border border-blue-600/20 hover:border-blue-400 dark:border-blue-400/20 rounded-xl p-4 dark:hover:border-blue-400/50 hover:bg-blue-50/50 dark:hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%)] transition-all duration-300"
-            >
+              className="backdrop-blur-xl border border-blue-600/20 hover:border-blue-600 dark:border-blue-400/20 rounded-xl p-4 dark:hover:border-blue-600 transition-all duration-600"
+              style={{backgroundColor:"#0a0a0a"}}
+              >
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
                 {/* Location Image and Plan Info */}
                 <div className="flex items-center gap-4">
@@ -236,57 +237,57 @@ export default function VPSPricingSection() {
 
                 {/* Specs with lighter backgrounds */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4 flex-1">
-                  <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md bg-gray-50 dark:bg-gray-800/30">
+                  <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md" style={{backgroundColor:"#0d0d0d"}}>
                     <div className="flex items-center gap-2">
                       <Cpu className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                       <div className="text-xs text-gray-500 dark:text-gray-400">{plan.cpuDetail}</div>
                     </div>
-                    <div className="text-md font-medium bg-blue-50 dark:bg-gray-800/80 rounded-md px-2 py-1 text-blue-600 dark:text-blue-400">
+                    <div className="text-md font-medium rounded-md px-2 py-1 text-blue-600 dark:text-blue-400" style={{backgroundColor:"#201e1e"}}>
                       {plan.cpu}
                     </div>
                   </div>
-                  <div className="border border-blue-400/20 flex items-center justify-between px-2 py-2 rounded-md bg-gray-50 dark:bg-gray-800/30">
+                  <div className="border border-blue-400/20 flex items-center justify-between px-2 py-2 rounded-md" style={{backgroundColor:"#0d0d0d"}}>
                     <div className="flex items-center gap-2">
                       <MemoryStick className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                       <div className="text-xs text-gray-500 dark:text-gray-400">{plan.ramDetail}</div>
                     </div>
-                    <div className="text-md font-medium bg-blue-50 dark:bg-gray-800/80 rounded-md px-2 py-1 text-blue-600 dark:text-blue-400">
+                    <div className="text-md font-medium rounded-md px-2 py-1 text-blue-600 dark:text-blue-400" style={{backgroundColor:"#201e1e"}}>
                       {plan.ram}
                     </div>
                   </div>
-                  <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md bg-gray-50 dark:bg-gray-800/30">
+                  <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md" style={{backgroundColor:"#0d0d0d"}}>
                     <div className="flex items-center gap-2">
                       <HardDrive className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                       <div className="text-xs text-gray-500 dark:text-gray-400">{plan.storageDetail}</div>
                     </div>
-                    <div className="text-md font-medium bg-blue-50 dark:bg-gray-800/80 rounded-md px-2 py-1 text-blue-600 dark:text-blue-400">
+                    <div className="text-md font-medium rounded-md px-2 py-1 text-blue-600 dark:text-blue-400" style={{backgroundColor:"#201e1e"}}>
                       {plan.storage}
                     </div>
                   </div>
-                  <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md bg-gray-50 dark:bg-gray-800/30">
+                  <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md" style={{backgroundColor:"#0d0d0d"}}>
                     <div className="flex items-center gap-2">
                       <Wifi className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                       <div className="text-xs text-gray-500 dark:text-gray-400">{plan.bandwidthDetail}</div>
                     </div>
-                    <div className="text-md font-medium bg-blue-50 dark:bg-gray-800/80 rounded-md px-2 py-1 text-blue-600 dark:text-blue-400">
+                    <div className="text-md font-medium rounded-md px-2 py-1 text-blue-600 dark:text-blue-400" style={{backgroundColor:"#201e1e"}}>
                       {plan.bandwidth}
                     </div>
                   </div>
-                  <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md bg-gray-50 dark:bg-gray-800/30">
+                  <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md" style={{backgroundColor:"#0d0d0d"}}>
                     <div className="flex items-center gap-2">
                       <Wifi className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                       <div className="text-xs text-gray-500 dark:text-gray-400">{plan.antiddosDetail}</div>
                     </div>
-                    <div className="text-md font-medium bg-blue-50 dark:bg-gray-800/80 rounded-md px-2 py-1 text-blue-600 dark:text-blue-400">
+                    <div className="text-md font-medium rounded-md px-2 py-1 text-blue-600 dark:text-blue-400" style={{backgroundColor:"#201e1e"}}>
                       {plan.antiddos}
                     </div>
                   </div>
-                  <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md bg-gray-50 dark:bg-gray-800/30">
+                  <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md" style={{backgroundColor:"#0d0d0d"}}>
                     <div className="flex items-center gap-2">
                       <Wifi className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                       <div className="text-xs text-gray-500 dark:text-gray-400">{plan.uplinkDetail}</div>
                     </div>
-                    <div className="text-md font-medium bg-blue-50 dark:bg-gray-800/80 rounded-md px-2 py-1 text-blue-600 dark:text-blue-400">
+                    <div className="text-md font-medium rounded-md px-2 py-1 text-blue-600 dark:text-blue-400" style={{backgroundColor:"#201e1e"}}>
                       {plan.uplink}
                     </div>
                   </div>

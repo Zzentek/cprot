@@ -15,4 +15,7 @@ export interface UIConfig {
     defaultCurrency: string;
     supportedCurrencies: Currency[];
   };
+  christmasTheme?: {
+    enabled: boolean;
+  };
 }

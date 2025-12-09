@@ -30,7 +30,9 @@ export interface Banner {
   show: boolean;
   text: string;
   couponCode: string;
+  useThemeColor?: boolean;
   backgroundColor: string;
+  fallbackColor: string;
 }
 
 export interface NavigationConfig {

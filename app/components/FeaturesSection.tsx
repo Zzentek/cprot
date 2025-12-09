@@ -69,8 +69,9 @@ export default function FeaturesSection() {
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.6, delay: index * 0.2 }}
-        className=" bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.15)_0%,_transparent_100%)] dark:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%),#0a0b0f] backdrop-blur-sm border border-blue-600/30 hover:border-blue-600/60 dark:border-blue-400/40 dark:hover:border-blue-400/60 rounded-md transition-all duration-300 relative col-span-1 md:col-span-2"
-      >
+        className="backdrop-blur-sm border border-blue-600/30 hover:border-blue-600/60 dark:border-blue-400/40 dark:hover:border-blue-400/60 rounded-md transition-all duration-300 relative col-span-1 md:col-span-2"
+        style={{backgroundColor:"#0a0a0a"}}
+        >
         <div className="flex justify-between items-start">
           <div className="flex-1 p-4 sm:p-6">
             <h3 className="text-base sm:text-lg font-semibold orbitron-font text-gray-900 dark:text-white mb-1 sm:mb-2">{feature.title}</h3>
@@ -95,7 +96,8 @@ export default function FeaturesSection() {
         initial={{ opacity: 0, y: 50 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.6, delay: index * 0.2 }}
-        className="bg-black dark:bg-black backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-md hover:bg-gray-50 dark:hover:bg-transparent hover:border-blue-600/40 dark:hover:border-blue-400/40 hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.15)_0%,_transparent_100%)] dark:hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%)] hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 relative"
+        className="backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-md hover:bg-gray-50 dark:hover:bg-transparent hover:border-blue-600/40 dark:hover:border-blue-400/40 hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.15)_0%,_transparent_100%)] dark:hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%)] hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 relative"
+        style={{backgroundColor:"#0a0a0a"}}
       >
         <div className="flex justify-between items-start">
           <div className="flex-1 p-4 sm:p-6">
@@ -133,7 +135,7 @@ export default function FeaturesSection() {
           </div>
           
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 orbitron-font">
-            Características <span className="text-blue-600 dark:text-blue-400">Avazadas</span>
+            Características <span className="text-blue-600 dark:text-blue-600">Avazadas</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300">
             Todo lo que necesitas saber para tu servidor de Minecraft.

@@ -3,10 +3,11 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { NavigationConfig, NavigationItem, DropdownItem } from '../types/navigation';
+import { NavigationConfig, NavigationItem } from '../types/navigation';
 import { usePathname } from 'next/navigation';
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
+import uiConfig from "../config/sections/ui.json"
 import {
   Cloud,
   Server,
@@ -533,7 +534,7 @@ const Navbar: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.3 }}
               >
-                Coupon Code Copied!
+                ¡Cupón copiado!
               </motion.h3>
               <motion.p 
                 className="text-gray-600 dark:text-gray-300 mb-6"
@@ -541,7 +542,7 @@ const Navbar: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.3 }}
               >
-                The coupon code has been copied to your clipboard.
+                El cupon ha sido copiado.
               </motion.p>
               <motion.button
                 onClick={handleClosePopup}
@@ -552,7 +553,7 @@ const Navbar: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Ok, Thank you!
+                ¡Ok, gracias!
               </motion.button>
             </motion.div>
           </motion.div>
@@ -644,15 +645,36 @@ const Navbar: React.FC = () => {
               <ThemeToggle />
 
               {/* Client Space Button */}
-              <Link
-                href={config.clientSpace.href}
-                className="hidden sm:flex items-center space-x-2 bg-blue-100 dark:bg-blue-500/20 hover:bg-blue-200 dark:hover:bg-transparent text-blue-600 dark:text-blue-400 border border-transparent hover:border-blue-400/40 hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.15)_0%,_transparent_100%)] dark:hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%)] hover:text-blue-700 dark:hover:text-blue-400 px-3 sm:px-4 py-2 rounded-lg orbitron-font text-xs sm:text-sm font-medium transition-colors"
-                prefetch={true}
-              >
-                {config.clientSpace.icon && getIcon(config.clientSpace.icon) && React.createElement(getIcon(config.clientSpace.icon), { className: "w-4 h-4" })}
-                <span>{config.clientSpace.name}</span>
-              </Link>
+              <div className="relative">
+                <Link
+                  href={config.clientSpace.href}
+                  className="flex items-center justify-center space-x-2 button-primary text-button-primary border border-transparent px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 shadow-sm hover:shadow-md hover:bg-[var(--hover-gradient)] hover:text-[var(--icon-text-primary)] hover:border-[var(--border-secondary)]"
+                  prefetch={true}
+                >
+                  {config.clientSpace.icon && getIcon(config.clientSpace.icon) && React.createElement(getIcon(config.clientSpace.icon), { className: "w-4 h-4" })}
+                  <span>{config.clientSpace.name}</span>
+                </Link>
+                {uiConfig.christmasTheme.enabled && (
+                  <>
+                    <Image
+                      src="/christmas/button-deco-up.png"
+                      alt="Christmas decoration"
+                      width={32}
+                      height={32}
+                      className="absolute -top-2 -right-2 pointer-events-none hidden sm:block"
+                    />
+                    <Image
+                      src="/christmas/button-deco-down.png"
+                      alt="Christmas decoration"
+                      width={32}
+                      height={32}
+                      className="absolute -bottom-2 -left-2 pointer-events-none hidden sm:block"
+                    />
+                  </>
+                )}
+              </div>
             </div>
+            
 
             {/* Mobile menu button */}
             <div className="flex items-center py-2 md:hidden ml-auto">
@@ -709,17 +731,41 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Client Space Button */}
-            <div className="px-4 py-3">
-              <Link
-                href={config.clientSpace.href}
-                className="flex items-center justify-center space-x-2 bg-blue-100 dark:bg-blue-500/20 hover:bg-blue-200 dark:hover:bg-blue-600/30 text-blue-600 dark:text-blue-400 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors w-full"
-                onClick={closeMobileMenu}
-                prefetch={true}
-              >
-                {config.clientSpace.icon && getIcon(config.clientSpace.icon) && React.createElement(getIcon(config.clientSpace.icon), { className: "w-4 h-4" })}
-                <span>{config.clientSpace.name}</span>
-              </Link>
-            </div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ delay: 0.4 }}
+                    className="relative"
+                  >
+                    <Link
+                      href={config.clientSpace.href}
+                      className="flex items-center justify-center space-x-2 button-primary text-button-primary border border-transparent px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 w-full shadow-sm hover:shadow-md hover:bg-[var(--hover-gradient)] hover:text-[var(--icon-text-primary)] hover:border-[var(--border-secondary)]"
+                      onClick={closeMobileMenu}
+                      prefetch={true}
+                    >
+                      {config.clientSpace.icon && getIcon(config.clientSpace.icon) && React.createElement(getIcon(config.clientSpace.icon), { className: "w-4 h-4" })}
+                      <span>{('ESPACIO DEL CLIENTE')}</span>
+                    </Link>
+                    {uiConfig.christmasTheme.enabled && (
+                      <>
+                        <Image
+                          src="/christmas/button-deco-up.png"
+                          alt="Christmas decoration"
+                          width={32}
+                          height={32}
+                          className="absolute -top-2 -right-2 pointer-events-none"
+                        />
+                        <Image
+                          src="/christmas/button-deco-down.png"
+                          alt="Christmas decoration"
+                          width={32}
+                          height={32}
+                          className="absolute -bottom-2 -left-2 pointer-events-none"
+                        />
+                      </>
+                    )}
+                  </motion.div>
           </div>
         </div>
       </nav>

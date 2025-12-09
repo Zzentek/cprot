@@ -13,7 +13,7 @@ const PanelShowcase = lazy(() => import("../components/PanelShowcase"))
 
 export default function DedicatedPage() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-[#0a0b0f] transition-colors duration-300">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#0a0a0a] transition-colors duration-300">
       <Navbar />
       <VDSPricingSection />
       <Suspense fallback={null}>

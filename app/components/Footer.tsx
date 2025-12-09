@@ -11,7 +11,7 @@ export default function Footer() {
     { name: "Area de Clientes", href: "https://lobby.cprot.net", target: "_BLANK" },
     { name: "Discord", href: "https://discord.cprot.net", target: "_BLANK" },
     { name: "VPS Panel", href: "https://vps.cprot.net", target: "_BLANK" },
-/**    { name: "Servidores Dedicados", href: "/dedicados" },*/
+    { name: "Servidores Dedicados", href: "/dedicados" },
     { name: "Minecraft Panel", href: "https://mc.cprot.net", target: "_BLANK" },
   ]
 

@@ -22,6 +22,7 @@ export interface HeroPartner {
   loading: "lazy" | "eager";
 }
 
+
 export interface HeroConfig {
   navbar: {
     logo: string;
