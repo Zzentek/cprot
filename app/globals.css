@@ -106,6 +106,7 @@
   --radius: 0.625rem;
   --background: rgba(255, 255, 255, 1);
   --foreground: rgba(37, 37, 37, 1);
+  --card-dark: #0a0a0a;
 
   /* Primary Colors - Soft Blue (Default) */
   --icon-primary: rgba(59, 130, 246, 1);
@@ -136,6 +137,7 @@
 .dark {
   --background: rgba(37, 37, 37, 1);
   --foreground: rgba(251, 251, 251, 1);
+  --card-dark: #0a0a0a;
 
   /* Primary Colors - Dark Mode Soft Blue */
   --icon-primary: rgba(59, 130, 246, 1);
@@ -172,6 +174,9 @@
     scroll-behavior: smooth;
     scrollbar-color: var(--button-primary) transparent;
   }
+  .card-dark {
+  background-color: var(--card-dark);
+}
   
   body {
     background-color: var(--background);

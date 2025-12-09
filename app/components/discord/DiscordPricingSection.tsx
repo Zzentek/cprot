@@ -118,7 +118,7 @@ export default function DiscordPricingSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                className="relative bg-white/20 dark:bg-gray-900/20 backdrop-blur-xl rounded-md overflow-hidden border border-blue-600/20 dark:border-blue-400/20 hover:border-blue-400 dark:hover:border-blue-400/50 hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.15)_0%,_transparent_100%)] dark:hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%)] transition-all duration-300"
+                className="relative bg-[#0a0a0a] rounded-md overflow-hidden border border-blue-600/20 dark:border-blue-400/20 hover:border-blue-400 dark:hover:border-blue-400/50 transition-all duration-300"
               >
                 {plan.badge && (
                   <div className="absolute top-4 right-4">
@@ -135,7 +135,7 @@ export default function DiscordPricingSection() {
                         alt="Mexico"
                         width={64}
                         height={64}
-                        className="object-contain bg-transparent"
+                        className="object-contain"
                       />
                     </div>
                     <div>
