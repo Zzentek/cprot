@@ -73,7 +73,7 @@ export default function ComparationTable() {
                   "Medio", "Bajo", "Bajo", "Medio"
                 ],
 
-                ["Precio", "€16 / Mes", "$27.99 / Mes", "$26 / Mes", "$32 / Mes", "$28 / Mes"],
+                ["Precio", "€16 / Mes", "€23.99 / Mes", "€22 / Mes", "€27.25 / Mes", "€23.85 / Mes"],
               ].map((row, i) => (
                 <tr
                   key={i}
