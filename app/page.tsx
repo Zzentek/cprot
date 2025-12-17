@@ -7,6 +7,7 @@ import FAQSection from "./components/FAQSection"
 import PricingSection from "./components/PricingSection"
 import Footer from "./components/Footer"
 import Navbar from "./components/Navbar"
+import ComparationTable from "./components/ComparationTable"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -20,6 +21,7 @@ export default function Home() {
       <Navbar />
         <HeroSection />
         <PricingSection />
+        <ComparationTable />
         <LocationsSection />
         <FeaturesSection />
         <PanelShowcase />
