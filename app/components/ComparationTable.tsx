@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 export default function ComparationTable() {
   return (
     <motion.div
-      className="relative w-full overflow-hidden bg-black margintop-10 mb-20 py-16 rounded-xl"
+      className="relative w-full overflow-hidden bg-black margintop-10 rounded-xl"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
