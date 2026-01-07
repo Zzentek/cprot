@@ -25,6 +25,7 @@ export default function HeroSection() {
   const currentGame = config.hero.games[currentBannerIndex] || config.hero.games[0]
   const partners = config.hero.partners
   
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -47,6 +48,10 @@ export default function HeroSection() {
   const leftWidth = useTransform(scrollYProgress, [0, 1], ["0%", "50vw"])
   const rightWidth = useTransform(scrollYProgress, [0, 1], ["0%", "50vw"])
   const glowOpacity = useTransform(scrollYProgress, [0, 1], [0, 1])
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+  setIsMobile(window.innerWidth < 768)
+}, [])
 
 
   const itemVariants = {
@@ -182,31 +187,33 @@ const activeStyle = heroStyles[HERO_STYLE]
 
   return (
     <motion.div
-      className={`${activeStyle.bg} relative overflow-hidden`}
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
+  className={`${activeStyle.bg} relative overflow-hidden`}
+  variants={containerVariants}
+  initial={isMobile ? false : "hidden"}
+  animate={isMobile ? false : "visible"}
+>
       <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <img
+        <Image
           src="https://cdn.cprot.net/CPROT-LANDING/Banners/asd4.svg"
           alt="CPROT"
-          className="object-cover object-center w-full h-full absolute inset-0"
-          loading="eager"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+          quality={80}
         />
 
 
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-t from-black via-black to-black dark:from-[#000000] dark:via-[#000000]/90 dark:to-[#000000]/40"
-        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black to-black dark:from-[#000000] dark:via-[#000000]/90 dark:to-[#000000]/40" />
       </div>
-      <motion.div
-        className="absolute top-0 right-0 z-0 pointer-events-none w-screen h-screen overflow-hidden"
-        variants={decorativeSvgVariants}
-        initial="initial"
-        animate="animate"
-      >
-        <svg
+      {!isMobile && (
+        <motion.div
+          className="absolute top-0 right-0 z-0 pointer-events-none w-screen h-screen overflow-hidden"
+          variants={decorativeSvgVariants}
+          initial="initial"
+          animate="animate"
+        >
+          <svg
           className="absolute left-[25%] top-[-5%] w-[700px] h-[700px]"
           viewBox="0 0 803 808"
           fill="none"
@@ -231,7 +238,8 @@ const activeStyle = heroStyles[HERO_STYLE]
             </filter>
           </defs>
         </svg>
-      </motion.div>
+        </motion.div>
+      )}
       <div className="relative z-0">
         <section className="flex px-4 sm:px-6 lg:px-8 pt-32 sm:pt-52 pb-16">
           <div className="max-w-7xl mx-auto w-full">
@@ -258,7 +266,7 @@ const activeStyle = heroStyles[HERO_STYLE]
                     <AnimatePresence mode="wait">
                       <motion.span
                         key={currentGame.displayName}
-                        initial={{ opacity: 0, y: 30, rotateX: 90 }}
+                        initial={isMobile ? false : { opacity: 0, y: 30, rotateX: 90 }}
                         animate={{ opacity: 1, y: 0, rotateX: 0 }}
                         exit={{ opacity: 0, y: -30, rotateX: -90 }}
                         transition={{
