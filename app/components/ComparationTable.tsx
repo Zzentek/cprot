@@ -5,7 +5,10 @@ import { motion } from "framer-motion"
 export default function ComparationTable() {
   return (
     <motion.div
-      className="relative w-full overflow-hidden bg-black margintop-10 rounded-xl"
+      className="relative w-full overflow-hidden bg-black margintop-10 rounded-xl bg-[url('https://cdn.cprot.net/CPROT-LANDING/Banners/title2.svg')] bg-cover bg-center bg-no-repeat absolute inset-0 bg-gradient-to-b 
+                  from-black via-black to-transparent 
+                  dark:from-[#000000]/50 dark:via-[#000000]/10 dark:to-transparent"
+      
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -21,7 +24,7 @@ export default function ComparationTable() {
         </p>
 
         <div className="overflow-x-auto">
-          <table className="min-w-[900px] w-full border border-white/10 rounded-xl overflow-hidden">
+          <table className="min-w-[900px] w-full border border-white/10 rounded-xl overflow-hidden bg-2xl">
             {/* HEADER */}
             <thead className="bg-gradient-to-r from-cyan-600 via-sky-600 to-blue-800">
               <tr>
@@ -31,29 +34,24 @@ export default function ComparationTable() {
                 </th>
                 <th className="p-4 text-white">Apex Hosting</th>
                 <th className="p-4 text-white">Bloom Host</th>
-                <th className="p-4 text-white">Bisect Hosting</th>
-                <th className="p-4 text-white">Pebble Host</th>
               </tr>
             </thead>
 
             {/* BODY */}
+          <div></div>
             <tbody className="bg-[#0A0A0A]">
               {[
-                ["CPU (Single Core)", "Ryzen 9950X 2 vCores dedicated", "Ryzen 7950X 2 vCores dedicated", "Ryzen 5950X 2 vCores dedicated", "Ryzen 3950X 5 vCores shared", "Ryzen 7900 4 vCores shared"],
-                ["RAM", "8GB DDR5 4800MHz", "8GB DDR5 4800MHz", "8GB DDR4 2666MHz", "8GB DDR4 2666MHz", "8GB DDR5 3600MHz"],
+                ["CPU (Single Core)", "Ryzen 9950X 2 vCores dedicated", "Ryzen 7950X 2 vCores dedicated", "Ryzen 5950X 2 vCores dedicated"],
+                ["RAM", "8GB DDR5 4800MHz", "8GB DDR5 4800MHz", "8GB DDR4 2666MHz"],
 
                 ["NVMe SSD 5.0",
                   <img src="/check.svg" className="h-6 w-6 mx-auto" />,
-                  <img src="/x.svg" className="h-6 w-6 mx-auto" />,
-                  <img src="/x.svg" className="h-6 w-6 mx-auto" />,
                   <img src="/x.svg" className="h-6 w-6 mx-auto" />,
                   <img src="/x.svg" className="h-6 w-6 mx-auto" />
                 ],
 
                 ["Hardware Propio",
                   <img src="/check.svg" className="h-6 w-6 mx-auto" />,
-                  <img src="/check.svg" className="h-6 w-6 mx-auto" />,
-                  <img src="/mid.svg" className="h-6 w-6 mx-auto" />,
                   <img src="/check.svg" className="h-6 w-6 mx-auto" />,
                   <img src="/mid.svg" className="h-6 w-6 mx-auto" />
                 ],
@@ -63,17 +61,17 @@ export default function ComparationTable() {
                     <p className="text-cyan-400 font-semibold">XDP</p>
                     <p className="text-white text-sm">10Tbps+ AntiDDoS</p>
                   </div>,
-                  "Media", "Media", "Media", "Media"
+                  "Media", "Media"
                 ],
 
-                ["Puerto de Red", "2 Gbps", "1 Gbps", "1 Gbps", "1 Gbps", "1 Gbps"],
+                ["Puerto de Red", "2 Gbps", "1 Gbps", "1 Gbps"],
 
                 ["Rendimiento",
                   <span className="text-cyan-400 font-bold text-lg">🔥 Alto</span>,
-                  "Medio", "Bajo", "Bajo", "Medio"
+                  "Medio", "Bajo"
                 ],
 
-                ["Precio", "€16 / Mes", "€23.99 / Mes", "€22 / Mes", "€27.25 / Mes", "€23.85 / Mes"],
+                ["Precio", "€16 / Mes", "€23.99 / Mes", "€22 / Mes"],
               ].map((row, i) => (
                 <tr
                   key={i}

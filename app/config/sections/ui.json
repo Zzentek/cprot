@@ -5,15 +5,10 @@
   },
   "currency": {
     "apiKey": "e912bbb7db10a10466ec18f0",
-    "baseCurrency": "USD",
-    "defaultCurrency": "USD",
+    "baseCurrency": "EUR",
+    "defaultCurrency": "EUR",
     "supportedCurrencies": [
-      { "code": "USD", "symbol": "$", "name": "US Dollar" },
-      { "code": "EUR", "symbol": "€", "name": "Euro" },
-      { "code": "GBP", "symbol": "£", "name": "British Pound" },
-      { "code": "CAD", "symbol": "C$", "name": "Canadian Dollar" },
-      { "code": "AUD", "symbol": "A$", "name": "Australian Dollar" },
-      { "code": "JPY", "symbol": "¥", "name": "Japanese Yen" }
+      { "code": "EUR", "symbol": "€", "name": "Euro" }
     ]
   },
   "themeSwitcher": {
@@ -64,6 +59,6 @@
     ]
   },
   "christmasTheme": {
-    "enabled": true
+    "enabled": false
   }
 }

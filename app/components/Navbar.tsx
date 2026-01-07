@@ -609,7 +609,7 @@ const Navbar: React.FC = () => {
                   width={48}
                   height={48}
                   priority
-                  quality={90}
+                  quality={75}
                   sizes="(max-width: 640px) 32px, (max-width: 768px) 40px, 48px"
                 />
                 <span className="text-base sm:text-lg md:text-xl font-bold text-gray-900 dark:text-white orbitron-font">

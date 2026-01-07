@@ -148,9 +148,10 @@ export default function VPSPricingSection() {
                       }`}
                     >
                       <Image
+                        style={{width:"auto", height:"auto"}}
                         src={location.flag || "/placeholder.webp"}
                         alt={`${location.name} bandera`}
-                        width={24}
+                        width={40}
                         height={24}
                         className={`object-cover ${!hasAvailableCpus ? 'opacity-50' : ''}`}
                       />
@@ -198,7 +199,45 @@ export default function VPSPricingSection() {
           </div>
         </motion.div>
               <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">3. Choose Plan</h3>
+{/* Pagination */}
+        {totalPages > 1 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
+            className="flex items-center justify-center gap-2 mt-8"
+          >
+            <button
+              onClick={goToPrevPage}
+              disabled={currentPage === 1}
+              className="p-2 rounded-lg border border-blue-600/20 dark:border-blue-400/20 bg-white dark:bg-gray-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-600/10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
 
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => goToPage(page)}
+                className={`px-4 py-2 rounded-lg font-medium transition-colors duration-300 ${
+                  currentPage === page
+                    ? "bg-blue-600 dark:bg-blue-500/40 text-white dark:text-blue-400"
+                    : "border border-blue-600/20 dark:border-blue-400/20 bg-white dark:bg-gray-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-600/10"
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+
+            <button
+              onClick={goToNextPage}
+              disabled={currentPage === totalPages}
+              className="p-2 rounded-lg border border-blue-600/20 dark:border-blue-400/20 bg-white dark:bg-gray-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-600/10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </motion.div>
+        )}
         {/* VPS Plans */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -221,11 +260,12 @@ export default function VPSPricingSection() {
                   {/* Location Image */}
                   
                   {/* Plan Image */}
-                  <div className="relative w-12 h-12 rounded-md">
+                  <div className="relative w-14 h-14 rounded-md">
                     <Image
                       src={plan.image || "/placeholder.svg"}
                       alt="CPU"
                       fill
+                      sizes="100%"
                       className="object-contain "
                     />
                   </div>
@@ -319,45 +359,7 @@ export default function VPSPricingSection() {
           ))}
         </motion.div>
 
-        {/* Pagination */}
-        {totalPages > 1 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.4 }}
-            className="flex items-center justify-center gap-2 mt-8"
-          >
-            <button
-              onClick={goToPrevPage}
-              disabled={currentPage === 1}
-              className="p-2 rounded-lg border border-blue-600/20 dark:border-blue-400/20 bg-white dark:bg-gray-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-600/10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <button
-                key={page}
-                onClick={() => goToPage(page)}
-                className={`px-4 py-2 rounded-lg font-medium transition-colors duration-300 ${
-                  currentPage === page
-                    ? "bg-blue-600 dark:bg-blue-500/40 text-white dark:text-blue-400"
-                    : "border border-blue-600/20 dark:border-blue-400/20 bg-white dark:bg-gray-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-600/10"
-                }`}
-              >
-                {page}
-              </button>
-            ))}
-
-            <button
-              onClick={goToNextPage}
-              disabled={currentPage === totalPages}
-              className="p-2 rounded-lg border border-blue-600/20 dark:border-blue-400/20 bg-white dark:bg-gray-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-600/10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </motion.div>
-        )}
+        
       </div>
     </div>
   )

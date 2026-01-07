@@ -13,7 +13,7 @@ const locations = [
     cpu: "AMD Ryzen 5700G",
     lat: 10.7128,
     lng: -142.0060,
-    endpoint: "http://121.127.43.9"
+    /** endpoint: "http://121.127.43.9" **/
   },
   {
     name: "Miami, US",
@@ -21,7 +21,7 @@ const locations = [
     cpu: "AMD Ryzen 7900",
     lat: 22.9128,
     lng: -114.5060,
-    endpoint: "http://209.222.97.194"
+   /** endpoint: "http://209.222.97.194" **/
   }
 ];
 
@@ -37,7 +37,7 @@ const LocationItem = memo(({ location, index }: { location: typeof locations[0],
 };
 
   // Hacer ping HTTP cada 10s
-  useEffect(() => {
+  /** useEffect(() => {
     let interval: NodeJS.Timeout | number | undefined;
 
     const pingServer = async () => {
@@ -52,14 +52,8 @@ const LocationItem = memo(({ location, index }: { location: typeof locations[0],
     };
 
     pingServer();
-    interval = window.setInterval(pingServer, 1100);
+    interval = window.setInterval(pingServer, 1100);**/
 
-    return () => {
-      if (interval !== undefined) {
-        clearInterval(interval);
-      }
-    };
-  }, [location.endpoint]);
 
   return (
 
@@ -75,8 +69,8 @@ const LocationItem = memo(({ location, index }: { location: typeof locations[0],
       <Image
         src={location.flag}
         alt={`${location.name} flag`}
-        width={32}
-        height={32}
+        width={40}
+        height={40}
         className="w-6 h-6 sm:w-8 sm:h-8 object-cover rounded-full flex-shrink-0"
         loading="lazy"
         placeholder="blur"

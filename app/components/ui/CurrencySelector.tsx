@@ -100,24 +100,6 @@ export function CurrencySelector({
           <ChevronDown className="w-4 h-4" />
         </motion.div>
       </motion.button>
-       {uiConfig.christmasTheme.enabled && (
-        <>
-          <Image
-            src="/christmas/button-deco-up.png"
-            alt="Christmas decoration"
-            width={28}
-            height={28}
-            className="absolute -top-2 -right-2 pointer-events-none"
-          />
-          <Image
-            src="/christmas/button-deco-down.png"
-            alt="Christmas decoration"
-            width={28}
-            height={28}
-            className="absolute -bottom-2 -left-2 pointer-events-none"
-          />
-        </>
-      )}
 
       <AnimatePresence>
         {isDropdownOpen && (
@@ -166,81 +148,25 @@ interface UseCurrencyReturn {
 }
 
 export function useCurrency(): UseCurrencyReturn {
-  const defaultCurrency = config.currency.supportedCurrencies.find(
-    c => c.code === config.currency.defaultCurrency
+  // Forzar EUR como moneda por defecto
+  const euroCurrency = config.currency.supportedCurrencies.find(
+    c => c.code === "EUR"
   ) || config.currency.supportedCurrencies[0];
 
-  const [selectedCurrency, setSelectedCurrency] = useState<Currency>(defaultCurrency);
+  const [selectedCurrency, setSelectedCurrency] = useState<Currency>(euroCurrency);
   const [exchangeRates, setExchangeRates] = useState<Record<string, number>>({});
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchExchangeRates = async () => {
-      try {
-        setIsLoading(true);
-        const response = await fetch(
-          `https://v6.exchangerate-api.com/v6/${config.currency.apiKey}/latest/${config.currency.baseCurrency}`
-        );
-        const data = await response.json();
-
-        if (data.result === "success") {
-          setExchangeRates(data.conversion_rates);
-          localStorage.setItem(
-            "exchangeRates",
-            JSON.stringify({
-              rates: data.conversion_rates,
-              timestamp: Date.now(),
-            })
-          );
-        }
-      } catch (error) {
-        console.error("Failed to fetch exchange rates:", error);
-        const stored = localStorage.getItem("exchangeRates");
-        if (stored) {
-          const { rates, timestamp } = JSON.parse(stored);
-          const dayInMs = 24 * 60 * 60 * 1000;
-
-          if (Date.now() - timestamp < dayInMs) {
-            setExchangeRates(rates);
-          }
-        }
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchExchangeRates();
-  }, []);
+  const [isLoading, setIsLoading] = useState(false);
 
   const convertPrice = (price: string): string => {
-    
+    // Extraer el precio numérico
     const numericPrice = parseFloat(price.replace(/[£$€¥C\$A\$]/g, ''));
     
     if (isNaN(numericPrice)) {
-      return `${selectedCurrency.symbol}0.00`;
+      return `€0.00`;
     }
 
-    if (selectedCurrency.code === config.currency.baseCurrency) {
-      if (selectedCurrency.code === "JPY") {
-        return `${selectedCurrency.symbol}${Math.round(numericPrice)}`;
-      }
-      return `${selectedCurrency.symbol}${numericPrice.toFixed(2)}`;
-    }
-    
-    if (!exchangeRates[selectedCurrency.code]) {
-      if (selectedCurrency.code === "JPY") {
-        return `${selectedCurrency.symbol}${Math.round(numericPrice)}`;
-      }
-      return `${selectedCurrency.symbol}${numericPrice.toFixed(2)}`;
-    }
-
-    const convertedPrice = numericPrice * exchangeRates[selectedCurrency.code];
-
-    if (selectedCurrency.code === "JPY") {
-      return `${selectedCurrency.symbol}${Math.round(convertedPrice)}`;
-    }
-
-    return `${selectedCurrency.symbol}${convertedPrice.toFixed(2)}`;
+    // Siempre retornar en EUR sin conversión
+    return `€${numericPrice.toFixed(2)}`;
   };
 
   return {
