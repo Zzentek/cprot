@@ -122,7 +122,7 @@ export default function VDSPricingSection() {
                       }`}
                     >
                       <Image
-                        src={cpu.image || "/placeholder.svg"}
+                        src={cpu.image || "/placeholder.webp"}
                         alt={cpu.name}
                         width={32}
                         height={32}
