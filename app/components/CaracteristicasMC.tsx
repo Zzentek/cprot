@@ -25,7 +25,7 @@ export default function FeaturesSection() {
     {
       icon: Cpu,
       title: "Alto rendimiento",
-      description: "Aún siendo shared, no saturamos nuestros nodos."
+      description: "Regulamos las cargas de nuestros nodos para mantener el mejor rendimiento."
     },
     {
       icon: Zap,
