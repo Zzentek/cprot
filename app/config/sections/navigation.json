@@ -1,6 +1,12 @@
 {
   "mainNavigation": [
     {
+      "name": "HYTALE",
+      "href": "/hytale-server-hosting",
+      "icon": "Server",
+      "hasDropdown": false
+    },
+    {
       "name": "Minecraft",
       "href": "/minecraft",
       "icon": "Gamepad2",
@@ -58,8 +64,8 @@
   },
   "banner": {
     "show": true,
-    "text": "PREVENTA Limitada 66% en VPS RYZEN 9950X 25/12/25 ",
-    "couponCode": "9950XPREVENTA",
+    "text": "PREORDER CODE:HYTALE // HOSTING 20% NOW ",
+    "couponCode": "HYTALE",
     "backgroundColor": "bg-blue-500"
   }
 }

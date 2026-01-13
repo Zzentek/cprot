@@ -210,7 +210,7 @@ export default function HytalePlansSection() {
                     <a href={plan.orderLink} target="_blank" rel="noopener noreferrer"
                       className="block w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-center shadow-lg hover:shadow-xl hover:scale-105"
                     >
-                      SELECCIONAR
+                      SELECT
                       <svg 
                         className="inline-block w-4 h-4 ml-2" 
                         fill="none" 
