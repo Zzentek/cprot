@@ -59,35 +59,39 @@ export default function VPSPricingSection() {
   }
 
   return (
-    <div className="bg-black relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="bg-black relative py-12 px-0 sm:px-0 lg:px-0 overflow-hidden">
+    
       {/* Background Image and Gradients */}
-      <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{
-            backgroundImage: `url('/vps/vps-hero-2.webp')`,
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-transparent dark:from-[#000000] dark:via-[#000000]/60 dark:to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/40 dark:from-[#000000] dark:via-[#000000]/60 dark:to-[#000000]/60" />
+      <div className="absolute inset-0 z-0 opacity-20">
+       
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mt-16 max-w-7xl mx-auto">
-        {/* Header */}
+      <div className="relative z-0 mt-6 mx-auto bg-[url('/Banners/brand.svg')]"
+        style={{ maxWidth: "1920px" }}
+        >
+        
+        <div>
+
+        
+          {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-left mb-8"
+          className="text-center mb-8 relative"
         >
+          
+        
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
+          
+            
             <div className="flex-1">
               <div className="inline-flex items-left gap-2 bg-blue-100 dark:bg-blue-600/20 px-4 py-2 rounded-full mb-4 border border-blue-600/20 dark:border-blue-400/20">
                 <Server className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 <span className="text-blue-600 dark:text-blue-400 text-sm">{config.header.badge.text}</span>
               </div>
-              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 orbitron-font">
+              <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 orbitron-font">
                 {config.header.title.split(" ").slice(0, -1).join(" ")}{" "}
                 <span className="text-blue-600 dark:text-blue-400 relative">
                   {config.header.title.split(" ").slice(-1)[0]}
@@ -105,18 +109,12 @@ export default function VPSPricingSection() {
                     />
                   </motion.svg>
                 </span>
-              </h2>
-              <p className="text-md text-gray-600 max-w-3xl dark:text-gray-300">{config.header.description1}</p>
-              <p className="text-md text-gray-600 max-w-3xl dark:text-gray-300">{config.header.description}</p>
+              </h1>
             </div>
             {/* Currency Selector in Header */}
-            <CurrencySelector
-              selectedCurrency={selectedCurrency}
-              onCurrencyChange={setSelectedCurrency}
-              className="w-full sm:w-64 mt-4 sm:mt-0"
-            />
           </div>
         </motion.div>
+        </div>
 
         {/* Filters - Side by Side Layout */}
         <motion.div

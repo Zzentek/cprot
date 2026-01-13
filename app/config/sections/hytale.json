@@ -1,0 +1,112 @@
+{
+  "header": {
+    "badge": {
+      "text": "Game Server"
+    },
+    "title": "Hytale Dedicated Server Hosting",
+    "description": "Hytale's best hosting from only $4.99 per month. DDoS protection included, setup on January 13th, 0 LAG Ryzen Servers."
+  },
+  "planTypes": [
+    {
+      "id": "premium",
+      "name": "Premium",
+      "displayName": "Ryzen 7900 PREMIUM",
+      "image": "/cpu/ryzen9.png"
+    }
+  ],
+  "plans": {
+    "budget": [
+      {
+        "id": "budget-starter",
+        "name": "NO STOCK",
+        "cpu": "200%",
+        "cpuDetail": "AMD Ryzen 5700G",
+        "ram": "4 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "20 GB",
+        "storageDetail": "Almacenamiento SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Tráfico",
+        "uptime": "OHZ 10Tbps Anti-DDoS",
+        "price": "£6",
+        "period": "/mes",
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/hytale/estandar&promocode=HYTALE"
+      }
+    ],
+    "premium": [
+      {
+        "id": "premium-arranque",
+        "name": "Estándar",
+        "promo": "€6.24",
+        "porcentaje": "20%",
+        "cpu": "200%",
+        "cpuDetail": "AMD Ryzen 7900",
+        "ram": "3 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "70 GB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Tráfico",
+        "uptime": "CPROT 100Gbps Anti-DDoS",
+        "price": "£4.99",
+        "period": "/mes",
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/hytale/estandar&promocode=HYTALE"
+      },
+      {
+        "id": "premium-basico",
+        "name": "Medio",
+        "promo": "€7.49",
+        "porcentaje": "20%",
+        "cpu": "300%",
+        "cpuDetail": "AMD Ryzen 7900",
+        "badge": "POPULAR",
+        "ram": "4 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "100 GB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Tráfico",
+        "uptime": "CPROT 100Gbps Anti-DDoS",
+        "price": "£5.99",
+        "period": "/mes",
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/hytale/medio&promocode=HYTALE"
+      },
+      {
+        "id": "premium-estandar",
+        "name": "Avanzado",
+        "promo": "€11.24",
+        "porcentaje": "20%",
+        "cpu": "400%",
+        "cpuDetail": "AMD Ryzen 7900",
+        "ram": "8 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "150 GB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Tráfico",
+        "uptime": "CPROT 100Gbps Anti-DDoS",
+        "price": "£8.99",
+        "period": "/mes",
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/hytale/avanzado&promocode=HYTALE"
+      },
+      {
+        "id": "premium-avanzado",
+        "name": "¿Necesitas más?",
+        "promo": "€23.74",
+        "porcentaje": "20%",
+        "cpu": "400%",
+        "cpuDetail": "AMD Ryzen 7900",
+        "ram": "12 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "250 GB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Ilimitado",
+        "bandwidthDetail": "Bandwidth",
+        "uptime": "CPROT 100Gbps Anti-DDoS",
+        "price": "£18.99",
+        "period": "/mes",
+        "orderLink": "https://lobby.cprot.net/index.php?rp=/store/hytale/extreme&promocode=HYTALE"
+      }
+    ]
+  }
+}
