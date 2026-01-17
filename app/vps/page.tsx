@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   ],
   
   openGraph: {
-    title: 'VPS Hosting Ryzen Miami - Alta Calidad y Precio',
-    description: 'Servidores VPS con AMD Ryzen, NVMe SSD, protección DDoS y 99.9% de uptime. Desde $4.99/mes.',
-    url: 'https://cprot.com/vps-ryzen-miami-hosting',
+    title: 'VPS Hosting Ryzen Miami - Alta Calidad y Estable | Desde $2.99/mes',
+    description: 'Servidores VPS con AMD Ryzen, NVMe SSD, protección DDoS y 99.9% de uptime. Desde $2.99/mes.',
+    url: 'https://cprot.com/vps-hosting',
     siteName: 'CPROT Hosting',
     images: [
       {
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: 'https://cprot.com/vps-ryzen-miami-hosting',
+    canonical: 'https://cprot.com/vps-hosting',
   },
 }
 
