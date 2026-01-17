@@ -1,13 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Server, Cpu, MemoryStick, HardDrive, Wifi, HeartPulse } from "lucide-react"
+import { Server } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
 import hytaleConfig from "../config/sections/hytale.json"
 import type { HytaleConfig } from "../types/hytale"
 import { CurrencySelector, useCurrency } from "../components/ui/CurrencySelector"
-
 
 const config = hytaleConfig as HytaleConfig
 
@@ -16,18 +15,21 @@ export default function HytaleServerSection() {
   const [selectedPlanType, setSelectedPlanType] = useState(config.planTypes[0].id)
 
   const currentPlans = config.plans[selectedPlanType] || config.plans[config.planTypes[0].id]
+  
   return (
     <div className="relative w-full min-h-[600px] sm:min-h-[700px] md:min-h-[800px] xl:min-h-screen overflow-hidden">
-      {/* ===== BACKGROUND ===== */}
+      {/* ===== BACKGROUND OPTIMIZADO ===== */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/banners/hytale-4.jpg"
+          src="/banners/hytale-4.webp"
           alt=""
           fill
           priority
-          quality={95}
+          quality={75}
           className="object-cover object-center"
           sizes="100vw"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAB//2Q=="
         />
         <div className="absolute inset-0 bg-black/60" />
       </div>
@@ -37,7 +39,7 @@ export default function HytaleServerSection() {
         <div className="max-w-7xl mx-auto w-full px-6 sm:px-8 md:px-10 lg:px-12 xl:px-0 py-12 sm:py-16 md:py-20 lg:py-20">
           <div className="grid grid-cols-1 xl:grid-cols-[230px_1fr] gap-8 sm:gap-10 md:gap-12 xl:gap-20 items-center">
 
-            {/* ===== POSTER (HIDDEN ON MOBILE/TABLET) ===== */}
+            {/* ===== POSTER OPTIMIZADO ===== */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -49,12 +51,12 @@ export default function HytaleServerSection() {
                   src="/banners/hytale-front.avif"
                   alt="Hytale Server Hosting"
                   fill
-                  priority
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="230px"
+                  loading="eager"
+                  quality={85}
                 />
               </div>
-              {/* Glow effect */}
               <div className="absolute -inset-4 bg-blue-600/20 rounded-3xl blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
             </motion.div>
 
@@ -86,7 +88,7 @@ export default function HytaleServerSection() {
                 {config.header.description}
               </p>
 
-              {/* Features (visible desde tablet en adelante) */}
+              {/* Features */}
               <div className="flex flex-wrap justify-center xl:justify-start gap-2 sm:gap-3">
                 <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 backdrop-blur-sm rounded-md sm:rounded-lg text-xs sm:text-sm text-white border border-white/10">
                   Ryzen 7900
@@ -98,7 +100,7 @@ export default function HytaleServerSection() {
                   DDoS Protection
                 </span>
                 <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 backdrop-blur-sm rounded-md sm:rounded-lg text-xs sm:text-sm text-white border border-white/10">
-                  Profesional Support
+                  Professional Support
                 </span>
                 <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 backdrop-blur-sm rounded-md sm:rounded-lg text-xs sm:text-sm text-white border border-white/10">
                   Dedicated resources
