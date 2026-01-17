@@ -1,24 +1,26 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Server, Cpu, MemoryStick, HardDrive, ChevronLeft, ChevronRight, Wifi } from "lucide-react"
+import { Cpu, MemoryStick, HardDrive, ChevronLeft, ChevronRight, Wifi } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
 import vpsConfig from "../../config/sections/vps.json"
 import type { VPSConfig } from "../../types/vps"
-import { CurrencySelector, useCurrency } from "../ui/CurrencySelector"
+import { useCurrency } from "../ui/CurrencySelector"
 
 const config = vpsConfig as VPSConfig
 
 export default function VPSPricingSection() {
-  const { selectedCurrency, setSelectedCurrency, convertPrice } = useCurrency()
+  const { convertPrice } = useCurrency()
   const [selectedLocation, setSelectedLocation] = useState(config.locations[0].id)
   const [selectedCPU, setSelectedCPU] = useState(config.planTypes[0].id)
   const [currentPage, setCurrentPage] = useState(1)
   const plansPerPage = 4
+  
   const currentLocation = config.locations.find(loc => loc.id === selectedLocation)
   const availableCPUs = currentLocation?.availableCpus || []
   const currentPlans = config.plans[selectedCPU] || config.plans[config.planTypes[0].id]
+  
   const handleCPUSelection = (cpuId: string) => {
     setSelectedCPU(cpuId)
     setCurrentPage(1)
@@ -41,92 +43,31 @@ export default function VPSPricingSection() {
       }
     }
   }
+  
   const totalPages = Math.ceil(currentPlans.length / plansPerPage)
   const startIndex = (currentPage - 1) * plansPerPage
   const endIndex = startIndex + plansPerPage
   const currentPagePlans = currentPlans.slice(startIndex, endIndex)
 
-  const goToPage = (page: number) => {
-    setCurrentPage(page)
-  }
-
-  const goToPrevPage = () => {
-    setCurrentPage((prev) => Math.max(prev - 1, 1))
-  }
-
-  const goToNextPage = () => {
-    setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-  }
+  const goToPage = (page: number) => setCurrentPage(page)
+  const goToPrevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 1))
+  const goToNextPage = () => setCurrentPage((prev) => Math.min(prev + 1, totalPages))
 
   return (
-    <div className="bg-black relative py-12 px-0 sm:px-0 lg:px-0 overflow-hidden">
-    
-      {/* Background Image and Gradients */}
-      <div className="absolute inset-0 z-0 opacity-20">
-       
-      </div>
-
-      {/* Content */}
-      <div className="relative z-0 mt-6 mx-auto bg-[url('/Banners/brand.svg')]"
-        style={{ maxWidth: "1920px" }}
-        >
+    <section className="bg-black relative py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative z-10 max-w-7xl mx-auto">
         
-        <div>
-
-        
-          {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8 relative"
-        >
-          
-        
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
-          
-            
-            <div className="flex-1">
-              <div className="inline-flex items-left gap-2 bg-blue-100 dark:bg-blue-600/20 px-4 py-2 rounded-full mb-4 border border-blue-600/20 dark:border-blue-400/20">
-                <Server className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                <span className="text-blue-600 dark:text-blue-400 text-sm">{config.header.badge.text}</span>
-              </div>
-              <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 orbitron-font">
-                {config.header.title.split(" ").slice(0, -1).join(" ")}{" "}
-                <span className="text-blue-600 dark:text-blue-400 relative">
-                  {config.header.title.split(" ").slice(-1)[0]}
-                  <motion.svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 1418 125"
-                    className="absolute left-0 w-full text-blue-400"
-                    initial={{ opacity: 0, pathLength: 0 }}
-                    animate={{ opacity: 1, pathLength: 1 }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                  >
-                    <path
-                      d="M1412.29 72.17c-11.04-5.78-20.07-14.33-85.46-25.24-22.37-3.63-44.69-7.56-67.07-11.04-167.11-22.06-181.65-21.24-304.94-30.56C888.78 1.39 822.57 1.1 756.44 0c-46.63-.11-93.27 1.56-139.89 2.5C365.5 13.55 452.86 7.68 277.94 23.15 202.57 33.32 127.38 45.01 52.07 55.69c-11.23 2.41-22.63 4.17-33.71 7.22C6.1 66.33 5.64 66.19 3.89 67.79c-7.99 5.78-2.98 20.14 8.72 17.5 33.99-9.47 32.28-8.57 178.06-29.66 4.26 4.48 7.29 3.38 18.42 3.11 13.19-.32 26.38-.53 39.56-1.12 53.51-3.81 106.88-9.62 160.36-13.95 18.41-1.3 36.8-3.12 55.21-4.7 23.21-1.16 46.43-2.29 69.65-3.4 120.28-2.16 85.46-3.13 234.65-1.52 23.42.99 1.57-.18 125.72 6.9 96.61 8.88 200.92 27.94 295.42 46.12 40.87 7.91 116.67 23.2 156.31 36.78 3.81 1.05 8.28-.27 10.51-3.58 3.17-3.72 2.66-9.7-.78-13.13-17.89-5.85-44.19-12.09-63.67-16.56l26.16 3.28c23.02 3.13 46.28 3.92 69.34 6.75 10.8.96 25.43 1.81 34.34-4.39 2.26-1.54 4.86-2.75 6.21-5.27 2.76-4.59 1.13-11.06-3.59-13.68ZM925.4 23.77c37.64 1.4 153.99 10.85 196.64 14.94 45.95 5.51 91.89 11.03 137.76 17.19 24.25 4.77 74.13 11.21 101.72 18.14-11.87-1.15-23.77-1.97-35.65-3.06-133.46-15.9-266.8-33.02-400.47-47.21Z"
-                      fill="currentColor"
-                    />
-                  </motion.svg>
-                </span>
-              </h1>
-            </div>
-            {/* Currency Selector in Header */}
-          </div>
-        </motion.div>
-        </div>
-
-        {/* Filters - Side by Side Layout */}
+        {/* Filters */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-4"
+          className="mb-8"
         >
-          <div className="flex flex-col lg:flex-row gap-6 justify-left items-left">
-            {/* Location Filter - First */}
-            <div className="flex flex-col items-left">
-              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3.5">1. Location</h3>
+          <div className="flex flex-col lg:flex-row gap-6">
+            {/* Location Filter */}
+            <div className="flex flex-col">
+              <h2 className="text-sm font-medium text-gray-300 mb-3.5">1. Ubicación</h2>
               <div className="flex flex-wrap gap-2">
                 {config.locations.map((location) => {
                   const hasAvailableCpus = location.availableCpus.length > 0
@@ -137,21 +78,23 @@ export default function VPSPricingSection() {
                       key={location.id}
                       onClick={() => handleLocationSelection(location.id)}
                       disabled={!hasAvailableCpus}
+                      aria-label={`Seleccionar ubicación ${location.displayName}`}
                       className={`flex items-center gap-3 px-4 py-3 rounded-md font-medium transition-all duration-300 ${
                         isSelected
-                          ? "button-primary border-primary text-button-primary shadow-lg"
+                          ? "bg-blue-600 text-white shadow-lg shadow-blue-500/30"
                           : hasAvailableCpus
-                          ? "bg-gray-200 dark:bg-gray-800/20 border border-secondary text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700/30 hover:border-secondary"
-                          : "bg-gray-100 dark:bg-gray-800/10 border button-primary text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-50"
+                          ? "bg-gray-800/20 border border-gray-700 text-gray-200 hover:bg-gray-700/30"
+                          : "bg-gray-800/10 border border-gray-800 text-gray-500 cursor-not-allowed opacity-50"
                       }`}
                     >
                       <Image
                         style={{width:"auto", height:"auto"}}
                         src={location.flag || "/placeholder.webp"}
-                        alt={`${location.name} bandera`}
+                        alt={`Bandera de ${location.name}`}
                         width={40}
                         height={24}
                         className={`object-cover ${!hasAvailableCpus ? 'opacity-50' : ''}`}
+                        loading="lazy"
                       />
                       <span className="text-sm font-medium">{location.displayName}</span>
                     </button>
@@ -160,9 +103,9 @@ export default function VPSPricingSection() {
               </div>
             </div>
 
-            {/* CPU Type Filter - Second */}
-            <div className="flex flex-col items-left">
-              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">2. TIPO CPU</h3>
+            {/* CPU Type Filter */}
+            <div className="flex flex-col">
+              <h2 className="text-sm font-medium text-gray-300 mb-3">2. Tipo de CPU</h2>
               <div className="flex flex-wrap gap-2">
                 {config.planTypes.map((cpu) => {
                   const isAvailable = availableCPUs.includes(cpu.id)
@@ -173,20 +116,22 @@ export default function VPSPricingSection() {
                       key={cpu.id}
                       onClick={() => handleCPUSelection(cpu.id)}
                       disabled={!isAvailable}
+                      aria-label={`Seleccionar CPU ${cpu.displayName}`}
                       className={`flex items-center gap-3 px-6 py-2 rounded-lg font-medium transition-all duration-300 ${
                         isSelected
-                          ? "button-primary border-primary text-button-primary shadow-lg"
+                          ? "bg-blue-600 text-white shadow-lg shadow-blue-500/30"
                           : isAvailable
-                          ? "bg-gray-200 dark:bg-gray-800/20 border border-secondary text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700/30 hover:border-secondary"
-                          : "bg-gray-100 dark:bg-gray-800/10 border border-primary text-gray-400 dark:text-gray-500 cursor-not-allowed opacity-50"
+                          ? "bg-gray-800/20 border border-gray-700 text-gray-200 hover:bg-gray-700/30"
+                          : "bg-gray-800/10 border border-gray-800 text-gray-500 cursor-not-allowed opacity-50"
                       }`}
                     >
                       <Image
                         src={cpu.image || "/placeholder.svg"}
-                        alt={cpu.name}
+                        alt={`Logo ${cpu.name}`}
                         width={32}
                         height={32}
                         className={`rounded-md object-contain ${!isAvailable ? 'opacity-50' : ''}`}
+                        loading="lazy"
                       />
                       <span className="text-sm font-semibold">{cpu.displayName}</span>
                     </button>
@@ -196,19 +141,17 @@ export default function VPSPricingSection() {
             </div>
           </div>
         </motion.div>
-              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">3. Choose Plan</h3>
-{/* Pagination */}
+        
+        <h2 className="text-sm font-medium text-gray-300 mb-3">3. Elige tu Plan</h2>
+
+        {/* Pagination Top */}
         {totalPages > 1 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.4 }}
-            className="flex items-center justify-center gap-2 mt-8"
-          >
+          <nav aria-label="Paginación de planes" className="flex items-center justify-center gap-2 mb-6">
             <button
               onClick={goToPrevPage}
               disabled={currentPage === 1}
-              className="p-2 rounded-lg border border-blue-600/20 dark:border-blue-400/20 bg-white dark:bg-gray-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-600/10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
+              aria-label="Página anterior"
+              className="p-2 rounded-lg border border-blue-600/20 bg-gray-900/20 text-blue-400 hover:bg-blue-600/10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
@@ -217,10 +160,12 @@ export default function VPSPricingSection() {
               <button
                 key={page}
                 onClick={() => goToPage(page)}
+                aria-label={`Ir a página ${page}`}
+                aria-current={currentPage === page ? 'page' : undefined}
                 className={`px-4 py-2 rounded-lg font-medium transition-colors duration-300 ${
                   currentPage === page
-                    ? "bg-blue-600 dark:bg-blue-500/40 text-white dark:text-blue-400"
-                    : "border border-blue-600/20 dark:border-blue-400/20 bg-white dark:bg-gray-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-600/10"
+                    ? "bg-blue-600 text-white"
+                    : "border border-blue-600/20 bg-gray-900/20 text-blue-400 hover:bg-blue-600/10"
                 }`}
               >
                 {page}
@@ -230,135 +175,134 @@ export default function VPSPricingSection() {
             <button
               onClick={goToNextPage}
               disabled={currentPage === totalPages}
-              className="p-2 rounded-lg border border-blue-600/20 dark:border-blue-400/20 bg-white dark:bg-gray-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-600/10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
+              aria-label="Página siguiente"
+              className="p-2 rounded-lg border border-blue-600/20 bg-gray-900/20 text-blue-400 hover:bg-blue-600/10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
-          </motion.div>
+          </nav>
         )}
+
         {/* VPS Plans */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.2, delay: 0.1 }}
-          className="space-y-2"
-        >
+        <div className="space-y-2">
           {currentPagePlans.map((plan, index) => (
-            <motion.div
+            <motion.article
               key={plan.id}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.2, delay: 0.1 }}
-              className="backdrop-blur-xl border border-blue-600/20 hover:border-blue-600 dark:border-blue-400/20 rounded-xl p-4 dark:hover:border-blue-600 transition-all duration-600"
+              className="backdrop-blur-xl border border-blue-600/20 hover:border-blue-600 rounded-xl p-4 transition-all duration-600"
               style={{backgroundColor:"#0a0a0a"}}
-              >
+            >
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
-                {/* Location Image and Plan Info */}
+                {/* Plan Info */}
                 <div className="flex items-center gap-4">
-                  {/* Location Image */}
-                  
-                  {/* Plan Image */}
-                  <div className="relative w-14 h-14 rounded-md">
+                  <div className="relative w-14 h-14 rounded-md flex-shrink-0">
                     <Image
                       src={plan.image || "/placeholder.svg"}
-                      alt="CPU"
+                      alt={`Plan ${plan.name}`}
                       fill
-                      sizes="100%"
-                      className="object-contain "
+                      sizes="56px"
+                      className="object-contain"
+                      loading="lazy"
                     />
                   </div>
-                  {/* Plan Name and Badge */}
-                  <div className="flex items-center gap-3">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">{plan.name}</h3>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">{plan.name}</h3>
                   </div>
                 </div>
 
-                {/* Specs with lighter backgrounds */}
+                {/* Specs */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4 flex-1">
                   <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md" style={{backgroundColor:"#0d0d0d"}}>
                     <div className="flex items-center gap-2">
-                      <Cpu className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                      <div className="text-xs text-gray-500 dark:text-gray-400">{plan.cpuDetail}</div>
+                      <Cpu className="w-4 h-4 text-blue-400" aria-hidden="true" />
+                      <span className="text-xs text-gray-400">{plan.cpuDetail}</span>
                     </div>
-                    <div className="text-md font-medium rounded-md px-2 py-1 text-blue-600 dark:text-blue-400" style={{backgroundColor:"#201e1e"}}>
+                    <span className="text-md font-medium rounded-md px-2 py-1 text-blue-400" style={{backgroundColor:"#201e1e"}}>
                       {plan.cpu}
-                    </div>
+                    </span>
                   </div>
                   <div className="border border-blue-400/20 flex items-center justify-between px-2 py-2 rounded-md" style={{backgroundColor:"#0d0d0d"}}>
                     <div className="flex items-center gap-2">
-                      <MemoryStick className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                      <div className="text-xs text-gray-500 dark:text-gray-400">{plan.ramDetail}</div>
+                      <MemoryStick className="w-4 h-4 text-blue-400" aria-hidden="true" />
+                      <span className="text-xs text-gray-400">{plan.ramDetail}</span>
                     </div>
-                    <div className="text-md font-medium rounded-md px-2 py-1 text-blue-600 dark:text-blue-400" style={{backgroundColor:"#201e1e"}}>
+                    <span className="text-md font-medium rounded-md px-2 py-1 text-blue-400" style={{backgroundColor:"#201e1e"}}>
                       {plan.ram}
-                    </div>
+                    </span>
                   </div>
                   <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md" style={{backgroundColor:"#0d0d0d"}}>
                     <div className="flex items-center gap-2">
-                      <HardDrive className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                      <div className="text-xs text-gray-500 dark:text-gray-400">{plan.storageDetail}</div>
+                      <HardDrive className="w-4 h-4 text-blue-400" aria-hidden="true" />
+                      <span className="text-xs text-gray-400">{plan.storageDetail}</span>
                     </div>
-                    <div className="text-md font-medium rounded-md px-2 py-1 text-blue-600 dark:text-blue-400" style={{backgroundColor:"#201e1e"}}>
+                    <span className="text-md font-medium rounded-md px-2 py-1 text-blue-400" style={{backgroundColor:"#201e1e"}}>
                       {plan.storage}
-                    </div>
+                    </span>
                   </div>
                   <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md" style={{backgroundColor:"#0d0d0d"}}>
                     <div className="flex items-center gap-2">
-                      <Wifi className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                      <div className="text-xs text-gray-500 dark:text-gray-400">{plan.bandwidthDetail}</div>
+                      <Wifi className="w-4 h-4 text-blue-400" aria-hidden="true" />
+                      <span className="text-xs text-gray-400">{plan.bandwidthDetail}</span>
                     </div>
-                    <div className="text-md font-medium rounded-md px-2 py-1 text-blue-600 dark:text-blue-400" style={{backgroundColor:"#201e1e"}}>
+                    <span className="text-md font-medium rounded-md px-2 py-1 text-blue-400" style={{backgroundColor:"#201e1e"}}>
                       {plan.bandwidth}
-                    </div>
+                    </span>
                   </div>
                   <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md" style={{backgroundColor:"#0d0d0d"}}>
                     <div className="flex items-center gap-2">
-                      <Wifi className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                      <div className="text-xs text-gray-500 dark:text-gray-400">{plan.antiddosDetail}</div>
+                      <Wifi className="w-4 h-4 text-blue-400" aria-hidden="true" />
+                      <span className="text-xs text-gray-400">{plan.antiddosDetail}</span>
                     </div>
-                    <div className="text-md font-medium rounded-md px-2 py-1 text-blue-600 dark:text-blue-400" style={{backgroundColor:"#201e1e"}}>
+                    <span className="text-md font-medium rounded-md px-2 py-1 text-blue-400" style={{backgroundColor:"#201e1e"}}>
                       {plan.antiddos}
-                    </div>
+                    </span>
                   </div>
                   <div className="border border-blue-400/20 flex items-center justify-between px-3 py-2 rounded-md" style={{backgroundColor:"#0d0d0d"}}>
                     <div className="flex items-center gap-2">
-                      <Wifi className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                      <div className="text-xs text-gray-500 dark:text-gray-400">{plan.uplinkDetail}</div>
+                      <Wifi className="w-4 h-4 text-blue-400" aria-hidden="true" />
+                      <span className="text-xs text-gray-400">{plan.uplinkDetail}</span>
                     </div>
-                    <div className="text-md font-medium rounded-md px-2 py-1 text-blue-600 dark:text-blue-400" style={{backgroundColor:"#201e1e"}}>
+                    <span className="text-md font-medium rounded-md px-2 py-1 text-blue-400" style={{backgroundColor:"#201e1e"}}>
                       {plan.uplink}
-                    </div>
+                    </span>
                   </div>
                 </div>
 
-                {/* Price and Action */}
+                {/* Price and CTA */}
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <div className="text-center sm:text-right">
-                    <div className="text-lg font-bold text-blue-600 dark:text-blue-400">
-                      <p className="text-sm dark:text-red-400">ANTES <span className="text-sm line-through dark:text-red-400">{plan.badge}</span></p>
-                      <p className="text-sm dark:text-yellow-400">AHORRA: {plan.oferta} OFF</p>
+                    {plan.badge && (
+                      <p className="text-sm text-red-400">
+                        ANTES <span className="line-through">{plan.badge}</span>
+                      </p>
+                    )}
+                    {plan.oferta && (
+                      <p className="text-sm text-yellow-400">AHORRA: {plan.oferta} OFF</p>
+                    )}
+                    <div className="text-lg font-bold text-blue-400">
                       {convertPrice(plan.price)}
-                      <span className=" text-gray-500 dark:text-gray-400">{plan.period}</span>
+                      <span className="text-gray-400">{plan.period}</span>
                     </div>
                   </div>
                   <a 
                     href={plan.orderLink}
-                    target="_BLANK"
-                    className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 dark:bg-blue-600/20 text-white dark:text-white-400 px-6 py-2 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2 border border-blue-600/20 dark:border-blue-400/20 hover:border-blue-600/40 dark:hover:border-blue-400/40 no-underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2 border border-blue-600/20 hover:border-blue-400/40 no-underline"
                   >
                     Contrata YA
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
-        </motion.div>
-
-        
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
