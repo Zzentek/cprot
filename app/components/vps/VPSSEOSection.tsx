@@ -209,7 +209,7 @@ export default function VPSSEOSection() {
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500  blur-2axl"
+                className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500  blur-2xl"
               />
               
               {/* Server Image - ESTA ES LA QUE CREARÁS EN CANVA */}
