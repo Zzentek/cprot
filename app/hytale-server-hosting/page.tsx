@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Hytale Server Hosting - CPROT Hosting',
     description: 'Premium Hytale server hosting with ultra-low latency and 24/7 uptime',
-    url: 'https://tudominio.com/hytale-server-hosting',
+    url: 'https://cprot.net/hytale-server-hosting',
     siteName: 'CPROT Hosting',
     type: 'website',
     locale: 'es_MX',
