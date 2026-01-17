@@ -162,9 +162,9 @@ export default function VPSSEOSection() {
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
               </button>
               
-              <button className="px-8 py-4 bg-white/10 backdrop-blur-sm rounded-xl font-bold text-white border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all hover:scale-105">
+              <a href="https://lobby.cprot.net/submitticket.php" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white/10 backdrop-blur-sm rounded-xl font-bold text-white border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all hover:scale-105">
                 Contactar Soporte
-              </button>
+              </a>
             </motion.div>
 
             {/* Trust Badges */}
@@ -209,7 +209,7 @@ export default function VPSSEOSection() {
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500  blur-2xl"
+                className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500  blur-2axl"
               />
               
               {/* Server Image - ESTA ES LA QUE CREARÁS EN CANVA */}
