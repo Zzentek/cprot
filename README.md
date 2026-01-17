@@ -1,4 +1,4 @@
-# 🚀 Nova Website Template
+# 🚀 CPROT Hosting Template
 
 Welcome! Thank you for purchasing Nova - a modern, responsive website template for hosting services.
 

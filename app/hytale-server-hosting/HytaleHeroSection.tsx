@@ -9,7 +9,16 @@ import type { HytaleConfig } from "../types/hytale"
 import { CurrencySelector, useCurrency } from "../components/ui/CurrencySelector"
 
 const config = hytaleConfig as HytaleConfig
-
+export const metadata = {
+  title: 'Hytale Server Hosting | Desde $4.99/mes | Ryzen 7900 | CPROT',
+  description: 'Hosting de servidores Hytale dedicados con Ryzen 7900, NVMe, protección DDoS y soporte profesional. Disponible desde $4.99/mes. Configuración instantánea el 13 de enero.',
+  keywords: 'hytale server hosting, hytale hosting, servidor hytale, hytale dedicado, hosting hytale mexico, hytale usa, hytale Miami, hytale server rental',
+  openGraph: {
+    title: 'Hytale Server Hosting - CPROT',
+    description: 'El mejor hosting para servidores Hytale en Latinoamérica',
+    images: ['/banners/hytale-4.jpg'],
+  },
+}
 export default function HytaleServerSection() {
   const { selectedCurrency, setSelectedCurrency, convertPrice } = useCurrency()
   const [selectedPlanType, setSelectedPlanType] = useState(config.planTypes[0].id)
