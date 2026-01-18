@@ -75,7 +75,6 @@ export default function VPSRyzenMiamiPage() {
       <VPSPricingSection />
       <OSSelectionSection />
       <FeaturesSection />
-      <LocationsSection />
       <FAQSection />
       <PanelShowcase />
       <Footer />
