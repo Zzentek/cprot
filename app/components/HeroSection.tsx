@@ -309,12 +309,6 @@ const activeStyle = heroStyles[HERO_STYLE]
                       className={`group ${activeStyle.button} text-white px-4 py-3 rounded-md font-bold text-md transition-all duration-300 flex items-center gap-2`}
                     >
                       <span className="orbitron-font">CATALOGO</span>
-                      <motion.div
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 0.7, repeat: Infinity, ease: "easeInOut" }}
-                      >
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                      </motion.div>
                     </a>
                   </motion.div>
 
