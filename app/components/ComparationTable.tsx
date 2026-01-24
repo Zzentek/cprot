@@ -1,7 +1,23 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Check, X, Minus, Zap, Shield, HardDrive, Cpu, Clock, Network } from "lucide-react"
+import {
+  Check,
+  X,
+  Minus,
+  Zap,
+  Shield,
+  HardDrive,
+  Cpu,
+  Clock,
+  Network,
+} from "lucide-react"
+import type { ElementType } from "react"
+
+/* =======================
+   TYPES
+======================= */
+
 type XDPValue = {
   type: "xdp"
   value: string
@@ -16,15 +32,28 @@ type FeatureValue =
   | null
   | undefined
 
+type Feature = {
+  icon: ElementType<{ className?: string }>
+  name: string
+  description: string
+  cprot: FeatureValue
+  apex: FeatureValue
+  bloom: FeatureValue
+}
+
+/* =======================
+   COMPONENT
+======================= */
+
 export default function ComparationTable() {
-  const features = [
+  const features: Feature[] = [
     {
       icon: Cpu,
       name: "CPU (Single Core)",
       description: "Potencia de procesamiento dedicada",
       cprot: "Ryzen 9950X 2 vCores dedicated",
       apex: "Ryzen 7950X 2 vCores dedicated",
-      bloom: "Ryzen 5950X 2 vCores dedicated"
+      bloom: "Ryzen 5950X 2 vCores dedicated",
     },
     {
       icon: HardDrive,
@@ -32,7 +61,7 @@ export default function ComparationTable() {
       description: "Memoria de alto rendimiento",
       cprot: "8GB DDR5 4800MHz",
       apex: "8GB DDR5 4800MHz",
-      bloom: "8GB DDR4 2666MHz"
+      bloom: "8GB DDR4 2666MHz",
     },
     {
       icon: Zap,
@@ -40,7 +69,7 @@ export default function ComparationTable() {
       description: "Almacenamiento ultrarrápido",
       cprot: true,
       apex: false,
-      bloom: false
+      bloom: false,
     },
     {
       icon: HardDrive,
@@ -48,7 +77,7 @@ export default function ComparationTable() {
       description: "Infraestructura propietaria",
       cprot: true,
       apex: true,
-      bloom: true
+      bloom: true,
     },
     {
       icon: Shield,
@@ -56,7 +85,7 @@ export default function ComparationTable() {
       description: "Seguridad contra ataques",
       cprot: { type: "xdp", value: "5Tbps+ o 100Gbps AntiDDoS" },
       apex: "Media",
-      bloom: "Media"
+      bloom: "Media",
     },
     {
       icon: Network,
@@ -64,7 +93,7 @@ export default function ComparationTable() {
       description: "Velocidad de conexión",
       cprot: "2 Gbps",
       apex: "1 Gbps",
-      bloom: "1 Gbps"
+      bloom: "1 Gbps",
     },
     {
       icon: Zap,
@@ -72,7 +101,7 @@ export default function ComparationTable() {
       description: "Desempeño general del servidor",
       cprot: "Alto",
       apex: "Medio",
-      bloom: "Bajo"
+      bloom: "Bajo",
     },
     {
       icon: Clock,
@@ -80,12 +109,14 @@ export default function ComparationTable() {
       description: "Costo mensual del servicio",
       cprot: "€16 / Mes",
       apex: "€23.99 / Mes",
-      bloom: "€22 / Mes"
-    }
+      bloom: "€22 / Mes",
+    },
   ]
 
-  const renderValue = (value: FeatureValue, isHighlighted: boolean = false) => {
-
+  const renderValue = (
+    value: FeatureValue,
+    isHighlighted: boolean = false
+  ) => {
     if (typeof value === "boolean") {
       return value ? (
         <Check className="w-6 h-6 text-cyan-400 mx-auto" />
@@ -165,7 +196,9 @@ export default function ComparationTable() {
                 <div className="absolute -top-1 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-bold px-4 py-1 rounded-full">
                   MEJOR VALOR
                 </div>
-                <h3 className="text-2xl font-bold text-white text-center mb-2">CPROT</h3>
+                <h3 className="text-2xl font-bold text-white text-center mb-2">
+                  CPROT
+                </h3>
                 <div className="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-600 mx-auto rounded-full" />
               </motion.div>
 
