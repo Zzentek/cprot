@@ -9,7 +9,7 @@
     "plans": [
       {
         "title": "Minecraft Servers",
-        "image": "/banners/minecraft-banners.webp",
+        "image": "/banners/minecraft-banners.avif",
         "description": "",
         "basePrice": 0.99,
         "features": [
@@ -29,7 +29,7 @@
       },
       {
         "title": "VPS KVM Hosting",
-        "image": "/vps.webp",
+        "image": "/vps.avif",
         "description": "",
         "basePrice": 2.95,
         "features": [
@@ -50,7 +50,7 @@
       },
       {
         "title": "Servidores Dedicados",
-        "image": "/dedicated.webp",
+        "image": "/dedicated.avif",
         "description": "Rendimiento Bare metal",
         "basePrice": 129,
         "features": [
