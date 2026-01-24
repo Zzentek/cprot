@@ -27,73 +27,67 @@
     "partners": [
       {
         "name": "Intel",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/Intel.svg",
+        "src": "/advertisement/Intel.avif",
         "website": "https://www.intel.com/",
         "loading": "lazy"
       },
       {
         "name": "Pterodactyl",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/Pterodactyl.svg",
+        "src": "/advertisement/Pterodactyl.avif",
         "website": "https://pterodactyl.io/",
         "loading": "lazy"
       },
       {
         "name": "TELMEX",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/TELMEX.svg",
+        "src": "/advertisement/TELMEX.avif",
         "website": "https://telmex.com/",
         "loading": "lazy"
       },
       {
         "name": "VirtFusion",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/VirtFusion.svg",
+        "src": "/advertisement/VirtFusion.avif",
         "website": "https://virtfusion.com/",
         "loading": "lazy"
       },
       {
         "name": "MEGA",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/MEGA.svg",
+        "src": "/advertisement/MEGA.avif",
         "website": "https://megacable.com.mx/",
         "loading": "lazy"
       },
       {
-        "name": "Infinitum",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/Infinitum.svg",
-        "website": "https://telmex.com",
-        "loading": "lazy"
-      },
-      {
         "name": "OHZ",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/OHZ.svg",
+        "src": "/advertisement/OHZ.avif",
         "website": "https://xdp.es",
         "loading": "lazy"
       },
       {
         "name": "ReliableSite",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/ReliableSite.svg",
+        "src": "/advertisement/ReliableSite.avif",
         "website": "https://reliablesite.net",
         "loading": "lazy"
       },
       {
         "name": "EdgeUno",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/EdgeUno.svg",
+        "src": "/advertisement/EdgeUno.avif",
         "website": "https://edgeuno.com/",
         "loading": "lazy"
       },
       {
         "name": "GTT",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/GTT.svg",
+        "src": "/advertisement/GTT.avif",
         "website": "https://gtt.net/",
         "loading": "lazy"
       },
       {
         "name": "NTT",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/NTT.svg",
+        "src": "/advertisement/NTT.avif",
         "website": "https://www.gin.ntt.net/",
         "loading": "lazy"
       },
       {
         "name": "RYZEN",
-        "src": "https://cdn.cprot.net/CPROT-LANDING/PROVEEDORES/RYZEN.svg",
+        "src": "/advertisement/RYZEN.avif",
         "website": "https://www.amd.com/",
         "loading": "lazy"
       }

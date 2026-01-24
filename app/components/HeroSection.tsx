@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback, useRef } from "react"
-import { motion, AnimatePresence, useAnimation, useScroll, useTransform, } from "framer-motion"
+import { motion, AnimatePresence, useAnimation } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import heroConfig from "../config/sections/hero.json"
@@ -37,22 +37,12 @@ export default function HeroSection() {
       },
     },
   }
-  
-  const lineRef = useRef(null)
 
-  const { scrollYProgress } = useScroll({
-    target: lineRef,
-    offset: ["start 80%", "end center"],
-  })
-
-  const leftWidth = useTransform(scrollYProgress, [0, 1], ["0%", "50vw"])
-  const rightWidth = useTransform(scrollYProgress, [0, 1], ["0%", "50vw"])
-  const glowOpacity = useTransform(scrollYProgress, [0, 1], [0, 1])
   const [isMobile, setIsMobile] = useState(false)
+  
   useEffect(() => {
-  setIsMobile(window.innerWidth < 768)
-}, [])
-
+    setIsMobile(window.innerWidth < 768)
+  }, [])
 
   const itemVariants = {
     hidden: {
@@ -187,25 +177,24 @@ const activeStyle = heroStyles[HERO_STYLE]
 
   return (
     <motion.div
-  className={`${activeStyle.bg} relative overflow-hidden`}
-  variants={containerVariants}
-  initial={isMobile ? false : "hidden"}
-  animate={isMobile ? false : "visible"}
->
+      className={`${activeStyle.bg} relative overflow-hidden`}
+      variants={containerVariants}
+      initial={isMobile ? false : "hidden"}
+      animate={isMobile ? false : "visible"}
+    >
       <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <Image
+        <img
           src="https://cdn.cprot.net/CPROT-LANDING/Banners/asd4.svg"
           alt="CPROT"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
+          loading="eager"
+          fetchPriority="high"
+          className="object-cover object-center w-full h-full"
           quality={80}
         />
 
-
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black to-black dark:from-[#000000] dark:via-[#000000]/90 dark:to-[#000000]/40" />
       </div>
+      
       {!isMobile && (
         <motion.div
           className="absolute top-0 right-0 z-0 pointer-events-none w-screen h-screen overflow-hidden"
@@ -214,32 +203,33 @@ const activeStyle = heroStyles[HERO_STYLE]
           animate="animate"
         >
           <svg
-          className="absolute left-[25%] top-[-5%] w-[700px] h-[700px]"
-          viewBox="0 0 803 808"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g filter="url(#filter0_f_top)">
-            <ellipse cx="401.5" cy="404" rx="101.5" ry="104" fill="#066BDF" />
-          </g>
-          <defs>
-            <filter
-              id="filter0_f_top"
-              x="0"
-              y="0"
-              width="803"
-              height="808"
-              filterUnits="userSpaceOnUse"
-              colorInterpolationFilters="sRGB"
-            >
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-              <feGaussianBlur stdDeviation="150" result="effect1_foregroundBlur_top" />
-            </filter>
-          </defs>
-        </svg>
+            className="absolute left-[25%] top-[-5%] w-[700px] h-[700px]"
+            viewBox="0 0 803 808"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g filter="url(#filter0_f_top)">
+              <ellipse cx="401.5" cy="404" rx="101.5" ry="104" fill="#066BDF" />
+            </g>
+            <defs>
+              <filter
+                id="filter0_f_top"
+                x="0"
+                y="0"
+                width="803"
+                height="808"
+                filterUnits="userSpaceOnUse"
+                colorInterpolationFilters="sRGB"
+              >
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                <feGaussianBlur stdDeviation="150" result="effect1_foregroundBlur_top" />
+              </filter>
+            </defs>
+          </svg>
         </motion.div>
       )}
+      
       <div className="relative z-0">
         <section className="flex px-4 sm:px-6 lg:px-8 pt-32 sm:pt-52 pb-16">
           <div className="max-w-7xl mx-auto w-full">
@@ -336,7 +326,6 @@ const activeStyle = heroStyles[HERO_STYLE]
                     whileHover="hover"
                     whileTap="tap"
                   >
-
                   </motion.div>
                 </motion.div>
               </motion.div>
@@ -356,71 +345,42 @@ const activeStyle = heroStyles[HERO_STYLE]
                     className="flex-shrink-0 w-[200px] hover:scale-110 transition-transform duration-300"
                   >
                     <a 
-                    key={`${partner.name}-${index}`}
-                    href={ partner.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-shrink-0 w-[200px] hover:scale-110 transition-transform duration-300"
+                      key={`${partner.name}-${index}`}
+                      href={partner.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-shrink-0 w-[200px] hover:scale-110 transition-transform duration-300"
                     >
-                    <Image
-                      src={partner.src}
-                      alt={`${partner.name} - Nuestros aliados`}
-                      width={128}
-                      height={64}
-                      className="h-12 sm:h-16 w-24 sm:w-32 object-contain transition-all duration-700"
-                      loading="lazy"
-                      quality={60}
-                      sizes="(max-width: 640px) 96px, 128px"
-                    />
+                      <img
+                        src={partner.src}
+                        alt={`${partner.name} - Nuestros aliados`}
+                        width={128}
+                        height={64}
+                        className="h-12 sm:h-16 w-24 sm:w-32 object-contain transition-all duration-700"
+                        loading="lazy"
+                        quality={60}
+                        sizes="(max-width: 640px) 96px, 128px"
+                      />
                     </a>
                   </div>
                 ))}
               </div>
             </motion.div>
+            
             <div className="texxt">
-            <motion.h1
-                    className="text-2xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 leading-tight orbitron-font"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      type: "spring",
-                      damping: 20,
-                      stiffness: 100,
-                      delay: 0.3,
-                    }}
-                  > NUESTROS PROVEEDORES</motion.h1>
-                  <motion.div
-                    ref={lineRef}
-                    className="relative flex items-center justify-center mt-2 w-full max-w-full mx-auto h-[40px]"
-                    >
-                          {/* Línea izquierda */}
-                    <motion.div
-                      className="absolute right-1/2 h-[2px] bg-blue-500 origin-right"
-                      style={{
-                        width: leftWidth,
-                        boxShadow: `0 0 12px ${activeStyle.glow}`,
-                        opacity: glowOpacity,
-                      }}
-                    />
-
-                        {/* Círculo central */}
-                    <motion.div
-                      className="z-10 w-4 h-4 rounded-full bg-blue-500"
-                      style={{
-                        boxShadow: `0 0 18px ${activeStyle.glow}`,
-                      }}
-                    />
-
-                        {/* Línea derecha */}
-                    <motion.div
-                      className="absolute left-1/2 h-[2px] bg-blue-500 origin-left"
-                      style={{
-                        width: rightWidth,
-                        boxShadow: `0 0 12px ${activeStyle.glow}`,
-                        opacity: glowOpacity,
-                      }}
-                    />
-                  </motion.div>
+              <motion.h1
+                className="text-2xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-6 leading-tight orbitron-font"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: "spring",
+                  damping: 20,
+                  stiffness: 100,
+                  delay: 0.3,
+                }}
+              >
+                NUESTROS PROVEEDORES
+              </motion.h1>
             </div>
           </div>
         </section>
