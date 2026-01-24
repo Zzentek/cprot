@@ -27,32 +27,6 @@ const locations = [
 
 // LocationItem con ping
 const LocationItem = memo(({ location, index }: { location: typeof locations[0], index: number }) => {
-  const [ping, setPing] = useState<number | null>(null);
-
-  const getPingColor = (ping: number | null) => {
-  if (ping === null) return "text-gray-500";   // no responde
-  if (ping < 100) return "text-green-500";     // rápido
-  if (ping < 100) return "text-yellow-500";   // medio
-  return "bg-red-500";                      // lento
-};
-
-  // Hacer ping HTTP cada 10s
-  /** useEffect(() => {
-    let interval: NodeJS.Timeout | number | undefined;
-
-    const pingServer = async () => {
-      const start = performance.now();
-      try {
-        await fetch(location.endpoint, { method: "HEAD", mode: "no-cors" }); // HEAD para solo medir
-        const end = performance.now();
-        setPing(Math.round(end - start));
-      } catch {
-        setPing(null);
-      }
-    };
-
-    pingServer();
-    interval = window.setInterval(pingServer, 1100);**/
 
 
   return (
@@ -86,7 +60,7 @@ const LocationItem = memo(({ location, index }: { location: typeof locations[0],
       </div>
       <div className="flex flex-col items-center justify-center">
         <div></div>
-        <p className={`text-g text-gray-400 mt-1 ${getPingColor(ping)}`}>{ping !== null ? `${ping} ms` : "–"}</p>
+        <p className={`text-gray-400 mt-1`}>-</p>
       </div>
     </motion.div>
   );
@@ -184,8 +158,6 @@ const WorldMapSVG = memo(() => {
                     r={hoveredDot === location.name ? "12" : "10"}
                     fill="rgba(22, 91, 202, 0.59)"
                     initial={{ scale: 0 }}
-                    animate={{ scale: [1, 1.4, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: location.delay }}
                   />
                   <motion.circle
                     cx={location.x}
@@ -196,8 +168,6 @@ const WorldMapSVG = memo(() => {
                     style={{ pointerEvents: 'all' }}
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ duration: 0.5, delay: location.delay + 0.5 }}
                     onMouseEnter={() => setHoveredDot(location.name)}
                     onMouseLeave={() => setHoveredDot(null)}
                   />

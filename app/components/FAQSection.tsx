@@ -2,7 +2,6 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import { TbChevronUpRight, TbChevronDownRight } from "react-icons/tb"
 import { useState } from "react"
 import Image from "next/image"
 
@@ -120,11 +119,7 @@ export default function FAQSection() {
                       {(index + 1).toString().padStart(2, '0')}
                     </span>
                     <span className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400">{faq.question}</span>
-                    {openIndex === index ? (
-                      <TbChevronDownRight className="w-5 h-5 text-blue-600 dark:text-blue-400 ml-auto" />
-                    ) : (
-                      <TbChevronUpRight className="w-5 h-5 text-blue-600 dark:text-blue-400 ml-auto" />
-                    )}
+                    
                   </button>
                   <div
                     className={`px-4 sm:px-6 transition-all duration-300 overflow-hidden ${

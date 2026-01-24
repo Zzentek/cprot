@@ -25,7 +25,6 @@ import {
   Shield,
   Check,
 } from 'lucide-react';
-import { FaDiscord } from "react-icons/fa6";
 import Confetti from 'react-confetti';
 import { motion, AnimatePresence } from 'framer-motion';
 import navigationConfig from '../config/sections/navigation.json';
@@ -51,7 +50,6 @@ const iconMap: { [key: string]: React.ElementType } = {
   ChevronRight,
   Moon,
   Sun,
-  FaDiscord,
 };
 
 const getIcon = (iconName: string) => iconMap[iconName];
@@ -310,8 +308,7 @@ const Navbar: React.FC = () => {
             href={item.href}
             className={`px-4 py-6 text-sm font-medium relative text-gray-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400/80 transition-colors flex items-center space-x-2 
             after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-600 dark:after:bg-blue-400/80 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-center
-            hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.15)_0%,_transparent_100%)] dark:hover:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%)] 
-            ${isActive ? 'text-blue-600 dark:text-blue-400/80 after:scale-x-100 bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.15)_0%,_transparent_100%)] dark:bg-[radial-gradient(50%_50%_at_50%_100%,_rgba(30,121,195,0.25)_0%,_transparent_100%)]' : ''}`}
+            `}
             prefetch={true}
           >
             {IconComponent && <IconComponent className="w-4 h-4" />}
@@ -432,7 +429,7 @@ const Navbar: React.FC = () => {
         key={item.name}
         href={item.href}
         className={`flex items-center justify-between w-full px-3 py-3 rounded-lg transition-colors mb-2 ${isActive
-          ? 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-500/30'
+          ? 'bg-blue-700 dark:bg-blue-700 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-500/30'
           : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800/50'
           }`}
         onClick={closeMobileMenu}

@@ -4,7 +4,6 @@ import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import Image from "next/image"
 import { Mail, Phone, Gamepad2, ExternalLink, Target } from "lucide-react"
-import DiscordBanner from "./DiscordBanner"
 
 export default function Footer() {
   const quickLinks = [
@@ -28,10 +27,6 @@ export default function Footer() {
 
   return (
     <div className="relative">
-      {/* Discord Banner with cut-off effect */}
-      <div className="relative z-30 -mb-47">
-        <DiscordBanner />
-      </div>
       
       <footer className="bg-gray-100 dark:bg-[#000000] border-t border-gray-200 dark:border-white/10 relative z-10 pt-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

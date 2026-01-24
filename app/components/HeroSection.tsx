@@ -9,8 +9,7 @@ import type { HeroConfig } from "../types/hero"
 import uiConfig from "../config/sections/ui.json"
 
 const config = heroConfig as HeroConfig;
-import { ArrowRight, Server, Shield, Clock, Users } from "lucide-react"
-import { FiExternalLink } from 'react-icons/fi';
+  import { ArrowRight, Server, Shield, Clock, Users } from "lucide-react"
 import { useLanguage } from '../contexts/LanguageContext';
 
 const generateBlurDataURL = () => {
@@ -189,7 +188,6 @@ const activeStyle = heroStyles[HERO_STYLE]
           loading="eager"
           fetchPriority="high"
           className="object-cover object-center w-full h-full"
-          quality={80}
         />
 
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black to-black dark:from-[#000000] dark:via-[#000000]/90 dark:to-[#000000]/40" />
@@ -358,7 +356,6 @@ const activeStyle = heroStyles[HERO_STYLE]
                         height={64}
                         className="h-12 sm:h-16 w-24 sm:w-32 object-contain transition-all duration-700"
                         loading="lazy"
-                        quality={60}
                         sizes="(max-width: 640px) 96px, 128px"
                       />
                     </a>
